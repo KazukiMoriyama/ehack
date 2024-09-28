@@ -465,7 +465,7 @@
   background: linear-gradient(to bottom, $c-white 13px, $c-BgGray 13px);
   @include mq("md") {
     row-gap: rrem(15);
-    padding-bottom: rrem(15);
+    //padding-bottom: rrem(15);
   }
 }
 
