@@ -1,10 +1,8 @@
 @use "../global" as *;
 //下層--Minutes Movieページ (page-minutes-movie)
 
-/* 下層serviceページ(共通) セクションタイトル → commonに記載
+/* 下層serviceページ(共通) セクションタイトル → page-under-service.scssに記載
 ======================================*/
-
-
 
 .mmovie-page__process {
   padding-top: rrem(184);
@@ -118,7 +116,7 @@
 }
 
 
-/* 下層--Minutes Movieページ 動画 quick セクション
+/* Minutes Movieページ 動画 quick セクション
 ======================================*/
 .mmovie-page__quick {
   background-color: $c-text;
@@ -131,7 +129,7 @@
 }
 
 
-/* 下層--Minutes Movieページ introduction セクション
+/* Minutes Movieページ introduction セクション
 ======================================*/
 .mmovie-page__introduction {
   padding-top: rrem(168);
@@ -215,7 +213,7 @@
   }
 }
 
-/* 下層--Minutes Movieページ plan セクション
+/* Minutes Movieページ plan セクション
 ======================================*/
 .mmovie-page__plan {
   padding-top: rrem(120);
@@ -411,7 +409,7 @@
 }
 
 
-/* 下層--Minutes Movieページ flow セクション
+/* Minutes Movieページ flow セクション
 ======================================*/
 // .flow-item__image {
 //   aspect-ratio: 56 / 79;
@@ -508,3 +506,13 @@
 }
 
 
+/* Minutes Movieページ qa セクション
+======================================*/
+.mmovie-page__qa {
+  padding-top: rrem(72);
+  padding-bottom: rrem(89);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}

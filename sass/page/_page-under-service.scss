@@ -169,3 +169,108 @@
     line-height: calc(33 / 22);
     letter-spacing: 1.76px;
   }
+/* 下層serviceページ(共通) qa よくある質問セクション
+======================================*/
+.under-service__qa {
+
+}
+
+.under-service__qa-title {
+  color: $c-black;
+  font-size: rrem(30);
+  font-weight: $bold;
+  line-height: calc(48 / 30);
+  letter-spacing: 2.4px;
+  text-align: center;
+  position: relative;
+}
+
+.under-service__qa-title::before {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 1px;
+  background-color: $c-Dgray;
+  @include mq("md") {
+    bottom: -20px;
+  }
+}
+
+.under-service__qa-wrap {
+  max-width: rrem(800);
+  margin-inline: auto;
+  margin-top: rrem(108);
+  @include mq("md") {
+    width: 100%;
+    margin-top: rrem(50);
+  }
+}
+
+.under-service .qa-list {
+
+}
+
+.under-service .qa-item {
+
+}
+
+.under-service .qa-item + .qa-item {
+  margin-top: rrem(33);
+}
+
+.under-service .qa-item__title {
+  color: $c-text;
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+  padding-left: rrem(32);
+  position: relative;
+}
+
+.under-service .qa-item__title::before {
+  content: "Q";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  width: rrem(16);
+  height: rrem(24);
+  color: $c-text;
+  font-family: $en-font;
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(31.5 / 18);
+  letter-spacing: 0.72px;
+}
+
+
+.under-service .qa-item__text {
+  margin-top: rrem(16);
+  color: $c-black;
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(26.25 / 15);
+  letter-spacing: 0.6px;
+  padding-left: rrem(30);
+  position: relative;
+}
+
+.under-service .qa-item__text::before {
+  content: "A";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  width: rrem(16);
+  height: rrem(26);
+  color: $c-text;
+  font-family: $en-font;
+  font-size: rrem(18);
+  font-weight: $medium;
+  line-height: calc(31.5 / 18);
+  letter-spacing: 0.72px;
+}

@@ -2376,7 +2376,7 @@ select::-ms-expand {
   }
 }
 
-/* 下層serviceページ(共通) セクションタイトル → commonに記載
+/* 下層serviceページ(共通) セクションタイトル → page-under-service.scssに記載
 ======================================*/
 .mmovie-page__process {
   padding-top: 11.5rem;
@@ -2505,7 +2505,7 @@ select::-ms-expand {
   }
 }
 
-/* 下層--Minutes Movieページ 動画 quick セクション
+/* Minutes Movieページ 動画 quick セクション
 ======================================*/
 .mmovie-page__quick {
   background-color: #28292B;
@@ -2519,7 +2519,7 @@ select::-ms-expand {
   }
 }
 
-/* 下層--Minutes Movieページ introduction セクション
+/* Minutes Movieページ introduction セクション
 ======================================*/
 .mmovie-page__introduction {
   padding-top: 10.5rem;
@@ -2600,7 +2600,7 @@ select::-ms-expand {
   }
 }
 
-/* 下層--Minutes Movieページ plan セクション
+/* Minutes Movieページ plan セクション
 ======================================*/
 .mmovie-page__plan {
   padding-top: 7.5rem;
@@ -2815,7 +2815,7 @@ select::-ms-expand {
   margin-top: 0.5rem;
 }
 
-/* 下層--Minutes Movieページ flow セクション
+/* Minutes Movieページ flow セクション
 ======================================*/
 .mmovie-page__flow {
   padding-top: 5rem;
@@ -2901,6 +2901,19 @@ select::-ms-expand {
   line-height: 1.5;
   letter-spacing: 0.64px;
   height: 3rem;
+}
+
+/* Minutes Movieページ qa セクション
+======================================*/
+.mmovie-page__qa {
+  padding-top: 4.5rem;
+  padding-bottom: 5.5625rem;
+}
+@media screen and (max-width: 767px) {
+  .mmovie-page__qa {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
 }
 
 /* serviceの下層ページ3つ fv ファーストビュー
@@ -3075,4 +3088,101 @@ select::-ms-expand {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 1.76px;
+}
+
+/* 下層serviceページ(共通) qa よくある質問セクション
+======================================*/
+.under-service__qa-title {
+  color: #000;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+  text-align: center;
+  position: relative;
+}
+
+.under-service__qa-title::before {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 1px;
+  background-color: #5f5f5f;
+}
+@media screen and (max-width: 767px) {
+  .under-service__qa-title::before {
+    bottom: -20px;
+  }
+}
+
+.under-service__qa-wrap {
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-top: 6.75rem;
+}
+@media screen and (max-width: 767px) {
+  .under-service__qa-wrap {
+    width: 100%;
+    margin-top: 3.125rem;
+  }
+}
+
+.under-service .qa-item + .qa-item {
+  margin-top: 2.0625rem;
+}
+
+.under-service .qa-item__title {
+  color: #28292B;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.under-service .qa-item__title::before {
+  content: "Q";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1.5rem;
+  color: #28292B;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.75;
+  letter-spacing: 0.72px;
+}
+
+.under-service .qa-item__text {
+  margin-top: 1rem;
+  color: #000;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+  padding-left: 1.875rem;
+  position: relative;
+}
+
+.under-service .qa-item__text::before {
+  content: "A";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1.625rem;
+  color: #28292B;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.72px;
 }/*# sourceMappingURL=styles.css.map */
