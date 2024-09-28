@@ -1,0 +1,235 @@
+@use "../global" as *;
+//下層--Minutes Movieページ (page-minutes-movie)
+
+/* 下層serviceページ(共通) セクションタイトル → commonに記載
+======================================*/
+
+
+
+.mmovie-page__process {
+  padding-top: rrem(184);
+  padding-bottom: rrem(153);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.mmovie-page__process-wrap {
+  text-align: center;
+}
+
+.mmovie-page__process-title {
+  font-size: rrem(44);
+  font-weight: $bold;
+  line-height: calc(66 / 44);
+  letter-spacing: 3.52px;
+  @include mq("md") {
+    font-size: rrem(30);
+    line-height: calc(48 / 30);
+    letter-spacing: 2.4px;
+  }
+}
+
+.mmovie-page__process-text {
+  margin-top: rrem(32);
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+  @include mq("md") {
+    margin-top: rrem(20);
+    text-align: left;
+  }
+}
+
+.mmovie-page__graph {
+  margin-top: rrem(64);
+  margin-inline: auto;
+  aspect-ratio: 800 / 400;
+  width: rrem(800);
+  @include mq("md") {
+    margin-top: rrem(40);
+    aspect-ratio: 320 / 160;
+    width: 100%;
+  }
+}
+
+.mmovie-page__graph img {
+  height: 100%;
+}
+
+.mmovie-page__process-list {
+  margin-top: rrem(119);
+  @include mq("md") {
+    margin-top: rrem(60);
+  }
+}
+
+.mmovie-page__process-list .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rrem(20);
+  place-items: center;
+  @include mq("md") {
+    grid-template-columns: repeat(1, 1fr);
+    gap: rrem(40);
+  }
+}
+
+.mmovie-page__process-list .cards-item {
+
+}
+
+.mmovie-page__process-list .cards-item__image {
+  aspect-ratio: 320 / 240;
+  max-width: rrem(320);
+  @include mq("md") {
+    width: rrem(250);
+  }
+}
+
+.mmovie-page__process-list .cards-item__bottom {
+  margin-top: rrem(72);
+  @include mq("md") {
+    margin-top: rrem(5);
+  }
+}
+
+.mmovie-page__process-list .cards-item__title {
+  font-size: rrem(30);
+  font-weight: $bold;
+  line-height: calc(48 / 30);
+  letter-spacing: 2.4px;
+}
+
+.mmovie-page__process-list .cards-item__text {
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+  margin-top: rrem(32);
+  @include mq("md") {
+    margin-top: rrem(10);
+  }
+}
+
+
+/* 下層--Minutes Movieページ 動画 quick セクション
+======================================*/
+.mmovie-page__quick {
+  background-color: $c-text;
+  padding-top: rrem(104);
+  padding-bottom: rrem(104);
+}
+
+
+/* 下層--Minutes Movieページ introduction セクション
+======================================*/
+.mmovie-page__introduction {
+  padding-top: rrem(168);
+  padding-bottom: rrem(171);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.mmovie-page__introduction-wrap {
+  text-align: center;
+}
+
+
+.mmovie-page__introduction-textBox {
+  margin-top: rrem(174);
+}
+
+.mmovie-page__introduction-text {
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(26.25 / 15);
+  letter-spacing: 0.6px;
+}
+
+.mmovie-page__achievement {
+
+}
+
+.mmovie-page__achievement-title {
+
+}
+
+.mmovie-page__achievement-video {
+
+}
+
+.video__container {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//制作実績mock-up動画
+// .mmovie-page__achievement .video__container {
+//   position: relative;
+//   padding-top: 56.25%;
+//   height: 0;
+//   overflow: hidden;
+// }
+
+// .mmovie-page__achievement .video__container  {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+
+.mmovie-page__achievement-title {
+
+}
+.mmovie-page__achievement-video {
+  position: relative;
+}
+.mmovie-page__achievement-video::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../images/minutes-movie/mock-up@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+  background-position: bottom;
+}

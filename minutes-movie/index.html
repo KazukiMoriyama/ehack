@@ -7,7 +7,7 @@
   <!-- noindex 検索させたくない時だけ入れる-->
   <meta name="robots" content="noindex">
   <!-- meta情報 -->
-  <title>EHACK | Company</title>
+  <title>EHACK | Minutes Movie</title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
   <!-- ogp -->
@@ -28,8 +28,8 @@
   <!-- JavaScript -->
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script defer src="../js/script.js"></script>
-
 </head>
+<!-- Minutes Movieページ -->
 <body>
   <!-- グラデーション定義 -->
   <svg class="gradient-svg" height="0" width="0">
@@ -141,32 +141,87 @@
     </div>
   </header>
   <main>
-    <!-- companyページ ファーストビュー -->
-    <section class="company-fv under-page__fv layout-under-fv" id="js-fv">
+    <!-- service下層--minutes-movieページ fv -->
+    <section class="under-service-fv layout-under-fv" id="js-fv">
       <!-- 背景動画 -->
       <video class="background_video" src="../images/video/bg_movie.mp4" autoplay muted loop></video>
-      <div class="company-fv__inner inner">
-        <div class="company-fv__wrap under-page__fv-wrap">
-          <h1 class="company-fv__title under-page__fv-title">company</h1>
-          <p class="company-fv__subtitle under-page__fv-subtitle">ehackについて</p>
+      <div class="under-service-fv__inner inner">
+        <div class="under-service-fv__box">
+          <div class="under-service-fv__wrap">
+            <p class="under-service-fv__label">service</p>
+            <h1 class="under-service-fv__title">minutes<br>movie</h1>
+            <h2 class="under-service-fv__subtitle">たった45分でオリジナルムービーを</h2>
+          </div>
+          <figure class="under-service-fv__image">
+            <img src="../images/minutes-movie/fv-movie@2x.png" alt="スマートフォンの画面から飛び出る様々なアイコン、アプリケーションをアクティブに操作している様子を描いた画像" width="480" height="320" decoding="async" loading="eager">
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- companyページ banner -->
-    <section class="company-page__banner">
-      <div class="inner company-page__inner">
+    <!-- service下層--minutes-movieページ process -->
+    <section class="mmovie-page__process">
+      <div class="inner">
+        <div class="mmovie-page__process-wrap">
+          <h3 class="mmovie-page__process-title">私たちは<br class="sp-only">45分で仕上げます</h3>
+          <p class="mmovie-page__process-text">
+            この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。この文章はダミーです。<br>
+            テキストの大きさ、行間を確認するために入力しています。この文章はダミーです。テキストの大きさ、<br>
+            行間を確認するために入力しています。この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。
+          </p>
+          <!-- グラフ -->
+          <figure class="mmovie-page__graph">
+            <img src="../images/minutes-movie/process-graph@2x.png" alt="動画の製作時間を示す緑色のグラフが描かれた図。脚本、撮影、編集の時間が詳細に記されている。" width="800" height="400" decoding="async">
+          </figure>
+          <!-- カードリスト -->
+          <div class="mmovie-page__process-list">
+            <ul class="cards">
+              <!-- 1 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/minutes-movie/process01@2x.png" alt="一人がスクリーンを操作し、他の三人がそれぞれ異なるデバイスで作業しているデジタル作業風景のイラスト" width="320" height="240" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <p class="cards-item__title">効率的</p>
+                  <p class="cards-item__text">短い拘束時間で最大の利益を</p>
+                </div>
+              </li>
+              <!-- 2 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/minutes-movie/process02@2x.png" alt="大きなディスプレイにコードが表示されており、周囲で異なるデバイスを操作する三人の人物を含む、クリエイティブな作業環境を示すイラスト" width="320" height="240" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <p class="cards-item__title">効果的</p>
+                  <p class="cards-item__text">抽象to具体<br>的確にわかりやすく</p>
+                </div>
+              </li>
+              <!-- 3 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/minutes-movie/process03@2x.png" alt="戦略的な計画を図示するチャートやデータが表示されたディスプレイを前に、意見交換するビジネスパーソンのイラスト" width="320" height="240" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <p class="cards-item__title">インタラクティブ</p>
+                  <p class="cards-item__text">コミニケーションが円滑に</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- service下層--minutes-movieページ quick -->
+    <section class="mmovie-page__quick under-service-quick">
+      <div class="inner">
         <!-- section タイトル -->
-        <div class="section__title-wrap">
-          <h2 class="section__title">ehack</h2>
-          <p class="section__subtitle">1分でわかるehack</p>title
+        <div class="under-service-quick__title-wrap">
+          <h3 class="under-service-quick__title">1分でわかる</h3>
+          <p class="under-service-quick__subtitle">minutes movie</p>
         </div>
         <!-- 動画 -->
-        <!-- <div class="company-page__video video__container">
-          <video src="../images/video/ehack_fv.mp4">
-            "Your browser does not support the video tag."
-          </video> -->
-          <!-- 動画 -->
+        <div class="under-service-quick__video video__container">
           <video id="ehack-video" playsinline autoplay loop muted controls>
             <source src="../images/video/ehack_fv.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -175,7 +230,125 @@
       </div>
     </section>
 
-    <!-- Contact セクション -->
+    <!-- service下層--minutes-movieページ introduction -->
+    <section class="mmovie-page__introduction">
+      <div class="inner">
+        <div class="mmovie-page__introduction-wrap">
+          <!-- セクションタイトル -->
+          <div class="mmovie-page__setion-titleBox">
+            <p class="mmovie-page__section-subtitle">シンプルな映像制作サービス</p>
+            <h3 class="mmovie-page__section-title">MinutesMovie<span>とは</span></h3>
+          </div>
+          <!-- テキスト -->
+          <div class="mmovie-page__introduction-textBox">
+            <p class="mmovie-page__introduction-text">
+              インタラクティブ機能を使い動画から直接サービスにアクセスできるので成約率が格段にUPします。<br>
+              さらにサービス説明を動画化することで商談時間の短縮。<br>
+              業務効率化によるコストダウンを実現します。
+            </p>
+            <p class="mmovie-page__introduction-text">
+              EHACKのプロジェクトチームが適切な動画の配置場所と動画の内容を考案し、<br>
+              あなたの思いをのせたアニメーションムービーを作成します。
+            </p>
+          </div>
+          <!-- 制作実績 -->
+          <div class="mmovie-page__achievement">
+            <h4 class="mmovie-page__achievement-title">制作実績</h4>
+            <div class="mmovie-page__achievement-video video__container">
+              <!-- <img src="../images/minutes-movie/mock-up@2x.png" alt="黒い枠のタブレットのモックアップ画像" width="840" height="546" decoding="async"> -->
+              <video id="ehack-video" playsinline autoplay loop muted controls>
+                <source src="../images/video/ehack_fv.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    
+
+    <!-- companyページ Message セクション -->
+    <section class="company-page__message">
+      <div class="company-page__inner inner">
+        <div class="company-page__message-container">
+          <!-- テキスト -->
+          <div class="company-page__message-content">
+            <h2 class="company-page__title company-page__title--white">message</h2>
+            <p class="company-page__subtitle section__subtitle--white">代表挨拶</p>
+            <div class="company-page__message-box">
+              <p class="company-page__message-text">
+                私は学生時代から日本の教育システムに違和感を感じていました。
+              </p>
+              <p class="company-page__message-text">
+                人とは違うことを悪とし、個性を潰し、コモディティ化させる仕組みの中で生かされている環境がとにかく嫌いでした。
+              </p>
+              <p class="company-page__message-text">
+                他人の敷いたレールを生きることを止め、組織や社会と協力しながら自分らしい人生のレールを走ることがこれからの人生を過ごす上での必修科目であると確信しています。
+              </p>
+              <p class="company-page__message-text">
+                私は「Education(教育)をHACK（よりよく）する」ことを目指しEHACKを興しました。
+              </p>
+              <p class="company-page__message-text">
+                誰もが社会や組織に価値を提供し、適切に評価される未来を信じて突き進みます。
+              </p>
+            </div>
+          </div>
+          <!-- 画像 -->
+          <figure class="company-page__image">
+            <img src="../images/company/company@2x.jpg" alt="株式会社イーハック代表が笑顔で映っている写真" width="396" height="509" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- companyページ Outline セクション -->
+    <section class="company-page__outline">
+      <div class="company-page__inner inner">
+        <div class="company-page__outline-wrap">
+          <!-- section タイトル -->
+          <div class="section__title-wrap">
+            <h2 class="company-page__title">outline</h2>
+            <p class="company-page__subtitle">会社概要</p>
+          </div>
+          <!-- 会社概要 -->
+          <dl class="company-page__company-info company-info ">
+            <div class="company-info__row">
+              <dt>会社名</dt>
+              <dd>株式会社EHACK</dd>
+            </div>
+            <div class="company-info__row">
+              <dt>代表取締役</dt>
+              <dd>○○○○○</dd>
+            </div>
+            <div class="company-info__row">
+              <dt>住所</dt>
+              <dd>○○○○○○○○○○</dd>
+            </div>
+            <div class="company-info__row">
+              <dt>電話番号</dt>
+              <dd><a href="tel:123-456-789">TEL 123-456-7890</a></dd>
+            </div>
+            <div class="company-info__row">
+              <dt>事業内容</dt>
+              <dd>○○○○○</dd>
+            </div>
+            <div class="company-info__row">
+              <dt>資本金</dt>
+              <dd>○○○○○</dd>
+            </div>
+            <div class="company-info__row">
+              <dt>取引銀行</dt>
+              <dd>○○○○○</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+    <!-- companyページ Contact セクション -->
     <section class="contact layout-contact">
       <!-- 背景動画 -->
       <video class="background_video" src="../images/video/bg_movie.mp4" autoplay muted loop></video>
@@ -203,6 +376,7 @@
         </div>
       </div>
     </section>
+
   </main>
   <!-- フッター -->
   <footer class="footer layout-footer">
