@@ -217,3 +217,142 @@
 
 /* 下層--Minutes Movieページ plan セクション
 ======================================*/
+.mmovie-page__plan-description {
+  margin-top: rrem(48);
+  max-width: rrem(800);
+  margin-inline: auto;
+  background-color: $c-BgGray;
+  padding-top: rrem(42);
+  padding-bottom: rrem(33);
+  text-align: center;
+}
+
+.mmovie-page .plan-description__subtitle {
+  font-size: 15px;
+  font-weight: $medium;
+  line-height: calc(26.25 / 15);
+  letter-spacing: 0.6px;
+}
+
+.mmovie-page .plan-description__title {
+  margin-top: rrem(22.98);
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(28.8 / 18);
+  letter-spacing: 0.72px;
+}
+
+.mmovie-page  .plan-description__price {
+  margin-top: rrem(24);
+  color: $c-accent;
+  font-size: rrem(30);
+  font-weight: $bold;
+  line-height: calc(48 / 30);
+  letter-spacing: 2.4px;
+}
+/* サポート内容
+======================================*/
+.mmovie-page__plan-support {
+  margin-top: rrem(32);
+}
+
+.mmovie-page  .plan-support__title {
+  font-size: 13px;
+  font-weight: $medium;
+  line-height: calc(20.8 / 13);
+  letter-spacing: 0.52px;
+}
+
+.mmovie-page  .plan-support__list {
+  margin-top: rrem(16);
+  max-width: rrem(600);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: rrem(8);
+  justify-content: center;
+  align-items: center;
+}
+
+.mmovie-page  .plan-support__item {
+  color: $c-black;
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(15 / 15);
+  letter-spacing: 0.6px;
+  background-color: $c-white;
+  padding: rrem(8) rrem(32);
+  display: inline-block;
+  border-radius: 99px;
+}
+
+/* プラン比較表
+======================================*/
+.mmovie-page__plan-table {
+  max-width: rrem(800);
+  margin-inline: auto;
+  margin-top: rrem(32);
+  overflow-x: scroll;
+  text-align: center;
+}
+
+.mmovie-page  .plan-table {
+  border-collapse: collapse;
+  width: rrem(800);
+
+}
+
+.mmovie-page .plan-table__head:first-child {
+  width: rrem(200);
+}
+.mmovie-page .plan-table__head:nth-child(2) {
+  width: rrem(360);
+}
+.mmovie-page .plan-table__head:nth-child(3) {
+  width: rrem(240);
+}
+
+.mmovie-page .plan-table__head {
+  padding-block: rrem(4);
+  max-width: 100%;
+}
+
+.mmovie-page .plan-table__ehack {
+
+}
+
+.mmovie-page .plan-table__bodys {
+
+}
+
+.mmovie-page .plan-table__body {
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(26.25 / 15);
+  letter-spacing: 0.6px;
+  padding: rrem(4) rrem(20);
+}
+
+.mmovie-page .plan-table__note {
+
+}
+
+
+/* 表の真ん中だけ赤
+======================================*/
+.mmovie-page .plan-table__ehack {
+  color: $c-accent;
+  font-size: rrem(15);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+  background-color: $c-BgGray;
+}
+
+.mmovie-page .plan-table__head.plan-table__ehack {
+  color: $c-text;
+}
+
+th, td {
+  border: dashed 1px #777;
+}

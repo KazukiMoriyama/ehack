@@ -2774,4 +2774,132 @@ select::-ms-expand {
 }
 
 /* 下層--Minutes Movieページ plan セクション
-======================================*//*# sourceMappingURL=styles.css.map */
+======================================*/
+.mmovie-page__plan-description {
+  margin-top: 3rem;
+  max-width: 50rem;
+  margin-inline: auto;
+  background-color: #f5f5f5;
+  padding-top: 2.625rem;
+  padding-bottom: 2.0625rem;
+  text-align: center;
+}
+
+.mmovie-page .plan-description__subtitle {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+}
+
+.mmovie-page .plan-description__title {
+  margin-top: 1.43625rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+}
+
+.mmovie-page .plan-description__price {
+  margin-top: 1.5rem;
+  color: #F74A3F;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+}
+
+/* サポート内容
+======================================*/
+.mmovie-page__plan-support {
+  margin-top: 2rem;
+}
+
+.mmovie-page .plan-support__title {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.52px;
+}
+
+.mmovie-page .plan-support__list {
+  margin-top: 1rem;
+  max-width: 37.5rem;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.mmovie-page .plan-support__item {
+  color: #000;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.6px;
+  background-color: #FFF;
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  border-radius: 99px;
+}
+
+/* プラン比較表
+======================================*/
+.mmovie-page__plan-table {
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-top: 2rem;
+  overflow-x: scroll;
+  text-align: center;
+}
+
+.mmovie-page .plan-table {
+  border-collapse: collapse;
+  width: 50rem;
+}
+
+.mmovie-page .plan-table__head:first-child {
+  width: 12.5rem;
+}
+
+.mmovie-page .plan-table__head:nth-child(2) {
+  width: 22.5rem;
+}
+
+.mmovie-page .plan-table__head:nth-child(3) {
+  width: 15rem;
+}
+
+.mmovie-page .plan-table__head {
+  padding-block: 0.25rem;
+  max-width: 100%;
+}
+
+.mmovie-page .plan-table__body {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+  padding: 0.25rem 1.25rem;
+}
+
+/* 表の真ん中だけ赤
+======================================*/
+.mmovie-page .plan-table__ehack {
+  color: #F74A3F;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  background-color: #f5f5f5;
+}
+
+.mmovie-page .plan-table__head.plan-table__ehack {
+  color: #28292B;
+}
+
+th, td {
+  border: dashed 1px #777;
+}/*# sourceMappingURL=styles.css.map */
