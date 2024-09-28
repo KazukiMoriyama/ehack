@@ -479,6 +479,10 @@ select::-ms-expand {
 
 /* 下層serviceページ(共通) セクションタイトル
 ======================================*/
+.mmovie-page__setion-titleBox {
+  text-align: center;
+}
+
 .mmovie-page__section-subtitle {
   font-size: 1.375rem;
   font-weight: 700;
@@ -2767,4 +2771,7 @@ select::-ms-expand {
   .mmovie-page__achievement-video #ehack-video {
     width: 77%;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/* 下層--Minutes Movieページ plan セクション
+======================================*//*# sourceMappingURL=styles.css.map */
