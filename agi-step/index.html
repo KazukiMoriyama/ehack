@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 修正必要。コピーしただけ！ -->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# article: http://ogp.me/ns/ article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- noindex 検索させたくない時だけ入れる-->
+  <meta name="robots" content="noindex">
+  <!-- meta情報 -->
+  <title>EHACK | Company</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <!-- ogp -->
+  <meta content="" property="og:title" />
+  <meta content="" property="og:description" />
+  <meta content="" property="og:image" />
+  <meta content="" property="og:url" />
+  <meta content="" property="og:type" />
+  <meta content="" property="og:site_name" />
+  <!-- ファビコン -->
+  <link href="" rel="icon" />
+  <!-- Googleフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <!-- css -->
+  <link href="../css/styles.css?20240927" rel="stylesheet">
+  <!-- JavaScript -->
+  <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="../js/script.js"></script>
+
+</head>
+<body>
+  <!-- グラデーション定義 -->
+  <svg class="gradient-svg" height="0" width="0">
+    <defs>
+      <linearGradient id="gradientSVG" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#FDE005; stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#00CF35; stop-opacity:1" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <!-- 下層ページ header -->
+  <header class="header slide-down">
+    <div class="inner header__inner">
+      <!-- ロゴ -->
+      <div class="header__logo">
+        <a href="../index.html" id="js-logo">
+          <img src="../images/common/logo-white.svg" alt="EHACK" width="127" height="70" decoding="async" loading="eager">
+        </a>
+      </div>
+      <!-- PCのみ ナビメニュー -->
+      <nav class="pc-only">
+        <ul class="header__nav">
+          <!-- 1.home -->
+          <li class="header__nav-item">
+            <a href="../index.html">home</a>
+          </li>
+          <!-- 2.company -->
+          <li class="header__nav-item">
+            <a href="#">company</a>
+          </li>
+          <!-- 3.service ドロップダウンメニュー含む -->
+          <li class="header__nav-item has-dropdown">
+            <a href="../e-cycle/html">service</a>
+            <!-- ドロップダウンメニュー -->
+            <ul class="dropdown dropdown__list">
+              <li class="dropdown__item">
+                <a href="../e-cycle/index.html">
+                  <img src="../images/common/btn-Ecycle@2x.png" alt="「E-Cycle」と記された、ソーシャルメディア関連のデジタル活動を表すイラストボタン" width="408" height="370" decoding="async" loading="eager">
+                </a>
+              </li>
+              <li class="dropdown__item">
+                <a href="../minutes-movie/index.html">
+                  <img src="../images/common/btn-Mmovie@2x.png" alt="「Minute-Movie」と記された、スマートフォンを用いたクイックムービー制作を表すイラストボタン" width="408" height="357" decoding="async" loading="eager">
+                </a>
+              </li>
+              <li class="dropdown__item">
+                <a href="../agi-step/index.html">
+                  <img src="../images/common/btn-AGIstep@2x.png" alt="「AGI-Step」と記された、オフィスの環境をAIアシスタントが支援する様子を表すイラストボタン" width="408" height="351" decoding="async" loading="eager">
+                </a>
+              </li>
+            </ul>
+            <!-- メガメニューここまで -->
+          </li>
+          <!-- 4.contact -->
+          <li class="header__nav-item header__nav-item--contact">
+            <a href="../contact/index.html"><span>30秒で問い合わせる</span></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- SPのみ ハンバーガーメニュー -->
+      <button class="header__drawer hamburger sp-only" id="js-hamburger">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </button>
+      <div class="sp-nav sp-only" id="js-drawer-menu">
+        <div class="inner">
+          <!-- spナビメニューロゴ -->
+          <a href="../index.htmlindex.html" class="logo sp-nav__logo">
+            <img src="../images/common/logo-white.svg" alt="EHACK" width="127" height="70" decoding="async" loading="eager">
+          </a>
+          <!-- spナビメニュー -->
+          <ul class="sp-nav__items">
+            <li class="sp-nav__item">
+              <a href="../company/index.html">Company<span>EHACKについて</span></a>
+            </li>
+            <li class="sp-nav__item">
+              <a href="../e-cycle/index.html">E-Cycle<span>むかつくほどわかりやすいIT研修</span></a>
+            </li>
+            <li class="sp-nav__item">
+              <a href="../minutes-movie/index.html">Minutes<br class="sp-only">Movie<span>たった45分でオリジナルムービーを</span></a>
+            </li>
+            <li class="sp-nav__item">
+              <a href="../agi-step/index.html">AGI-Step<span>まるで人のようなチャットbot</span></a>
+            </li>
+            <li class="sp-nav__item sp-nav__item--contact">
+              <a href="../contact/index.html"><span>30秒で問い合わせる</span></a>
+            </li>
+          </ul>
+          <!-- 会社情報 -->
+          <address class="sp-nav__info-wrap">
+            <ul class="sp-nav__info">
+              <li class="sp-nav__info-item postalCode">〒000-0000 </li>
+              <li class="sp-nav__info-item address">大阪府○○○○○○○○○○○○○○○○○</li>
+              <li class="sp-nav__info-item tel">
+                <a href="tel:123-456-789">TEL 123-456-7890</a>
+              </li>
+              <li class="sp-nav__info-item mail">
+                <a href="mailto:aaaaaaaa@ehack.com">E-mail aaaaaaaaa@ehack.com</a>
+              </li>
+            </ul>
+          </address>
+          <!-- コピーライト -->
+          <p class="sp-nav__copyright">
+            <small>Copyright©&copy; EHACK Inc. All Rights Reserved.</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- companyページ ファーストビュー -->
+    <section class="company-fv under-page__fv layout-under-fv" id="js-fv">
+      <!-- 背景動画 -->
+      <video class="background_video" src="../images/video/bg_movie.mp4" autoplay muted loop></video>
+      <div class="company-fv__inner inner">
+        <div class="company-fv__wrap under-page__fv-wrap">
+          <h1 class="company-fv__title under-page__fv-title">company</h1>
+          <p class="company-fv__subtitle under-page__fv-subtitle">ehackについて</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- companyページ banner -->
+    <section class="company-page__banner">
+      <div class="inner company-page__inner">
+        <!-- section タイトル -->
+        <div class="section__title-wrap">
+          <h2 class="section__title">ehack</h2>
+          <p class="section__subtitle">1分でわかるehack</p>title
+        </div>
+        <!-- 動画 -->
+        <!-- <div class="company-page__video video__container">
+          <video src="../images/video/ehack_fv.mp4">
+            "Your browser does not support the video tag."
+          </video> -->
+          <!-- 動画 -->
+          <video id="ehack-video" playsinline autoplay loop muted controls>
+            <source src="../images/video/ehack_fv.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact セクション -->
+    <section class="contact layout-contact">
+      <!-- 背景動画 -->
+      <video class="background_video" src="../images/video/bg_movie.mp4" autoplay muted loop></video>
+      <div class="contact__inner inner">
+        <div class="contact__wrap">
+          <div class="contact__title-wrap section__title-wrap">
+            <h2 class="contact__title section__title">contact us</h2>
+          </div>
+          <p class="contact__text">
+            お仕事のご相談やお問い合わせはこちらまで。<br>
+            最短30秒でお問い合わせは完了します。
+          </p>
+          <!-- contactボタン -->
+          <div class="contact-btn__wrap">
+            <a href="#" class="about-btn btn--gray contact-btn btn-gradient" id="js-btn-hover">
+              <div  class="contact-btn__circle">
+                <i class="contact-btn__arrow btn-gradient__arrow"></i>
+                <svg class="circle-border" viewBox="0 0 100 100" >
+                  <circle class="gradient-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="url(#gradientSVG)"></circle>
+                  <circle class="black-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="#28292B"></circle>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- フッター -->
+  <footer class="footer layout-footer">
+    <div class="footer__inner inner">
+      <div class="footer__container">
+        <!-- 1.会社情報 -->
+        <div class="footer__company">
+          <!-- ロゴ -->
+          <div class="footer__logo">
+            <a href="../index.html" class="footer__logo-link">
+              <img src="../images/common/logo-white.svg" alt="EHACK" width="164" height="90" decoding="async">
+            </a>
+          </div>
+          <!-- 会社情報 -->
+          <address class="footer__info-wrap">
+            <ul class="footer__info-list">
+              <li class="footer__info-item postalCode">〒000-0000 </li>
+              <li class="footer__info-item address">大阪府○○○○○○○○○○○○○○○○○</li>
+              <li class="footer__info-item tel">
+                <a href="tel:123-456-789">TEL 123-456-7890</a>
+              </li>
+              <li class="footer__info-item mail">
+                <a href="mailto:aaaaaaaa@ehack.com">E-mail aaaaaaaaa@ehack.com</a>
+              </li>
+            </ul>
+          </address>
+        </div>
+        <!-- 2.footerナビメニュー -->
+        <div class="footer-nav">
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item">
+              <a href="../index.htmlindex.html" class="footer-nav__link">top</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="../company/index.html" class="footer-nav__link">company</a>
+            </li>
+            <li class="footer-nav__item">
+              <!-- アコーディオン -->
+              <details class="footer-nav__dropdown footer-dropdown">
+                <summary class="footer-nav__dropdown-head">
+                  <span class="footer-nav__dropdown-title">service</span>
+                  <span class="footer-nav__dropdown-icon"></span>
+                </summary>
+                <ul class="footer-nav__dropdown-list footer-dropdown__list">
+                  <li class="footer-nav__dropdown-item">
+                    <a href="../e-cycle/index.html" class="footer-nav__dropdown-link">e-cycle</a>
+                  </li>
+                  <li class="footer-nav__dropdown-item">
+                    <a href="../minutes-movie/index.html" class="footer-nav__dropdown-link">minutes movie</a>
+                  </li>
+                  <li class="footer-nav__dropdown-item">
+                    <a href="../agi-step/index.html" class="footer-nav__dropdown-link">AGI-Step</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="footer-nav__item">
+              <a href="../contact/index.html" class="footer-nav__link">contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- 3.コピーライト -->
+        <div class="footer__copy-wrap">
+          <p class="footer__copyright">
+            <small>Copyright©&copy; EHACK Inc. All Rights Reserved.</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

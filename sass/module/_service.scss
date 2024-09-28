@@ -1,0 +1,298 @@
+@use "../global" as *;
+//serviceセクション
+.service {
+
+}
+
+.layout-service {
+
+}
+
+.service__inner {
+
+}
+
+.inner {
+
+}
+
+// .service__title {
+//   text-align: center;
+
+// }
+
+.service__title-wrap {
+  text-align: center;
+}
+
+.service__container {
+  margin-top: rrem(170);
+  @include mq("md") {
+    margin-top: rrem(50);
+  }
+}
+
+.service__block {
+  display: flex;
+  //grid-template-columns: repeat(2, 1fr);
+  gap: rrem(36);
+  //margin-top: rrem(14);
+  @include mq("md") {
+    //grid-template-columns: repeat(1, 1fr);
+    flex-direction: column;
+    align-items: center;
+    gap: rrem(20);
+  }
+}
+
+.service__block.service__block--reverse {
+  flex-direction: row-reverse;
+  @include mq("md") {
+    flex-direction: column;
+  }
+}
+
+.service__block + .service__block {
+  margin-top: rrem(174);
+  @include mq("md") {
+    margin-top: rrem(50);
+  }
+}
+
+.service__block-title {
+  font-family: $en-font;
+  //font-size: rrem(104);
+  font-size: clamp(4.563rem, 2.348rem + 4.61vw, 6.5rem);
+  line-height: calc(104/104);
+  font-weight: $bold;
+  letter-spacing: 5px;
+  //text-align: right;
+  @include mq("md") {
+    order: 0;
+    font-size: rrem(60);
+    letter-spacing: 4.8px;
+    text-align: center;
+  }
+}
+
+.service__block-subtitle {
+  margin-top: rrem(60);
+  //font-size: rrem(30);
+  font-size: clamp(1.313rem, 0.67rem + 1.34vw, 1.875rem);
+  line-height: calc(48/30);
+  font-weight: $bold;
+  letter-spacing: 1.4px;
+  @include mq("md") {
+    order: 1;
+    margin-top: rrem(20) ;
+    font-size: rrem(20);
+    line-height: calc(32/20);
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}
+
+
+
+.service__block-item {
+  //flex: 1;
+  @include mq("md") {
+    display: contents;
+  }
+}
+
+.service__block-image {
+  flex-shrink: 0;
+  aspect-ratio: 440/293;
+  max-width: rrem(440);
+  width: 100%;
+  //margin-top: rrem(52);
+  //margin-bottom: rrem(63.67);
+  @include mq("md") {
+    order: 2;
+    margin-top: 0;
+    width: 100%;
+  }
+
+}
+
+.service__block-image img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.service__block-description {
+  margin-top: rrem(56);
+  font-size: rrem(18);
+  line-height: calc(28/18);
+  font-weight: $bold;
+  letter-spacing: 0.72px;
+  @include mq("md") {
+    order: 3;
+    margin-top: initial;
+  }
+}
+
+.service__btn-wrap {
+  margin-top: rrem(64);
+  @include mq("md") {
+    order: 4;
+    margin-top: initial;
+  }
+}
+
+
+
+/* serviceセクション ボタン（aboutセクションと同じ）
+==========================================*/
+.about-btn__wrap {
+  margin-top: rrem(44);
+}
+
+.about-btn,
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.btn--black__text,
+.service-btn__text {
+  color: $c-text;
+  margin-right: 12px;
+  font-family: $en-font;
+  font-size: 14px;
+  font-weight: $bold;
+  text-transform: capitalize;
+  letter-spacing: 1.12px;
+}
+
+.btn--black__circle,
+.service-btn__circle {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 64px;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+/* 初期で表示される矢印 */
+.btn--black__arrow,
+.service-btn__arrow {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  //margin-left: 7px;
+  background-image: url(../images/common/arrow-black.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  //transform: translateX(0px);//試しに追加
+}
+
+.btn--black__arrow:after,
+.service-btn__arrow:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../images/common/arrow-gradient.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(-7px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ホバー時のアニメーション */
+.service-btn__circle:hover {
+  transform: scale(1.2);
+  background-color: transparent;
+
+}
+
+.service-btn__circle:hover .service-btn__arrow {
+  animation: arrow-slide 0.5s ;
+  opacity: 1;
+  //transform: translateX(7px);
+  transition-delay: 0.2s;
+}
+
+@keyframes arrow-slide {
+  0% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  50% {
+      opacity: 1;
+      transform: translateX(20px); /* 右に消える */
+  }
+  50.1% {
+      opacity: 0;
+      transform: translateX(-10px); /* 左に戻る */
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0); /* 左から現れる */
+  }
+}
+
+.service-btn__circle:hover .service-btn__arrow:after {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+  left: 0;
+}
+
+/* SVGを使用したグレー線とグラデーション線の表示 */
+.service-btn__circle .circle-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* 回転の起点を変更 */
+}
+
+/* 初期状態でグレー線を表示 */
+.service-btn__circle .gray-border {
+  stroke: #28292B;
+}
+
+/* グラデーション線のスタイル（初期状態では見えない） */
+////円の外側を一周なので、数字の調整が必要
+/// HTMLの cx="50" cy="50" r="48" を調整かな？？
+.service-btn__circle .gradient-border {
+  stroke-dasharray: 301.6; /* 円周の長さ */
+  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.5s ease; /* スピード */
+}
+
+/* ホバー時 背景は黒、ボタンを拡大 */
+.service-btn__circle:hover {
+  //background-color: transparent;
+  transform: scale(1.2);
+  background-color: $c-text;
+}
+
+/* ホバー時にグラデーション線が一周し、グラデーション線を非表示 */
+.service-btn__circle:hover .gradient-border {
+  stroke-dashoffset: 0;
+}
+
+/* 黒線を消す */
+.service-btn__circle:hover .black-border {
+  stroke: none;
+}
+

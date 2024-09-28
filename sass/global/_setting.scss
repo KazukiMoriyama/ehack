@@ -1,0 +1,179 @@
+@use "sass:math";
+// ================================================
+// インナー幅の設定
+// ================================================
+
+// コンテンツのインナー幅（Webサイトで一番多いインナー幅で設定）
+$inner: 1000px;
+// ↑この数字はコーディングするデザインによって書き換えてください
+
+// 余白設定
+// PC時の余白はデザインに応じたものではなく、最低取っておいた方が良い余白
+$padding-pc: 25px;
+// SP時はデザインカンプに沿って書き換えてください
+$padding-sp: 20px;
+
+// ================================================
+    // 色に関する設定
+// ================================================
+
+//色指定（デザインを見てよく使う色は設定！）
+$c-black: #000;
+$c-white: #FFF;
+$c-text: #28292B; //背景・文字色
+$c-main: #00CF35; //メインカラー
+$c-accent: #F74A3F; //アクセントカラー
+$c-gradation: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);//グラデーション
+$c-Mgray: #959595;
+$c-Dgray: #5f5f5f;
+$c-BgGray: #f5f5f5;
+
+
+body {
+  color: $c-text;
+}
+
+// ================================================
+  // フォントについての設定
+// ================================================
+
+$base-font: 'Noto Sans JP',sans-serif;
+$en-font: "Montserrat", sans-serif;
+
+// フォントウェイト
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$heavy: 900;
+
+body {
+  // このサイトの基本フォント
+  font-family: $base-font;
+  font-weight: $regular;
+}
+
+// ================================================
+  // メディアクエリとブレークポイントの設定
+// ================================================
+//ブレイクポイント(デザインによって異なる)
+$breakpoints: (
+  sm: 550,
+  md: 767,
+  lg: 1200,
+  xl: 1400,
+);
+
+
+//メディアクエリー
+$mediaquerys: (
+  sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (max-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (max-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (max-width: #{map-get($breakpoints,'xl')}px)",
+);
+
+// @include mq(){}で書くとブレークポイントが反映される（初期値はmd）
+@mixin mq($mediaquery: md) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
+/*  PCとSPの表示非表示の切り替え */
+
+/*PCのみ表示*/
+.pc-only {
+  display: block;
+  @include mq("md") {
+    display: none;
+  }
+}
+
+/*(md)px以下で表示*/
+.sp-only {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+
+// ================================================
+  // remへ変換
+// ================================================
+// remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
+@function rrem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+/*画像の縦横比設定*/
+img {
+  width: 100%;
+  //height: auto;
+  display: block;
+}
+
+img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* aタグのスタイルリセット*/
+a {
+  text-decoration: none;
+  transition: opacity, 0.5s 0s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+/* 画像のはみ出しを管理 */
+main {
+  overflow: hidden;
+}
+
+/* addressタグ リセット */
+address {
+  font-style: normal;
+}
+
+/* 電話発信 PCではしない*/
+a[href^="tel:"]{
+  pointer-events: none;//クリックやタップなどのイベントを無効
+  color: inherit;
+  @include mq("md") {
+    pointer-events: auto;
+  }
+}
+
+/* 横スクロール防止 */
+html, body {
+  overflow-x: clip;
+}
+
+.anker-link {
+  scroll-margin-top: rrem(150);
+  @include mq("md") {
+  scroll-margin-top: rrem(50);
+  }
+}
+
+/* ハンバーガーメニュー開いているとき、背景固定 */
+body.js-fixed {
+  @include mq("md") {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+}
+
+/* ▼を非表示にする（detailsとsummaryタグ） */
+summary {
+	display: block;
+}
+/* Safariで表示されるデフォルトの三角形アイコンを消します */
+summary::-webkit-details-marker {
+	display: none;
+}

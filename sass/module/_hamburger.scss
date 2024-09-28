@@ -1,0 +1,145 @@
+@use "../global" as *;
+//ハンバーガーメニュー
+
+.hamburger {
+  @include mq("md") {
+    cursor: pointer;
+    border: none;
+    background-color: #959595; // 背景色をグレーに設定
+    display: flex;
+    justify-content: space-around; // ドットを均等に配置
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    padding: 0;
+    position: relative; // 相対位置を設定
+    border-radius: 50%; // 丸形
+    z-index: 9999;
+  }
+}
+
+.hamburger .dot {
+  @include mq("md") {
+    display: block;
+    height: 2px; // 初期の高さ
+    width: 2px; // 初期の幅
+    background: white; // 白色に設定
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+  }
+}
+
+// 各ドットを初期位置に配置
+.hamburger .dot:nth-child(1) {
+  @include mq("md") {
+    left: calc(50% - 10px); // 左側に配置
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.hamburger .dot:nth-child(2) {
+  @include mq("md") {
+  left: 50%; // 中心に配置
+  top: 50%;
+  transform: translate(-50%, -50%);
+  }
+}
+
+.hamburger .dot:nth-child(3) {
+  @include mq("md") {
+    left: calc(50% + 10px); // 右側に配置
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// アクティブ状態での変形
+.hamburger.active .dot:nth-child(1) {
+  @include mq("md") {
+    transform: translate(-2px, -2px) rotate(45deg);
+    width: 24px; // 長さを24pxに設定
+    height: 1px; // 太さを1pxに設定
+  }
+}
+
+.hamburger.active .dot:nth-child(2) {
+  @include mq("md") {
+    opacity: 0; // アクティブ時は透明にする
+  }
+}
+
+.hamburger.active .dot:nth-child(3) {
+  @include mq("md") {
+    transform: translate(-21px, -2px) rotate(-45deg);
+    width: 24px; // 長さを24pxに設定
+    height: 1px; // 太さを1pxに設定
+  }
+}
+
+
+
+
+//14：57修正//14：59コメントアウトもとに戻す
+// .hamburger {
+//   cursor: pointer;
+//   border: none;
+//   background-color: #959595;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   height: 48px;
+//   width: 48px;
+//   padding: 0;
+//   position: relative;
+//   border-radius: 50%;
+//   z-index: 9999;
+//   transition: background-color 0.3s ease; // 背景色のトランジション追加
+// }
+
+// .hamburger .dot {
+//   display: block;
+//   height: 2px;
+//   width: 2px;
+//   background: white;
+//   border-radius: 50%;
+//   position: absolute;
+//   transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease; // トランジションを設定
+// }
+
+// // 初期状態のドット位置
+// .hamburger .dot:nth-child(1) {
+//   left: calc(50% - 10px);
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// .hamburger .dot:nth-child(2) {
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// .hamburger .dot:nth-child(3) {
+//   left: calc(50% + 10px);
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// // active時のアニメーション (クリックされたとき)
+// .hamburger.active .dot:nth-child(1) {
+//   transform: translate(-2px, -2px) rotate(45deg); // 45度回転させて✖の一部に
+//   width: 24px; // 幅を広げる
+//   height: 1px; // 高さを縮小
+// }
+
+// .hamburger.active .dot:nth-child(2) {
+//   opacity: 0; // 中央のドットを消す
+// }
+
+// .hamburger.active .dot:nth-child(3) {
+//   transform: translate(-21px, -2px) rotate(-45deg); // 逆方向に45度回転させて✖のもう一部に
+//   width: 24px;
+//   height: 1px;
+// }

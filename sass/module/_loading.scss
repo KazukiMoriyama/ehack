@@ -1,0 +1,408 @@
+@use "../global" as *;
+//ローディング画面
+// .loading {
+//   width: 100vw;
+//   height: 100vh;
+//   //background: rgba(40, 41, 43, 1);
+//   background: $c-text;
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   z-index: 100;
+//   transition: 2s;
+// }
+
+// .loading__text {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   //-webkit-text-stroke: 1px #fff;
+//   //color: $c-text; // 元の文字色
+//   text-shadow: 
+//     1px 1px 0 #fff,
+//     -1px 1px 0 #fff,
+//     1px -1px 0 #fff,
+//     -1px -1px 0 #fff; // 白枠を文字の周りに付ける
+//   font-size: rrem(80);
+//   font-weight: $bold;
+//   line-height: 150%;
+//   letter-spacing: 6.4px;
+//   color: rgba(40, 41, 43);
+//   transition: 2s;
+//   @include mq("md") {
+//     font-size: rrem(40);
+//   }
+// }
+
+
+
+// #loading__typewriter-text {
+//   position: relative;
+//   display: inline-block;
+// }
+
+// .fade-out.loading {
+//   background: rgba(40, 41, 43, 0);
+// }
+
+// .fade-out.loading p {
+//   //-webkit-text-stroke: unset;
+//   text-shadow: unset;
+//   color: rgba(255, 255, 255);
+// }
+
+/*ここまでは既存
+＝＝＝＝＝＝＝*/
+// @use "../global" as *;
+
+// /* ローディング画面全体 */
+// .loading {
+//   width: 100vw;
+//   height: 100vh;
+//   background: $c-text; /* ローディング背景は $c-text 色 */
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   z-index: 1000; /* ローディング画面を最前面に */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   opacity: 1; /* 初期状態で表示 */
+//   transition: opacity 2s ease; /* ふわっとフェードアウト */
+// }
+
+// /* タイプライター風テキスト */
+// .loading__text {
+//   font-size: rrem(80); /* 大きいサイズのテキスト */
+//   font-weight: $bold; /* 太字 */
+//   line-height: 150%;
+//   letter-spacing: 6.4px;
+//   color: $c-text; /* 最初は背景と同じ色に設定 */
+//   text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff; /* 白い枠線 */
+//   opacity: 1; /* 初期状態から表示 */
+//   transition: color 2s ease-in-out, opacity 2s ease-in-out; /* 文字の色と透明度をゆっくり変える */
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+
+//   @include mq("md") {
+//     font-size: rrem(40); /* モバイル表示では小さくする */
+//     width: 100%;
+//     padding-left: rrem(15);
+//     padding-right: rrem(15);
+//   }
+// }
+
+// /* 文字色を白に変えるスタイル */
+// .white-text {
+//   color: rgba(255, 255, 255, 1); /* 白文字に変える */
+//   text-shadow: none; /* 枠線を消す */
+//   transition: color 2s ease-in-out; /* 色がゆっくり白に変わる */
+// }
+
+// /* ローディング画面が消える時のフェードアウト */
+// .fade-out {
+//   opacity: 0;
+//   transition: opacity 2s ease; /* ふわっと消える */
+//   pointer-events: none; /* クリックを無効化 */
+// }
+
+// /* ファーストビューのテキスト */
+// #fv-typewriter-text {
+//   max-width: rrem(1000);
+//   width: 100%;
+//   font-size: rrem(80);
+//   font-weight: $bold;
+//   line-height: 150%;
+//   letter-spacing: 6.4px;
+//   color: rgba(255, 255, 255, 0); /* 初期状態は透明 */
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   opacity: 0; /* 初期状態は非表示 */
+//   transition: opacity 2s ease, color 2s ease-in-out; /* ゆっくりフェードイン */
+//   text-align: center;
+
+//   @include mq("md") {
+//     font-size: rrem(40);
+//     max-width: rrem(600);
+//     //margin-left: rrem(20);
+//     //margin-right: rrem(20);
+//   }
+// }
+
+// /* ファーストビューの文字を白くするスタイル */
+// #fv-typewriter-text.show-text {
+//   opacity: 1;
+//   color: rgba(255, 255, 255, 1); /* 白文字にする */
+//   transition: opacity 2s ease, color 2s ease-in-out; /* ゆっくりと表示される */
+// }
+
+
+//修正
+// @use "../global" as *;
+
+// /* ローディング画面全体 */
+// .loading {
+//   width: 100vw;
+//   height: 100vh;
+//   background: $c-text;
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   z-index: 1000;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   opacity: 1;
+//   transition: opacity 2s ease;
+// }
+
+// /* タイプライター風テキスト */
+// .loading__text {
+//   font-size: rrem(80);
+//   font-weight: $bold;
+//   line-height: 150%;
+//   letter-spacing: 6.4px;
+//   color: $c-text; /* 初期は黒 */
+//   text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
+//   opacity: 1;
+//   transition: color 2s ease-in-out, opacity 2s ease-in-out;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+
+//   @include mq("md") {
+//     font-size: rrem(40);
+//     width: 100%;
+//     padding-left: rrem(15);
+//     padding-right: rrem(15);
+//   }
+// }
+
+// /* 白い文字に変わるときのスムーズな変化 */
+// .white-transition {
+//   color: rgba(255, 255, 255, 1);
+//   text-shadow: none; /* 白い文字になったら枠線を消す */
+//   transition: color 2s ease-in-out;
+// }
+
+// /* ローディング画面が消えるときのフェードアウト */
+// .fade-out {
+//   opacity: 0;
+//   transition: opacity 2s ease;
+//   pointer-events: none;
+// }
+
+// /* ファーストビューのテキスト */
+// #fv-typewriter-text {
+//   max-width: rrem(1000);
+//   width: 100%;
+//   font-size: rrem(80);
+//   font-weight: $bold;
+//   line-height: 150%;
+//   letter-spacing: 6.4px;
+//   color: rgba(255, 255, 255, 0);
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   opacity: 0;
+//   transition: opacity 2s ease, color 2s ease-in-out;
+//   text-align: center;
+
+//   @include mq("md") {
+//     font-size: rrem(40);
+//     max-width: rrem(600);
+//   }
+// }
+
+// /* ファーストビューの文字が白くなる */
+// #fv-typewriter-text.show-text {
+//   opacity: 1;
+//   color: rgba(255, 255, 255, 1);
+//   transition: opacity 2s ease, color 2s ease-in-out;
+// }
+
+
+////////修正
+// @use "../global" as *;
+
+// /* ローディング画面全体 */
+// .loading {
+//   width: 100vw;
+//   height: 100vh;
+//   background: $c-text; /* ローディング背景は黒 */
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   z-index: 1000; /* 最前面 */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   opacity: 1;
+//   transition: opacity 2s ease; /* ふわっとフェードアウト */
+// }
+
+// /* タイプライター風テキスト */
+// .loading__text {
+//   font-size: rrem(80);
+//   font-weight: $bold;
+//   line-height: 150%;
+//   letter-spacing: 6.4px;
+//   color: $c-text; /* 最初は黒文字 */
+//   text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff; /* 白い枠線 */
+//   opacity: 1;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+//   transition: color 2s ease-in-out, text-shadow 2s ease-in-out; /* 滑らかに色を変える */
+
+//   @include mq("md") {
+//     font-size: rrem(40); /* モバイル対応時に小さくする */
+//     width: 100%;
+//     padding-left: rrem(15);
+//     padding-right: rrem(15);
+//   }
+// }
+
+// /* 黒文字から白文字へ変わるアニメーション */
+// .white-text {
+//   color: rgba(255, 255, 255, 1); /* 白文字に変更 */
+//   text-shadow: none; /* 白文字時に枠を消す */
+//   transition: color 2s ease-in-out, text-shadow 2s ease-in-out;
+// }
+
+// /* ローディング画面が消える時のフェードアウト */
+// .fade-out {
+//   opacity: 0;
+//   transition: opacity 2s ease;
+//   pointer-events: none; /* クリック無効化 */
+// }
+
+// /* ファーストビューのテキスト */
+// #fv-typewriter-text {
+//   max-width: rrem(1000);
+//   width: 100%;
+//   font-size: rrem(80);
+//   font-weight: $bold;
+//   line-height: 150%;
+//   letter-spacing: 6.4px;
+//   color: rgba(255, 255, 255, 0); /* 初期は透明 */
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   opacity: 0; /* 非表示から始まる */
+//   transition: opacity 2s ease, color 2s ease-in-out; /* フェードイン */
+
+//   @include mq("md") {
+//     font-size: rrem(40);
+//     max-width: rrem(600);
+//   }
+// }
+
+// /* ファーストビュー表示時のテキスト */
+// #fv-typewriter-text.show-text {
+//   opacity: 1;
+//   color: rgba(255, 255, 255, 1); /* 白文字にする */
+//   transition: opacity 2s ease, color 2s ease-in-out;
+// }
+
+
+
+/////////修正
+@use "../global" as *;
+
+/* ローディング画面全体 */
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background: $c-text; /* ローディング背景は黒 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000; /* 最前面 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 2s ease; /* ふわっとフェードアウト */
+}
+
+/* タイプライター風テキスト */
+.loading__text {
+  font-size: rrem(80);
+  font-weight: $bold;
+  line-height: 150%;
+  letter-spacing: 6.4px;
+  color: $c-text; /* 最初は黒文字 */
+  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff; /* 白い枠線 */
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%; /* 幅を広げて改行を防ぐ */
+  transition: color 2s ease-in-out, text-shadow 2s ease-in-out; /* 滑らかに色を変える */
+
+  @include mq("md") {
+    font-size: rrem(40); /* モバイル対応時に小さくする */
+    width: 100%;
+    padding-left: rrem(15);
+    padding-right: rrem(15);
+  }
+}
+
+/* 黒文字から白文字へ変わるアニメーション */
+.white-text {
+  color: rgba(255, 255, 255, 1); /* 白文字に変更 */
+  text-shadow: none; /* 白文字時に枠を消す */
+  transition: color 2s ease-in-out, text-shadow 2s ease-in-out;
+}
+
+/* ローディング画面が消える時のフェードアウト */
+.fade-out {
+  opacity: 0;
+  transition: opacity 2s ease;
+  pointer-events: none; /* クリック無効化 */
+}
+
+/* ファーストビューのテキスト */
+#fv-typewriter-text {
+  max-width: rrem(1000);
+  width: 100%;
+  font-size: rrem(80);
+  font-weight: $bold;
+  line-height: 150%;
+  letter-spacing: 6.4px;
+  color: rgba(255, 255, 255, 1); /* 初期は白文字 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1; /* 初期状態で表示 */
+  text-align: center; /* 中央揃え */
+  transition: opacity 2s ease, color 2s ease-in-out; /* フェードイン */
+
+  @include mq("md") {
+    font-size: rrem(40);
+    max-width: rrem(600);
+  }
+}
+
+/* ファーストビュー表示時のテキスト */
+#fv-typewriter-text.show-text {
+  opacity: 1;
+  color: rgba(255, 255, 255, 1); /* 白文字にする */
+  transition: opacity 2s ease, color 2s ease-in-out;
+}

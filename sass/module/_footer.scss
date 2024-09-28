@@ -1,0 +1,195 @@
+@use "../global" as *;
+//フッター
+.footer {
+  background: $c-text;
+}
+
+//inner.footer__inner で別ファイルかな？
+.footer__inner {
+  max-width: rrem(1290);
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  @include mq("md") {
+    flex-direction: column;
+  }
+}
+
+.footer__company {
+
+}
+
+.footer__logo {
+  width: rrem(164);
+  @include mq("md") {
+    width: rrem(100);
+  }
+}
+
+.footer__logo img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer__logo-link {
+
+}
+
+.footer__info-wrap {
+  margin-top: rrem(32);
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
+.footer__info-list {
+  
+}
+
+.footer__info-item {
+  color: $c-Mgray;
+  font-size: 13px;
+  line-height: calc(20.8/13);
+  font-weight: $medium;
+  letter-spacing: 0.52px;
+}
+
+
+.footer__info-item a {
+  color: $c-Mgray;
+}
+
+
+.footer-nav {
+  color: $c-white;
+  width: rrem(140);
+  flex-shrink: 0;
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
+.footer-nav__list {
+
+}
+
+.footer-nav__item {
+
+}
+
+.footer-nav__item + .footer-nav__item {
+  margin-top: rrem(40);
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
+.footer-nav__link,
+.footer-nav__dropdown-link,
+.footer-nav__dropdown-title {
+  color: $c-white;
+  text-transform: capitalize;
+  font-family: $en-font;
+  font-size: rrem(14);
+  font-weight: $regular;
+  line-height: calc(21/14);
+  letter-spacing: 1.12px;
+}
+
+
+.footer-nav__dropdown {
+  //width: 100%;
+}
+
+/* アコーディオンふわっと開くように
+//footer-nav__dropdownに[open]がついたら
+//footer-dropdown__listにjs-footer-dropdown__listがつく
+======================================== */
+.js-footer-dropdown__list {
+  animation: dropOpen 0.8s ease infinite;//アニメーション無限繰り返し
+  @keyframes dropOpen {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.footer-nav__dropdown-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+
+
+.footer-nav__dropdown-icon {
+  position: relative;
+  width: 12px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+/* ▽アイコン */
+.footer-nav__dropdown-icon::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 8px;
+  background-image: url(../images/common/arrow-white.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  transition: transform 0.5s 0s ease;
+}
+
+/* アコーディオンが開いた時のスタイル */
+.footer-nav__dropdown[open]:not([data-accordion-before-close]) .footer-nav__dropdown-icon::before {
+	transform: rotate(-180deg);
+}
+
+.footer-nav__dropdown-list {
+  margin-top: rrem(22);
+  padding-left: rrem(14);
+}
+
+.footer-nav__dropdown-item {
+
+}
+
+.footer-nav__dropdown-item +.footer-nav__dropdown-item {
+  margin-top: rrem(22);
+}
+
+.footer-nav__dropdown-link {
+
+}
+
+.footer__copy-wrap {
+  flex-shrink: 0;
+  display: grid;
+  align-items: end;
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
+.footer__copyright {
+  color: $c-Mgray;
+  font-family: $en-font;
+  font-size: rrem(14);
+  line-height: calc(21/14);
+  letter-spacing: 1.12px;
+}

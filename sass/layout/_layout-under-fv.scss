@@ -1,0 +1,43 @@
+@use "../global" as *;
+//下層ページ contact・company
+// .layout-under-fv video{
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   transform: translate(-50%, -50%);
+//   z-index: -1;
+// }
+
+.layout-under-fv {
+  //padding-top: rrem(270);
+  //padding-bottom: rrem(190);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  @include mq("md") {
+    //padding-top: rrem(80);
+    //padding-bottom: rrem(60);
+  }
+}
+
+.layout-under-fv {
+  width: 100%;
+  height: rrem(560);
+  color: $c-white;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}

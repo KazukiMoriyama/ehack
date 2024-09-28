@@ -1,0 +1,16 @@
+@use "../global" as *;
+//supportセクション
+.layout-supports {
+  padding-top: rrem(120);
+  padding-bottom: rrem(100);
+  //position: relative;
+  //overflow: hidden;
+  width: 100%;
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+
+

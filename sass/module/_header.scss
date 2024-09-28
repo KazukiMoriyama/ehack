@@ -1,0 +1,296 @@
+@use "../global" as *;
+//ヘッダー
+.header {
+  position: fixed;
+  max-width: 100%;
+  width: rrem(1330);
+  height: rrem(90);
+  //height: rrem(70);
+  //top: rrem(48);
+  top: rrem(-90); // 初期位置を画面外に設定
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  transition: background-color 0.3s ease, transform 0.5s ease; //背景色と位置を0.3秒かけて変化
+}
+
+.header__inner,
+.header__inner nav,
+.header__nav,
+.header__nav-item,
+.header__nav-item a {
+  height: inherit;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: rrem(1330);
+}
+
+.header__logo {
+  max-width: rrem(127);
+  width: 100%;
+  @include mq("md") {
+    max-width: rrem(100);
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: rrem(32);
+}
+
+.header__nav-item a {
+  text-transform: capitalize;
+  color: $c-white;
+  font-family: $en-font;
+  font-size: rrem(14);
+  line-height: calc(21/14);
+  letter-spacing: 1.12px;
+  display: grid;
+  place-items: center;
+  margin-block: auto;
+  position: relative;
+}
+
+.header__nav-item a::after {
+  content: "";
+  position: absolute;
+  bottom: rrem(20);
+  width: 0%;
+  left: 0;
+  height: 2px;
+  background: $c-gradation;
+  transition: width 0.5s;
+}
+
+.header__nav-item a:hover::after {
+  width: 100%;
+}
+
+//問い合わせボタン
+.header__nav-item--contact {
+  width: rrem(180);
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.header__nav-item--contact a {
+  display: grid;
+  width: rrem(180);
+  height: rrem(36);
+  border-radius: rrem(25);
+  color: $c-text;
+  font-family: $base-font;
+  font-size: rrem(13);
+  font-weight: $medium;
+  line-height: 1;
+  background: $c-gradation;
+
+}
+
+.header__nav-item--contact span {
+  padding-left: rrem(31);
+  position: relative;
+}
+
+.header__nav-item--contact span::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/common/icon-mail.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: rrem(26);
+  height: rrem(26);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+// header__nav-item--contact の ::after を無効化する
+.header__nav-item.header__nav-item--contact a::after {
+  content: none; // ホバー時の下線を削除
+}
+
+
+// ドロップダウンメニュー
+.header__nav-item.has-dropdown {
+  //position: relative;
+}
+
+/* ドロップダウンメニューのアニメーション */
+/* 左から順番に表示される */
+.header__nav-item .dropdown__list li {
+  flex-basis: calc(100% / 3);
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1000ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(2) {
+  transition-delay: 200ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(3) {
+  transition-delay: 400ms;
+}
+
+.header__nav-item .dropdown__list.show li {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+.header__nav-item .dropdown__list {
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: rrem(30);
+  border-radius: 0 0 rrem(36) rrem(36);
+  z-index: 1;
+  visibility: hidden;
+
+  opacity: 0;
+  transition: visibility .3s,opacity .3s
+
+}
+
+.header__nav-item .dropdown__item {
+  visibility: hidden;//隠しておく
+  opacity: 0;
+  transition: visibility .2s .2s,opacity .2s .2s;
+}
+
+.header__nav-item .dropdown__item + .dropdown__item {
+  gap: rrem(35);
+}
+
+
+
+
+/* ヘッダー背景色変更 JSで制御中 */
+.header {
+  transition: background-color 0.3s ease; //背景色を0.3秒かけて変化
+}
+
+.header.show-bg {
+  background: $c-white;
+  box-shadow: 0 0 rrem(20) rgba(0,0,0,.06);
+  border-radius: rrem(36) rrem(36) 0 0;
+}
+
+
+.header.show-subnav {
+  border-radius: rrem(36) rrem(36) 0 0;
+}
+
+
+/* ヘッダー背景が白くなった時に文字色を変更 */
+.header__nav-item a.text-dark {
+  color: $c-text;
+  font-weight: $medium;
+}
+
+/* ドロップダウンメニューを表示・非表示にする */
+.header__nav-item .dropdown.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 2
+}
+
+.header__nav-item .dropdown.show .dropdown__item {
+  visibility: visible;
+  opacity: 1
+}
+
+.header__nav-item .dropdown.show img {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ドロップダウンメニューが表示されている間も下線を表示 */
+.header__nav-item.has-dropdown.show-subnav a::after {
+  width: 100%;
+}
+
+
+
+/* 下線を付けないようにする（ドロップダウン内のリンクを除外） */
+.header__nav-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  width: 0%;
+  left: 0;
+  height: 2px;
+  background: $c-gradation;  // グラデーションの色
+  transition: width 0.5s;
+}
+
+/* ホバー時に下線を表示 */
+.header__nav-item a:hover::after {
+  width: 100%;
+}
+
+/* ドロップダウンメニュー内のリンクには下線を付けないようにする */
+.dropdown__list a::after {
+  content: none;  // 下線を無効にする
+}
+
+/* ドロップダウンメニュー内の img をホバーしたときにスケールダウン */
+.header__nav-item .dropdown__item img {
+  transition: transform 0.3s ease;
+}
+
+.header__nav-item .dropdown__item img:hover {
+  transform: scale(0.95);
+}
+
+/* ヘッダーがスライドダウンするアニメーション */
+.header.slide-down {
+  top: rrem(28); // 画面内にスライドダウン
+  opacity: 1;
+  transition: top 1s ease;//下りてくる速さ＆
+}
+
+/* ファーストビューを超えたらheader背景色が変わる */
+.header.change-color {
+  background-color: $c-text;
+  top: 0;
+  width: 100%;
+  height: rrem(90);
+}
+
+
+/* ドロップダウンメニューのアニメーション */
+/* 左から順番に表示される */
+.header__nav-item .dropdown__list li {
+  flex-basis: 33.3333333333%;
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1000ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(2) {
+  transition-delay: 200ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(3) {
+  transition-delay: 400ms;
+}
+
+.header__nav-item .dropdown__list.show li {
+  opacity: 1;
+  transform: translate(0, 0);
+}

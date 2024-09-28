@@ -1,0 +1,22 @@
+@use "../global" as *;
+//ファーストビュー
+.fv {
+  width: 100%;
+  height: 100vh;
+  padding: rrem(28) rrem(28) rrem(50) rrem(28);
+  box-sizing: border-box; // パディングを含めたサイズ計算
+  background-color: $c-text;
+}
+
+.fv__inner {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; // パディングを含めたサイズ計算
+}
+
+.fv__inner .fixed_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // 親要素内でアスペクト比を保持しつつ、はみ出さないように表示
+  border-radius: rrem(20);
+}

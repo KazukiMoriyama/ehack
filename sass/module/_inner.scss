@@ -1,0 +1,15 @@
+@use "../global" as *;
+/*インナー幅用の基本CSS*/
+.inner {
+  width: 100%;
+  max-width: $inner + $padding-pc * 2;
+  padding-right: $padding-pc;
+  padding-left: $padding-pc;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq("md") {
+    max-width: rrem(600);
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+  }
+}

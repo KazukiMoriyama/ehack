@@ -1,0 +1,81 @@
+@use "../global" as *;
+//scrollボタン
+
+.scroll-button {
+  position: absolute;
+  bottom: -75px; // 初期位置を画面外に設定
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: bottom 1s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+/* ホバーしても透過しない */
+.scroll-button a:hover {
+  opacity: 1;
+}
+
+.scroll-button.slide-up {
+  bottom: 75px; // ローディング後、画面内にスライドアップ
+  opacity: 1;
+}
+
+.scroll-button .btn-scroll {
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-button .scroll-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 20s linear infinite;
+  z-index: 2;
+  width: 71px;
+  height: 69px;
+}
+
+.scroll-button .scroll-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: rrem(15);
+  height: rrem(15);
+  animation: bounce 1s infinite;
+  z-index: 3;
+}
+
+/* 回転アニメーション */
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* 跳ねるアニメーション */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+
+/* loadingがフェードアウト後に消えるように設定 */
+.loading.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: none; /* 追加: 完全に非表示にする */
+}
+

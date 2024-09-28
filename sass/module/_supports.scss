@@ -1,0 +1,12 @@
+@use "../global" as *;
+//TOP-supportsセクション
+.supports__title-wrap {
+    text-align: center;
+}
+
+.supports__logo-item {
+  margin-top: rrem(94);
+  @include mq("md") {
+    margin-top: rrem(43);
+  }
+}

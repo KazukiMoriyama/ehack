@@ -1,0 +1,98 @@
+@use "../global" as *;
+//共通パーツのコーディング
+.section__title-wrap {
+  text-align: center;
+}
+
+.section__title {
+    font-family: $en-font;
+    font-size: rrem(80);
+    line-height: calc(80/80);
+    font-weight: $light;
+    letter-spacing: 6.4px;
+    text-transform: capitalize;
+    text-align: center;
+    display: inline-block;
+    border-bottom: solid 1px $c-Mgray;
+    @include mq("md") {
+      font-size: rrem(50);
+      line-height: calc(50/40);
+      letter-spacing: 3.2px;
+    }
+  }
+
+.section__title--white,
+.section__subtitle--white {
+  color: $c-white;
+}
+.section__title--white {
+  border-bottom: solid 1px $c-white;
+}
+
+/* グラデーションの定義 */
+.gradient-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 下層ページ ファーストビュー */
+.under-page__fv-wrap {
+  // width: 100%;
+  // height: rrem(560);
+  // color: $c-white;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.under-page__fv-title {
+  font-family: $en-font;
+  font-size: rrem(80);
+  line-height: calc(104/80);
+  font-weight: 200;
+  text-transform: capitalize;
+  @include mq("md") {
+    font-size: rrem(50);
+  }
+}
+
+.under-page__fv-subtitle {
+  font-family: $en-font;
+  font-size: 13px;
+  line-height: calc(28.8/13);
+  font-weight: $medium;
+  text-transform: uppercase;
+  letter-spacing: 0.52px;
+}
+
+
+/* 下層ページ video 動画セクション
+============================================*/
+.video__container {
+  max-width: rrem(704);
+  width: 100%;
+  margin-inline: auto;
+}
+
+.video__container{
+  max-width: rrem(704);
+  width: 100%;
+}
+
+#ehack-video {
+  position: relative;
+  width: 100%;
+}
+#ehack-video::before {
+  content:"";
+  display: block;
+  padding-top: 56.25%;//16:9
+}
+#ehack-video source {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

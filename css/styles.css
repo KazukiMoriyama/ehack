@@ -1,0 +1,2377 @@
+@charset "UTF-8";
+/* リキッドレイアウト対応のための設定 */
+body {
+  color: #28292B;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+}
+
+/*  PCとSPの表示非表示の切り替え */
+/*PCのみ表示*/
+.pc-only {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .pc-only {
+    display: none;
+  }
+}
+
+/*(md)px以下で表示*/
+.sp-only {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .sp-only {
+    display: block;
+  }
+}
+
+/*画像の縦横比設定*/
+img {
+  width: 100%;
+  display: block;
+}
+
+img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* aタグのスタイルリセット*/
+a {
+  text-decoration: none;
+  transition: opacity, 0.5s 0s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* 画像のはみ出しを管理 */
+main {
+  overflow: hidden;
+}
+
+/* addressタグ リセット */
+address {
+  font-style: normal;
+}
+
+/* 電話発信 PCではしない*/
+a[href^="tel:"] {
+  pointer-events: none;
+  color: inherit;
+}
+@media screen and (max-width: 767px) {
+  a[href^="tel:"] {
+    pointer-events: auto;
+  }
+}
+
+/* 横スクロール防止 */
+html, body {
+  overflow-x: clip;
+}
+
+.anker-link {
+  scroll-margin-top: 9.375rem;
+}
+@media screen and (max-width: 767px) {
+  .anker-link {
+    scroll-margin-top: 3.125rem;
+  }
+}
+
+/* ハンバーガーメニュー開いているとき、背景固定 */
+@media screen and (max-width: 767px) {
+  body.js-fixed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+}
+
+/* ▼を非表示にする（detailsとsummaryタグ） */
+summary {
+  display: block;
+}
+
+/* Safariで表示されるデフォルトの三角形アイコンを消します */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* リキッドレイアウト対応のための設定 */
+html {
+  font-size: 16px;
+}
+@media (max-width: 1000px) {
+  html {
+    font-size: 1.6vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 4.2666666667vw;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core html defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* フォームリセット */
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+input[type=submit],
+input[type=button],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/*インナー幅用の基本CSS*/
+.inner {
+  width: 100%;
+  max-width: 1050px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (max-width: 767px) {
+  .inner {
+    max-width: 37.5rem;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.section__title-wrap {
+  text-align: center;
+}
+
+.section__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: 6.4px;
+  text-transform: capitalize;
+  text-align: center;
+  display: inline-block;
+  border-bottom: solid 1px #959595;
+}
+@media screen and (max-width: 767px) {
+  .section__title {
+    font-size: 3.125rem;
+    line-height: 1.25;
+    letter-spacing: 3.2px;
+  }
+}
+
+.section__title--white,
+.section__subtitle--white {
+  color: #FFF;
+}
+
+.section__title--white {
+  border-bottom: solid 1px #FFF;
+}
+
+/* グラデーションの定義 */
+.gradient-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 下層ページ ファーストビュー */
+.under-page__fv-wrap {
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.under-page__fv-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 5rem;
+  line-height: 1.3;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+@media screen and (max-width: 767px) {
+  .under-page__fv-title {
+    font-size: 3.125rem;
+  }
+}
+
+.under-page__fv-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 2.2153846154;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.52px;
+}
+
+/* 下層ページ video 動画セクション
+============================================*/
+.video__container {
+  max-width: 44rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.video__container {
+  max-width: 44rem;
+  width: 100%;
+}
+
+#ehack-video {
+  position: relative;
+  width: 100%;
+}
+
+#ehack-video::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+#ehack-video source {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.fv {
+  width: 100%;
+  height: 100vh;
+  padding: 1.75rem 1.75rem 3.125rem 1.75rem;
+  box-sizing: border-box;
+  background-color: #28292B;
+}
+
+.fv__inner {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.fv__inner .fixed_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25rem;
+}
+
+.header {
+  position: fixed;
+  max-width: 100%;
+  width: 83.125rem;
+  height: 5.625rem;
+  top: -5.625rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  transition: background-color 0.3s ease, transform 0.5s ease;
+}
+
+.header__inner,
+.header__inner nav,
+.header__nav,
+.header__nav-item,
+.header__nav-item a {
+  height: inherit;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 83.125rem;
+}
+
+.header__logo {
+  max-width: 7.9375rem;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .header__logo {
+    max-width: 6.25rem;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__nav-item a {
+  text-transform: capitalize;
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 1.12px;
+  display: grid;
+  place-items: center;
+  margin-block: auto;
+  position: relative;
+}
+
+.header__nav-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 1.25rem;
+  width: 0%;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
+  transition: width 0.5s;
+}
+
+.header__nav-item a:hover::after {
+  width: 100%;
+}
+
+.header__nav-item--contact {
+  width: 11.25rem;
+  flex-shrink: 0;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.header__nav-item--contact a {
+  display: grid;
+  width: 11.25rem;
+  height: 2.25rem;
+  border-radius: 1.5625rem;
+  color: #28292B;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+  background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
+}
+
+.header__nav-item--contact span {
+  padding-left: 1.9375rem;
+  position: relative;
+}
+
+.header__nav-item--contact span::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/common/icon-mail.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.625rem;
+  height: 1.625rem;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.header__nav-item.header__nav-item--contact a::after {
+  content: none;
+}
+
+/* ドロップダウンメニューのアニメーション */
+/* 左から順番に表示される */
+.header__nav-item .dropdown__list li {
+  flex-basis: 33.3333333333%;
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1000ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(2) {
+  transition-delay: 200ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(3) {
+  transition-delay: 400ms;
+}
+
+.header__nav-item .dropdown__list.show li {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.header__nav-item .dropdown__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1.875rem;
+  border-radius: 0 0 2.25rem 2.25rem;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.header__nav-item .dropdown__item {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s 0.2s, opacity 0.2s 0.2s;
+}
+
+.header__nav-item .dropdown__item + .dropdown__item {
+  gap: 2.1875rem;
+}
+
+/* ヘッダー背景色変更 JSで制御中 */
+.header {
+  transition: background-color 0.3s ease;
+}
+
+.header.show-bg {
+  background: #FFF;
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.06);
+  border-radius: 2.25rem 2.25rem 0 0;
+}
+
+.header.show-subnav {
+  border-radius: 2.25rem 2.25rem 0 0;
+}
+
+/* ヘッダー背景が白くなった時に文字色を変更 */
+.header__nav-item a.text-dark {
+  color: #28292B;
+  font-weight: 500;
+}
+
+/* ドロップダウンメニューを表示・非表示にする */
+.header__nav-item .dropdown.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 2;
+}
+
+.header__nav-item .dropdown.show .dropdown__item {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header__nav-item .dropdown.show img {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ドロップダウンメニューが表示されている間も下線を表示 */
+.header__nav-item.has-dropdown.show-subnav a::after {
+  width: 100%;
+}
+
+/* 下線を付けないようにする（ドロップダウン内のリンクを除外） */
+.header__nav-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  width: 0%;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
+  transition: width 0.5s;
+}
+
+/* ホバー時に下線を表示 */
+.header__nav-item a:hover::after {
+  width: 100%;
+}
+
+/* ドロップダウンメニュー内のリンクには下線を付けないようにする */
+.dropdown__list a::after {
+  content: none;
+}
+
+/* ドロップダウンメニュー内の img をホバーしたときにスケールダウン */
+.header__nav-item .dropdown__item img {
+  transition: transform 0.3s ease;
+}
+
+.header__nav-item .dropdown__item img:hover {
+  transform: scale(0.95);
+}
+
+/* ヘッダーがスライドダウンするアニメーション */
+.header.slide-down {
+  top: 1.75rem;
+  opacity: 1;
+  transition: top 1s ease;
+}
+
+/* ファーストビューを超えたらheader背景色が変わる */
+.header.change-color {
+  background-color: #28292B;
+  top: 0;
+  width: 100%;
+  height: 5.625rem;
+}
+
+/* ドロップダウンメニューのアニメーション */
+/* 左から順番に表示される */
+.header__nav-item .dropdown__list li {
+  flex-basis: 33.3333333333%;
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1000ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(2) {
+  transition-delay: 200ms;
+}
+
+.header__nav-item .dropdown__list li:nth-of-type(3) {
+  transition-delay: 400ms;
+}
+
+.header__nav-item .dropdown__list.show li {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/*ここまでは既存
+＝＝＝＝＝＝＝*/
+/* ローディング画面全体 */
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background: #28292B; /* ローディング背景は黒 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000; /* 最前面 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 2s ease; /* ふわっとフェードアウト */
+}
+
+/* タイプライター風テキスト */
+.loading__text {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 6.4px;
+  color: #28292B; /* 最初は黒文字 */
+  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff; /* 白い枠線 */
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%; /* 幅を広げて改行を防ぐ */
+  transition: color 2s ease-in-out, text-shadow 2s ease-in-out; /* 滑らかに色を変える */
+}
+@media screen and (max-width: 767px) {
+  .loading__text {
+    font-size: 2.5rem; /* モバイル対応時に小さくする */
+    width: 100%;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
+}
+
+/* 黒文字から白文字へ変わるアニメーション */
+.white-text {
+  color: rgb(255, 255, 255); /* 白文字に変更 */
+  text-shadow: none; /* 白文字時に枠を消す */
+  transition: color 2s ease-in-out, text-shadow 2s ease-in-out;
+}
+
+/* ローディング画面が消える時のフェードアウト */
+.fade-out {
+  opacity: 0;
+  transition: opacity 2s ease;
+  pointer-events: none; /* クリック無効化 */
+}
+
+/* ファーストビューのテキスト */
+#fv-typewriter-text {
+  max-width: 62.5rem;
+  width: 100%;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 6.4px;
+  color: rgb(255, 255, 255); /* 初期は白文字 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1; /* 初期状態で表示 */
+  text-align: center; /* 中央揃え */
+  transition: opacity 2s ease, color 2s ease-in-out; /* フェードイン */
+}
+@media screen and (max-width: 767px) {
+  #fv-typewriter-text {
+    font-size: 2.5rem;
+    max-width: 37.5rem;
+  }
+}
+
+/* ファーストビュー表示時のテキスト */
+#fv-typewriter-text.show-text {
+  opacity: 1;
+  color: rgb(255, 255, 255); /* 白文字にする */
+  transition: opacity 2s ease, color 2s ease-in-out;
+}
+
+.scroll-button {
+  position: absolute;
+  bottom: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: bottom 1s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+/* ホバーしても透過しない */
+.scroll-button a:hover {
+  opacity: 1;
+}
+
+.scroll-button.slide-up {
+  bottom: 75px;
+  opacity: 1;
+}
+
+.scroll-button .btn-scroll {
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-button .scroll-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 20s linear infinite;
+  z-index: 2;
+  width: 71px;
+  height: 69px;
+}
+
+.scroll-button .scroll-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.9375rem;
+  height: 0.9375rem;
+  animation: bounce 1s infinite;
+  z-index: 3;
+}
+
+/* 回転アニメーション */
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* 跳ねるアニメーション */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+/* loadingがフェードアウト後に消えるように設定 */
+.loading.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: none; /* 追加: 完全に非表示にする */
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger {
+    cursor: pointer;
+    border: none;
+    background-color: #959595;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    padding: 0;
+    position: relative;
+    border-radius: 50%;
+    z-index: 9999;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger .dot {
+    display: block;
+    height: 2px;
+    width: 2px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger .dot:nth-child(1) {
+    left: calc(50% - 10px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger .dot:nth-child(2) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger .dot:nth-child(3) {
+    left: calc(50% + 10px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger.active .dot:nth-child(1) {
+    transform: translate(-2px, -2px) rotate(45deg);
+    width: 24px;
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger.active .dot:nth-child(2) {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger.active .dot:nth-child(3) {
+    transform: translate(-21px, -2px) rotate(-45deg);
+    width: 24px;
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav {
+    background-color: #28292B;
+    width: 100%;
+    height: 100svh;
+    position: fixed;
+    top: -3rem;
+    left: 0;
+    z-index: 9998;
+    transform: translateX(100%);
+    overflow-x: auto;
+    transition: transform 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav.is-openSP {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__logo {
+    padding-top: 3rem;
+    padding-left: 1.25rem;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__logo img {
+    width: 7.9375rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__items {
+    padding-block: 1.25rem 1.25rem;
+    display: grid;
+    gap: 1.875rem;
+    margin-inline: auto;
+    width: 68.6567164179%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__item {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 0.7692307692;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__item a {
+    color: #FFF;
+    width: 100%;
+    height: inherit;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__item span {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.6;
+    display: block;
+    padding-top: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__item--contact a {
+    display: grid;
+    width: 100%;
+    height: 3rem;
+    border-radius: 1.5625rem;
+    color: #28292B;
+    font-family: "Noto Sans JP", sans-serif;
+    background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__item--contact span {
+    padding-left: 2.5rem;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__item--contact span::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/common/icon-mail.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.8125rem;
+    height: 1.8125rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__info {
+    margin-inline: auto;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__info-item {
+    color: #FFF;
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__info-item a {
+    color: #FFF;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sp-nav__copyright {
+    margin-top: 0.625rem;
+    color: #959595;
+    font-size: 0.6875rem;
+    font-weight: 200;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+  }
+}
+
+.about__title {
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 700;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .about__title {
+    font-size: 3rem;
+  }
+}
+
+.about__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0.8125rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #FFF;
+}
+@media screen and (max-width: 767px) {
+  .about__title::before {
+    bottom: 0.375rem;
+  }
+}
+
+.about__container {
+  margin-top: 4.375rem;
+  display: flex;
+  gap: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .about__container {
+    margin-top: 1.25rem;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about__description {
+    order: 1;
+  }
+}
+
+.about__text {
+  color: #FFF;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-weight: 700;
+}
+@media screen and (max-width: 767px) {
+  .about__text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.about__text + .about__text {
+  margin-top: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  .about__text + .about__text {
+    margin-top: 1.25rem;
+  }
+}
+
+.about__image {
+  margin-top: 2.3125rem;
+  aspect-ratio: 529/390;
+  max-width: 33.0625rem;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 767px) {
+  .about__image {
+    width: 18.75rem;
+    margin-inline: auto;
+  }
+}
+
+.about__image img {
+  height: 100%;
+}
+
+.about__btn-wrap {
+  margin-top: 2.75rem;
+}
+@media screen and (max-width: 767px) {
+  .about__btn-wrap {
+    margin-top: 1.25rem;
+    text-align: center;
+  }
+}
+
+/* Aboutセクション ボタン
+==========================================*/
+.about-btn__wrap {
+  margin-top: 2.75rem;
+}
+
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.btn--gray__text,
+.about-btn__text {
+  color: #FFF;
+  margin-right: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 1.12px;
+}
+
+.btn--gray__circle,
+.about-btn__circle {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 64px;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+/* 初期で表示される矢印 */
+.btn--gray__arrow,
+.about-btn__arrow {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url(../images/common/arrow-gray.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.btn--gray__arrow:after,
+.about-btn__arrow:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../images/common/arrow-gradient.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(-7px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ホバー時のアニメーション */
+.about-btn__circle:hover {
+  transform: scale(1.2);
+  background-color: transparent;
+}
+
+.about-btn__circle:hover .about-btn__arrow {
+  animation: arrow-slide 0.5s;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+@keyframes arrow-slide {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20px); /* 右に消える */
+  }
+  50.1% {
+    opacity: 0;
+    transform: translateX(-10px); /* 左に戻る */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 左から現れる */
+  }
+}
+.about-btn__circle:hover .about-btn__arrow:after {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+  left: 0;
+}
+
+/* SVGを使用したグレー線とグラデーション線の表示 */
+.about-btn__circle .circle-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* 回転の起点を変更 */
+}
+
+/* 初期状態でグレー線を表示 */
+.about-btn__circle .gray-border {
+  stroke: #5f5f5f;
+}
+
+/* グラデーション線のスタイル（初期状態では見えない） */
+.about-btn__circle .gradient-border {
+  stroke-dasharray: 301.6; /* 円周の長さ */
+  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.5s ease; /* スピード */
+}
+
+/* ホバー時も背景は透明、ボタンを拡大 */
+.about-btn__circle:hover {
+  background-color: transparent;
+  transform: scale(1.2);
+}
+
+/* ホバー時にグラデーション線が一周し、グラデーション線を非表示 */
+.about-btn__circle:hover .gradient-border {
+  stroke-dashoffset: 0;
+}
+
+/* グレー線を消す */
+.about-btn__circle:hover .gray-border {
+  stroke: none;
+}
+
+.service__title-wrap {
+  text-align: center;
+}
+
+.service__container {
+  margin-top: 10.625rem;
+}
+@media screen and (max-width: 767px) {
+  .service__container {
+    margin-top: 3.125rem;
+  }
+}
+
+.service__block {
+  display: flex;
+  gap: 2.25rem;
+}
+@media screen and (max-width: 767px) {
+  .service__block {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
+.service__block.service__block--reverse {
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 767px) {
+  .service__block.service__block--reverse {
+    flex-direction: column;
+  }
+}
+
+.service__block + .service__block {
+  margin-top: 10.875rem;
+}
+@media screen and (max-width: 767px) {
+  .service__block + .service__block {
+    margin-top: 3.125rem;
+  }
+}
+
+.service__block-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(4.563rem, 2.348rem + 4.61vw, 6.5rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+@media screen and (max-width: 767px) {
+  .service__block-title {
+    order: 0;
+    font-size: 3.75rem;
+    letter-spacing: 4.8px;
+    text-align: center;
+  }
+}
+
+.service__block-subtitle {
+  margin-top: 3.75rem;
+  font-size: clamp(1.313rem, 0.67rem + 1.34vw, 1.875rem);
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+@media screen and (max-width: 767px) {
+  .service__block-subtitle {
+    order: 1;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .service__block-item {
+    display: contents;
+  }
+}
+
+.service__block-image {
+  flex-shrink: 0;
+  aspect-ratio: 440/293;
+  max-width: 27.5rem;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .service__block-image {
+    order: 2;
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+.service__block-image img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.service__block-description {
+  margin-top: 3.5rem;
+  font-size: 1.125rem;
+  line-height: 1.5555555556;
+  font-weight: 700;
+  letter-spacing: 0.72px;
+}
+@media screen and (max-width: 767px) {
+  .service__block-description {
+    order: 3;
+    margin-top: initial;
+  }
+}
+
+.service__btn-wrap {
+  margin-top: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .service__btn-wrap {
+    order: 4;
+    margin-top: initial;
+  }
+}
+
+/* serviceセクション ボタン（aboutセクションと同じ）
+==========================================*/
+.about-btn__wrap {
+  margin-top: 2.75rem;
+}
+
+.about-btn,
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.btn--black__text,
+.service-btn__text {
+  color: #28292B;
+  margin-right: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 1.12px;
+}
+
+.btn--black__circle,
+.service-btn__circle {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 64px;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+/* 初期で表示される矢印 */
+.btn--black__arrow,
+.service-btn__arrow {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url(../images/common/arrow-black.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.btn--black__arrow:after,
+.service-btn__arrow:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../images/common/arrow-gradient.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(-7px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ホバー時のアニメーション */
+.service-btn__circle:hover {
+  transform: scale(1.2);
+  background-color: transparent;
+}
+
+.service-btn__circle:hover .service-btn__arrow {
+  animation: arrow-slide 0.5s;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+@keyframes arrow-slide {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20px); /* 右に消える */
+  }
+  50.1% {
+    opacity: 0;
+    transform: translateX(-10px); /* 左に戻る */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 左から現れる */
+  }
+}
+.service-btn__circle:hover .service-btn__arrow:after {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+  left: 0;
+}
+
+/* SVGを使用したグレー線とグラデーション線の表示 */
+.service-btn__circle .circle-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* 回転の起点を変更 */
+}
+
+/* 初期状態でグレー線を表示 */
+.service-btn__circle .gray-border {
+  stroke: #28292B;
+}
+
+/* グラデーション線のスタイル（初期状態では見えない） */
+.service-btn__circle .gradient-border {
+  stroke-dasharray: 301.6; /* 円周の長さ */
+  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.5s ease; /* スピード */
+}
+
+/* ホバー時 背景は黒、ボタンを拡大 */
+.service-btn__circle:hover {
+  transform: scale(1.2);
+  background-color: #28292B;
+}
+
+/* ホバー時にグラデーション線が一周し、グラデーション線を非表示 */
+.service-btn__circle:hover .gradient-border {
+  stroke-dashoffset: 0;
+}
+
+/* 黒線を消す */
+.service-btn__circle:hover .black-border {
+  stroke: none;
+}
+
+.supports__title-wrap {
+  text-align: center;
+}
+
+.supports__logo-item {
+  margin-top: 5.875rem;
+}
+@media screen and (max-width: 767px) {
+  .supports__logo-item {
+    margin-top: 2.6875rem;
+  }
+}
+
+.contact__wrap {
+  position: relative;
+  padding-top: 8.875rem;
+  padding-bottom: 7.625rem;
+}
+@media screen and (max-width: 767px) {
+  .contact__wrap {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+}
+
+.contact__wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 12px;
+  opacity: 0.1;
+  background: #5f5f5f;
+  box-shadow: 0px 0px 24px 0px #000;
+}
+
+.contact__title-wrap {
+  text-align: center;
+}
+
+.contact__title {
+  color: #FFF;
+}
+
+.contact__text {
+  color: #FFF;
+  text-align: center;
+  padding-top: 3.25rem;
+}
+@media screen and (max-width: 767px) {
+  .contact__text {
+    padding-top: 1.875rem;
+    font-size: 0.9375rem;
+  }
+}
+
+.contact__btn-wrap {
+  text-align: center;
+  margin-top: 3.125rem;
+}
+
+/* contactボタン ホバーアニメーション
+// 背景＆テキストの変化 jsあり
+======================================================*/
+/* 背景とテキストの変化時のスタイル */
+.contact__wrap.active::before {
+  background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
+  opacity: 1;
+  transition: background 0.5s ease, opacity 0.5s ease; /* ふわっと変わる */
+}
+
+/* 文字色の変化をスムーズに */
+.contact__wrap .contact__title,
+.contact__wrap .contact__text {
+  transition: color 0.5s ease;
+}
+
+/* 文字色を$c-textに変える */
+.contact__wrap.active .contact__title,
+.contact__wrap.active .contact__text {
+  color: #28292B;
+}
+
+/* ボーダー色の変化をスムーズに */
+.contact__title {
+  transition: border-bottom-color 0.5s ease;
+}
+
+/* ボーダー色を$c-textに変える */
+.contact__wrap.active .contact__title {
+  border-bottom-color: #28292B;
+}
+
+/* contactボタン ホバーアニメーション ボタン自体の変化
+======================================================*/
+.contact-btn__wrap {
+  text-align: center;
+  margin-top: 3.125rem;
+}
+
+.contact-btn.btn-gradient {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.contact-btn__circle {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background-color: transparent;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+/* 初期で表示される矢印 */
+.btn-gradient__arrow,
+.contact-btn__arrow {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url(../images/common/arrow-gradient.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.btn-gradient__arrow:after,
+.contact-btn__arrow:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -21px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../images/common/arrow-black.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(-7px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ホバー時のアニメーション */
+.contact-btn__circle:hover {
+  transform: scale(1.2);
+  background-color: transparent;
+}
+
+.contact-btn__circle:hover .contact-btn__arrow {
+  animation: arrow-slide 0.5s;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+@keyframes arrow-slide {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20px); /* 右に消える */
+  }
+  50.1% {
+    opacity: 0;
+    transform: translateX(-10px); /* 左に戻る */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 左から現れる */
+  }
+}
+.contact-btn__circle:hover .contact-btn__arrow:after {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+  left: 0;
+}
+
+/* SVGを使用したグレー線とグラデーション線の表示 */
+.contact-btn__circle .circle-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* 回転の起点を変更 */
+}
+
+/* 初期状態でグラデーション線を表示 */
+.contact-btn__circle .gradient-border {
+  stroke: url(#gradientSVG);
+}
+
+/* 黒線のスタイル（初期状態では見えない） */
+.contact-btn__circle .black-border {
+  stroke-dasharray: 301.6; /* 円周の長さ */
+  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.5s ease; /* スピード */
+}
+
+/* ホバー時も背景は透明、ボタンを拡大 */
+.contact-btn__circle:hover {
+  background-color: transparent;
+  transform: scale(1.2);
+}
+
+/* ホバー時に黒線が一周し、グラデーション線を非表示 */
+.contact-btn__circle:hover .black-border {
+  stroke-dashoffset: 0;
+}
+
+/* グラデーション線を消す */
+.contact-btn__circle:hover .gradient-border {
+  stroke: none;
+}
+
+.footer {
+  background: #28292B;
+}
+
+.footer__inner {
+  max-width: 80.625rem;
+}
+@media screen and (max-width: 767px) {
+  .footer__inner {
+    width: 100%;
+  }
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .footer__container {
+    flex-direction: column;
+  }
+}
+
+.footer__logo {
+  width: 10.25rem;
+}
+@media screen and (max-width: 767px) {
+  .footer__logo {
+    width: 6.25rem;
+  }
+}
+
+.footer__logo img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer__info-wrap {
+  margin-top: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .footer__info-wrap {
+    margin-top: 1.25rem;
+  }
+}
+
+.footer__info-item {
+  color: #959595;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.52px;
+}
+
+.footer__info-item a {
+  color: #959595;
+}
+
+.footer-nav {
+  color: #FFF;
+  width: 8.75rem;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 767px) {
+  .footer-nav {
+    margin-top: 1.25rem;
+  }
+}
+
+.footer-nav__item + .footer-nav__item {
+  margin-top: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  .footer-nav__item + .footer-nav__item {
+    margin-top: 1.25rem;
+  }
+}
+
+.footer-nav__link,
+.footer-nav__dropdown-link,
+.footer-nav__dropdown-title {
+  color: #FFF;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1.12px;
+}
+
+/* アコーディオンふわっと開くように
+//footer-nav__dropdownに[open]がついたら
+//footer-dropdown__listにjs-footer-dropdown__listがつく
+======================================== */
+.js-footer-dropdown__list {
+  animation: dropOpen 0.8s ease infinite;
+}
+@keyframes dropOpen {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.footer-nav__dropdown-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.footer-nav__dropdown-icon {
+  position: relative;
+  width: 12px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+/* ▽アイコン */
+.footer-nav__dropdown-icon::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 8px;
+  background-image: url(../images/common/arrow-white.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  transition: transform 0.5s 0s ease;
+}
+
+/* アコーディオンが開いた時のスタイル */
+.footer-nav__dropdown[open]:not([data-accordion-before-close]) .footer-nav__dropdown-icon::before {
+  transform: rotate(-180deg);
+}
+
+.footer-nav__dropdown-list {
+  margin-top: 1.375rem;
+  padding-left: 0.875rem;
+}
+
+.footer-nav__dropdown-item + .footer-nav__dropdown-item {
+  margin-top: 1.375rem;
+}
+
+.footer__copy-wrap {
+  flex-shrink: 0;
+  display: grid;
+  align-items: end;
+}
+@media screen and (max-width: 767px) {
+  .footer__copy-wrap {
+    margin-top: 1.25rem;
+  }
+}
+
+.footer__copyright {
+  color: #959595;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 1.12px;
+}
+
+.layout-about {
+  padding-top: 8.125rem;
+  padding-bottom: 6.875rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.layout-about video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+@media screen and (max-width: 767px) {
+  .layout-about {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.layout-service {
+  padding-top: 10rem;
+  padding-bottom: 5.625rem;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .layout-service {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.layout-supports {
+  padding-top: 7.5rem;
+  padding-bottom: 6.25rem;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .layout-supports {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.layout-contact {
+  padding-top: 6.25rem;
+  padding-bottom: 3.75rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.layout-contact video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+@media screen and (max-width: 767px) {
+  .layout-contact {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.layout-footer {
+  padding-top: 6.25rem;
+  padding-bottom: 6.8125rem;
+}
+@media screen and (max-width: 767px) {
+  .layout-footer {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+}
+
+.layout-under-fv {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.layout-under-fv video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.layout-under-fv {
+  width: 100%;
+  height: 35rem;
+  color: #FFF;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.contact-fv__subtitle {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.contact-page__section {
+  padding-top: 12.5rem;
+  padding-bottom: 30.5rem;
+}
+@media screen and (max-width: 767px) {
+  .contact-page__section {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+  }
+}
+
+.contact-page__inner {
+  text-align: center;
+}
+
+.contact_page__logo {
+  aspect-ratio: 188/99;
+  width: 11.75rem;
+  margin-inline: auto;
+}
+
+.contact_page__logo img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact_page__text {
+  margin-top: 2.5rem;
+  color: #000;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.contact-page__btn-wrap {
+  margin-top: 3.5rem;
+}
+
+.contact-page__btn {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  text-transform: capitalize;
+  display: inline-block;
+  background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+  max-width: 20rem;
+  width: 100%;
+  transition: transform 1s 0s ease;
+}
+
+.contact-page__btn:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: ripple 1.5s infinite;
+  color: #FFF;
+  opacity: 1;
+}
+
+/* ボタンの外側に黄色い波紋が広がるアニメーション */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 #FDE005;
+  } /* グラデーションの開始色に変更 */
+  70% {
+    box-shadow: 0 0 0 15px rgba(253, 224, 5, 0);
+  } /* 開始色の透明 */
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 224, 5, 0);
+  } /* 同じく透明 */
+}
+/* ボタンの外側に黄緑の波紋が広がるアニメーション */
+/* Companyページ(共通) セクションタイトル
+======================================*/
+.company-page__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: 5.12px;
+  text-transform: capitalize;
+  text-align: center;
+  display: inline-block;
+  border-bottom: solid 1px #959595;
+}
+@media screen and (max-width: 767px) {
+  .company-page__title {
+    font-size: 3.125rem;
+    line-height: 1.25;
+    letter-spacing: 3.2px;
+  }
+}
+
+.company-page__title--white,
+.company-page__subtitle--white {
+  color: #FFF;
+}
+
+.company-page__title--white {
+  border-bottom: solid 1px #FFF;
+}
+
+.company-page__subtitle {
+  margin-top: 0.625rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0.64px;
+}
+@media screen and (max-width: 767px) {
+  .company-page__subtitle {
+    margin-top: initial;
+    text-align: center;
+  }
+}
+
+.company-page__banner .company-page__title {
+  width: 18.75rem;
+}
+
+/* 動画の調整 video.scssかな？commonかな？今はcommonに記載済み
+=======================================*/
+.company-page__banner {
+  padding-top: 8.5rem;
+  padding-bottom: 4.3125rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__banner {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.company-page__video {
+  margin-top: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__video {
+    margin-top: 1.5625rem;
+  }
+}
+
+/* companyページ Message セクション
+=======================================*/
+.company-page__message {
+  background-color: #28292B;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__message {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.company-page__message-container {
+  display: flex;
+  gap: 5rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__message-container {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .company-page__message-content {
+    display: contents;
+  }
+}
+
+.company-page__message-box {
+  margin-top: 3.75rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__message-box {
+    margin-top: 1.25rem;
+    order: 1;
+  }
+}
+
+.company-page__message-text {
+  color: #FFF;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+}
+
+.company-page__message-text + .company-page__message-text {
+  margin-top: 1.875rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__message-text + .company-page__message-text {
+    margin-top: 0.9375rem;
+  }
+}
+
+.company-page__image {
+  flex-shrink: 0;
+  aspect-ratio: 396/509;
+  width: 24.75rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__image {
+    width: 18.75rem;
+    order: 0;
+    margin-inline: auto;
+  }
+}
+
+.company-page__image img {
+  height: 100%;
+}
+
+/* companyページ Outline セクション
+=======================================*/
+.company-page__outline {
+  padding-top: 10rem;
+  padding-bottom: 8.125rem;
+}
+@media screen and (max-width: 767px) {
+  .company-page__outline {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.company-page__outline-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .company-page__outline-wrap {
+    flex-direction: column;
+  }
+}
+
+.company-page__outline .section__title-wrap {
+  text-align: start;
+}
+@media screen and (max-width: 767px) {
+  .company-page__outline .section__title-wrap {
+    text-align: center;
+  }
+}
+
+.company-page__company-info {
+  margin-top: 5.4375rem;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 767px) {
+  .company-page__company-info {
+    margin-top: 2.5rem;
+  }
+}
+
+.company-info {
+  color: #000;
+}
+
+.company-info__row {
+  display: flex;
+  width: 29.75rem;
+  border-bottom: 1px dashed #000;
+}
+@media screen and (max-width: 767px) {
+  .company-info__row {
+    width: 100%;
+  }
+}
+
+.company-info__row:last-child {
+  border-bottom: none;
+}
+
+.company-info__row dt,
+.company-info__row dd {
+  font-size: 0.9375rem;
+  line-height: 2;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  padding-block: 1.625rem;
+  display: grid;
+  place-content: center;
+  justify-content: start;
+}
+@media screen and (max-width: 767px) {
+  .company-info__row dt,
+  .company-info__row dd {
+    padding-block: 0.8125rem;
+  }
+}
+
+.company-info__row dt {
+  font-weight: 500;
+  width: 9.125rem;
+}
+@media screen and (max-width: 767px) {
+  .company-info__row dt {
+    width: 28%;
+  }
+}
+
+.company-info__row dd {
+  width: 65%;
+  max-width: 20.625rem;
+}
+@media screen and (max-width: 767px) {
+  .company-info__row dd {
+    width: 65%;
+  }
+}/*# sourceMappingURL=styles.css.map */

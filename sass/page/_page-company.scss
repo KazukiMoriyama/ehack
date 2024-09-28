@@ -1,0 +1,238 @@
+@use "../global" as *;
+//下層--Companyページ (page-contact)
+
+/* Companyページ(共通) セクションタイトル
+======================================*/
+.company-page__title {
+  font-family: $en-font;
+  font-size: rrem(64);
+  line-height: calc(64/64);
+  font-weight: $light;
+  letter-spacing: 5.12px;
+  text-transform: capitalize;
+  text-align: center;
+  display: inline-block;
+  border-bottom: solid 1px $c-Mgray;
+  @include mq("md") {
+    font-size: rrem(50);
+    line-height: calc(50/40);
+    letter-spacing: 3.2px;
+  }
+}
+
+.company-page__title--white,
+.company-page__subtitle--white {
+color: $c-white;
+}
+.company-page__title--white {
+  border-bottom: solid 1px $c-white;
+}
+
+.company-page__subtitle {
+  margin-top: rrem(10);
+  font-size: rrem(16);
+  line-height: calc(24/16);
+  font-weight: $bold;
+  letter-spacing: 0.64px;
+  @include mq("md") {
+    margin-top: initial;
+    text-align: center;
+  }
+}
+
+.company-page__banner .company-page__title {
+  width: rrem(300);
+}
+
+
+
+/* 動画の調整 video.scssかな？commonかな？今はcommonに記載済み
+=======================================*/
+
+.company-page__banner {
+  padding-top: rrem(136);
+  padding-bottom: rrem(69);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.company-page__video {
+  margin-top: rrem(40);
+  @include mq("md") {
+    margin-top: rrem(25);
+  }
+}
+
+
+/* companyページ Message セクション
+=======================================*/
+.company-page__message {
+  background-color: $c-text;
+  padding-top: rrem(144);
+  padding-bottom: rrem(144);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+
+.company-page__inner {
+
+}
+
+
+
+.company-page__message-container {
+  display: flex;
+  gap: rrem(80);
+  @include mq("md") {
+    flex-direction: column;
+    gap: rrem(10);
+  }
+}
+
+.company-page__message-content {
+  @include mq("md") {
+    display: contents;
+  }
+
+}
+
+.company-page__message-box {
+  margin-top: rrem(60);
+  @include mq("md") {
+    margin-top: rrem(20);
+    order: 1;
+  }
+}
+
+.company-page__message-text {
+  color: $c-white;
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(26.25/15);
+  letter-spacing: 0.6px;
+}
+
+.company-page__message-text + .company-page__message-text {
+  margin-top: rrem(30);
+  @include mq("md") {
+    margin-top: rrem(15);
+  }
+}
+
+.company-page__image {
+  flex-shrink: 0;
+  aspect-ratio: 396/509;
+  width: rrem(396);
+  @include mq("md") {
+    width: rrem(300);
+    order: 0;
+    margin-inline: auto;
+  }
+}
+.company-page__image img {
+  height: 100%;
+}
+
+/* companyページ Outline セクション
+=======================================*/
+.company-page__outline {
+  padding-top: rrem(160);
+  padding-bottom: rrem(130);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.company-page__outline-wrap {
+  display: flex;
+  justify-content: space-between;
+  @include mq("md") {
+    flex-direction: column;
+
+  }
+}
+
+.company-page__inner {
+
+}
+
+.inner {
+
+}
+
+.company-page__outline .section__title-wrap {
+  text-align: start;
+  @include mq("md") {
+    text-align: center;
+  }
+}
+
+.company-page__title {
+
+}
+
+.company-page__subtitle {
+
+}
+
+.company-page__company-info {
+  margin-top: rrem(87);
+  flex-shrink: 0;
+  @include mq("md") {
+    margin-top: rrem(40);
+  }
+}
+
+.company-info {
+  color: $c-black;
+}
+
+.company-info__row {
+  display: flex;
+  width: rrem(476);
+  border-bottom: 1px dashed $c-black;
+  @include mq("md") {
+    width: 100%;
+  }
+}
+.company-info__row:last-child{
+  border-bottom: none;
+}
+
+.company-info__row dt,
+.company-info__row dd{
+  font-size: rrem(15);
+  line-height: calc(30/15);
+  font-weight: $medium;
+  letter-spacing: 1.2px;
+  padding-block: rrem(26);
+  //border-bottom: 1px dashed $c-black;
+  display: grid;
+  place-content: center;
+  justify-content: start;
+  @include mq("md") {
+    padding-block: rrem(13);
+  }
+}
+
+
+.company-info__row dt {
+  font-weight: $medium;
+  width: rrem(146);
+  @include mq("md") {
+    width: 28%;
+  }
+}
+.company-info__row dd {
+  width: 65%;
+  max-width: rrem(330);
+  @include mq("md") {
+    width: 65%;
+  }
+}

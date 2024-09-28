@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/ website:#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- noindex 検索させたくない時だけ入れる-->
+  <meta name="robots" content="noindex">
+  <!-- meta情報 -->
+  <title>EHACK</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <!-- ogp -->
+  <meta content="" property="og:title" />
+  <meta content="" property="og:description" />
+  <meta content="" property="og:image" />
+  <meta content="" property="og:url" />
+  <meta content="" property="og:type" />
+  <meta content="" property="og:site_name" />
+  <!-- ファビコン -->
+  <link href="" rel="icon" />
+  <!-- Googleフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <!-- css -->
+  <link href="./css/styles.css?20240927" rel="stylesheet">
+  <!-- JavaScript -->
+  <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="./js/script.js"></script>
+
+</head>
+<body>
+  <!-- グラデーション定義 -->
+  <svg class="gradient-svg" height="0" width="0">
+    <defs>
+      <linearGradient id="gradientSVG" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#FDE005; stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#00CF35; stop-opacity:1" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <!-- header -->
+  <header class="header">
+    <div class="inner header__inner">
+      <!-- ロゴ -->
+      <h1 class="header__logo">
+        <a href="#top" id="js-logo">
+          <img src="./images/common/logo-white.svg" alt="EHACK" width="127" height="70" decoding="async" loading="eager">
+        </a>
+      </h1>
+      <!-- PCのみ ナビメニュー -->
+      <nav class="pc-only">
+        <ul class="header__nav">
+          <!-- 1.home -->
+          <li class="header__nav-item">
+            <a href="#top">home</a>
+          </li>
+          <!-- 2.company -->
+          <li class="header__nav-item">
+            <a href="./company/index.html">company</a>
+          </li>
+          <!-- 3.service ドロップダウンメニュー含む -->
+          <li class="header__nav-item has-dropdown">
+            <a href="#">service</a>
+            <!-- ドロップダウンメニュー -->
+            <ul class="dropdown dropdown__list">
+              <li class="dropdown__item">
+                <a href="./e-cycle/ecycle.html">
+                  <img src="./images/common/btn-Ecycle@2x.png" alt="「E-Cycle」と記された、ソーシャルメディア関連のデジタル活動を表すイラストボタン" width="408" height="370" decoding="async" loading="eager">
+                </a>
+              </li>
+              <li class="dropdown__item">
+                <a href="./minutes-movie/index.html">
+                  <img src="./images/common/btn-Mmovie@2x.png" alt="「Minute-Movie」と記された、スマートフォンを用いたクイックムービー制作を表すイラストボタン" width="408" height="357" decoding="async" loading="eager">
+                </a>
+              </li>
+              <li class="dropdown__item">
+                <a href="ecycle.html">
+                  <img src="./images/common/btn-AGIstep@2x.png" alt="「AGI-Step」と記された、オフィスの環境をAIアシスタントが支援する様子を表すイラストボタン" width="408" height="351" decoding="async" loading="eager">
+                </a>
+              </li>
+            </ul>
+            <!-- メガメニューここまで -->
+          </li>
+          <!-- 4.contact -->
+          <li class="header__nav-item header__nav-item--contact">
+            <a href="./contact/index.html"><span>30秒で問い合わせる</span></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- SPのみ ハンバーガーメニュー -->
+      <button class="header__drawer hamburger sp-only" id="js-hamburger">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </button>
+      <div class="sp-nav sp-only" id="js-drawer-menu">
+        <div class="inner">
+          <!-- spナビメニューロゴ -->
+          <a href="index.html" class="logo sp-nav__logo">
+            <img src="./images/common/logo-white.svg" alt="EHACK" width="127" height="70" decoding="async" loading="eager">
+          </a>
+          <!-- spナビメニュー -->
+          <ul class="sp-nav__items">
+            <li class="sp-nav__item">
+              <a href="company.html">Company<span>EHACKについて</span></a>
+            </li>
+            <li class="sp-nav__item">
+              <a href="#">E-Cycle<span>むかつくほどわかりやすいIT研修</span></a>
+            </li>
+            <li class="sp-nav__item">
+              <a href="#">Minutes<br class="sp-only">Movie<span>たった45分でオリジナルムービーを</span></a>
+            </li>
+            <li class="sp-nav__item">
+              <a href="#">AGI-Step<span>まるで人のようなチャットbot</span></a>
+            </li>
+            <li class="sp-nav__item sp-nav__item--contact">
+              <a href="contact.html"><span>30秒で問い合わせる</span></a>
+            </li>
+          </ul>
+          <!-- 会社情報 -->
+          <address class="sp-nav__info-wrap">
+            <ul class="sp-nav__info">
+              <li class="sp-nav__info-item postalCode">〒000-0000 </li>
+              <li class="sp-nav__info-item address">大阪府○○○○○○○○○○○○○○○○○</li>
+              <li class="sp-nav__info-item tel">
+                <a href="tel:123-456-789">TEL 123-456-7890</a>
+              </li>
+              <li class="sp-nav__info-item mail">
+                <a href="mailto:aaaaaaaa@ehack.com">E-mail aaaaaaaaa@ehack.com</a>
+              </li>
+            </ul>
+          </address>
+          <!-- コピーライト -->
+          <p class="sp-nav__copyright">
+            <small>Copyright©&copy; EHACK Inc. All Rights Reserved.</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ファーストビュー -->
+    <section class="fv" id="js-fv">
+      <div class="fv__inner">
+        <video class="fixed_video" src="./images/video/ehack_fv.mp4" playsinline autoplay muted loop></video>
+        <!-- ローディング後も表示されるテキスト -->
+        <!-- <p class="fv-text loading__text" id="fv-typewriter-text">想像を超えた<br class="sp-only">その先へ</p> -->
+        <!-- ファーストビュー用のテキスト -->
+        <p class="fv-text" id="fv-typewriter-text">想像を超えた<br class="sp-only">その先へ</p>
+        <!-- スクロールボタン -->
+        <div class="scroll-button">
+          <a href="#about">
+            <img src="./images/common/btn-scroll.svg" alt="スクロールボタン" width="120" height="80" decoding="async">
+            <img class="scroll-text" src="./images/common/scroll-text.svg" alt="scroll" width="71" height="69">
+            <img class="scroll-arrow" src="./images/common/arrow-down.svg" alt="下向きの矢印" width="15" height="15">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about layout-about" id="about">
+      <!-- 背景動画 -->
+      <video class="background_video" src="./images/video/bg_movie.mp4" autoplay muted loop></video>
+      <div class="about__inner inner">
+        <!-- タイトル -->
+        <h2 class="about__title">about</h2>
+        <!-- コンテンツ -->
+        <div class="about__container">
+          <!-- テキスト -->
+          <div class="about__description">
+            <p class="about__text">
+              私たちは「人的価値の最大化」を通して組織と個人が互いに成長できる環境を追求する「Educational Company」です。
+            </p>
+            <p class="about__text">
+              テクノロジーの急激な進展、少子高齢化、労働人口の減少など「人」にまつわる様々を抱え、終身雇用の崩壊、働き方の多様化など労働に関する「仕組み」も大きく変化しています。
+            </p>
+            <p class="about__text">
+              私たちは、個人が提供する価値を最大化し、組織や社会が適切な評価を可能にする仕組みを提供します。
+            </p>
+            <p class="about__text">
+              そして、成長を求める組織と個人の乖離をなくし、誰もが存在意義を認識し活躍できる社会を実現します。
+            </p>
+          </div>
+          <!-- 画像 -->
+          <figure class="about__image">
+            <img src="./images/top/about@2x.png" alt="異なるテクノロジーガジェットに囲まれ、多様な職業の人々が技術的な作業をしているイラスト" width="529" height="390" decoding="async">
+          </figure>
+        </div>
+        <!-- Aboutセクション ボタン -->
+        <div class="about-btn__wrap">
+          <a href="./company/index.html" class="about-btn btn--gray">
+            <span class="about-btn__text btn--gray__text">company</span>
+            <div  class="about-btn__circle btn--gray__circle btn__circle">
+              <i class="about-btn__arrow btn--gray__arrow"></i>
+              <svg class="circle-border" viewBox="0 0 100 100" >
+                <circle class="gray-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="#fff"></circle>
+                <circle class="gradient-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="url(#gradientSVG)"></circle>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service -->
+    <section class="service layout-service" id="service">
+      <div class="service__inner inner">
+        <!-- section タイトル -->
+        <div class="service__title-wrap section__title-wrap">
+          <h2 class="service__title section__title">service</h2>
+        </div>
+        <div class="service__container">
+          <!-- 1.E-Cycle -->
+          <div class="service__block">
+            <!-- 画像 -->
+            <figure class="service__block-image">
+              <img src="./images/top/service01@2x.png" alt="E-Cycleのサービスに関するイラストで、「ソーシャルメディア」とラベル付けられた大きなプラットフォームの周囲に、様々なデバイスを操作する人々が描かれている画像" width="440" height="293" decoding="async">
+            </figure>
+            <!-- テキスト -->
+            <div class="service__block-item">
+              <h3 class="service__block-title" aria-label="イーサイクル">E-Cycle</h3>
+              <h4 class="service__block-subtitle">ムカつくほどわかりやすいIT研修</h4>
+              <p class="service__block-description">
+                この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。<br>
+                この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。
+              </p>
+              <!-- serviceボタン 1.E-Cycle -->
+              <div class="service__btn-wrap">
+                <a href="./e-cycle/index.html" class="service-btn btn--black">
+                  <span class="service-btn__text btn--black__text">learn more</span>
+                  <div  class="service-btn__circle btn--black__circle">
+                    <i class="service-btn__arrow btn--black__arrow"></i>
+                    <svg class="circle-border" viewBox="0 0 100 100" >
+                      <circle class="black-border" cx="50" cy="50" r="48" fill="none" stroke-width="1" stroke="#28292B"></circle>
+                      <circle class="gradient-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="url(#gradientSVG)"></circle>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- 2.Minutes Movie -->
+          <div class="service__block service__block--reverse">
+            <!-- 画像 -->
+            <figure class="service__block-image">
+              <img src="./images/top/service02@2x.png" alt="スマートフォンの画面から飛び出る様々なアイコン、アプリケーションをアクティブに操作している様子を描いた画像" width="440" height="293" decoding="async">
+            </figure>
+            <!-- テキスト -->
+            <div class="service__block-item">
+              <h3 class="service__block-title" aria-label="ミニッツムービー">Minutes<br>Movie</h3>
+              <h4 class="service__block-subtitle">たった45分でオリジナルムービーを</h4>
+              <p class="service__block-description">
+                この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。<br>
+                この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。
+              </p>
+              <!-- serviceボタン 2.Minutes Movie -->
+              <div class="service__btn-wrap">
+                <a href="./minutes-movie/index.html" class="service-btn btn--black">
+                  <span class="service-btn__text btn--black__text">learn more</span>
+                  <div  class="service-btn__circle btn--black__circle">
+                    <i class="service-btn__arrow btn--black__arrow"></i>
+                    <svg class="circle-border" viewBox="0 0 100 100" >
+                      <circle class="black-border" cx="50" cy="50" r="48" fill="none" stroke-width="1" stroke="#28292B"></circle>
+                      <circle class="gradient-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="url(#gradientSVG)"></circle>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <!-- 3.AGI-Step -->
+          <div class="service__block">
+            <!-- 画像 -->
+            <figure class="service__block-image">
+              <img src="./images/top/service03@2x.png" alt="巨大なスマートフォンの画面に映し出されたロボットがオフィスワーカーにタスクを割り当てている様子の画像" width="440" height="293" decoding="async">
+            </figure>
+            <!-- テキスト -->
+            <div class="service__block-item">
+              <h3 class="service__block-title" aria-label="エージーアイステップ">AGI-Step</h3>
+              <h4 class="service__block-subtitle">まるでヒトのようなチャットボット</h4>
+              <p class="service__block-description">
+                この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。<br>
+                この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。
+              </p>
+              <!-- serviceボタン 3.AGI-Step -->
+              <div class="service__btn-wrap">
+                <a href="./agi-step/index.html" class="service-btn btn--black">
+                  <span class="service-btn__text btn--black__text">learn more</span>
+                  <div  class="service-btn__circle btn--black__circle">
+                    <i class="service-btn__arrow btn--black__arrow"></i>
+                    <svg class="circle-border" viewBox="0 0 100 100" >
+                      <circle class="black-border" cx="50" cy="50" r="48" fill="none" stroke-width="1" stroke="#28292B"></circle>
+                      <circle class="gradient-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="url(#gradientSVG)"></circle>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Supports -->
+    <section class="supports layout-supports">
+      <div class="supports__inner inner">
+        <!-- タイトル -->
+        <div class="supports__title-wrap section__title-wrap">
+          <h2 class="supports__title section__title">supports</h2>
+        </div>
+        <!-- ロゴ一覧 -->
+        <!-- <ul class="supports__logo-list">
+          <li class="supports__logo-item">
+            <img src="./images/top/logo01@2x.png" alt="ロゴ" width="120" height="120" decoding="async">
+          </li>
+          <li class="supports__logo-item">
+            <img src="./images/top/logo01@2x.png" alt="ロゴ" width="120" height="120" decoding="async">
+          </li>
+        </ul> -->
+        <!-- 仮ロゴ画像 -->
+        <figure class="supports__logo-item">
+          <picture>
+            <!-- <source srcset="" media="(min-width: px)" type="image/webp"> -->
+            <source srcset="./images/top/logo_dummy_SP.svg" media="(max-width: 767px)">
+            <img src="./images/top/logo_dummy.svg" alt="（仮）ロゴ一覧" width="880" height="247" decoding="async">
+          </picture>
+        </figure>
+      </div>
+
+    </section>
+
+    <!-- Contact セクション -->
+    <section class="contact layout-contact">
+      <!-- 背景動画 -->
+      <video class="background_video" src="./images/video/bg_movie.mp4" autoplay muted loop></video>
+      <div class="contact__inner inner">
+        <div class="contact__wrap">
+          <div class="contact__title-wrap section__title-wrap">
+            <h2 class="contact__title section__title">contact us</h2>
+          </div>
+          <p class="contact__text">
+            お仕事のご相談やお問い合わせはこちらまで。<br>
+            最短30秒でお問い合わせは完了します。
+          </p>
+          <!-- contactボタン -->
+          <div class="contact-btn__wrap">
+            <a href="./contact/index.html" class="about-btn btn--gray contact-btn btn-gradient" id="js-btn-hover">
+              <div  class="contact-btn__circle">
+                <i class="contact-btn__arrow btn-gradient__arrow"></i>
+                <svg class="circle-border" viewBox="0 0 100 100" >
+                  <circle class="gradient-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="url(#gradientSVG)"></circle>
+                  <circle class="black-border" cx="50" cy="50" r="48" fill="none" stroke-width="2" stroke="#28292B"></circle>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- フッター -->
+  <footer class="footer layout-footer">
+    <div class="footer__inner inner">
+      <div class="footer__container">
+        <!-- 1.会社情報 -->
+        <div class="footer__company">
+          <!-- ロゴ -->
+          <div class="footer__logo">
+            <a href="index.html" class="footer__logo-link">
+              <img src="./images/common/logo-white.svg" alt="EHACK" width="164" height="90" decoding="async">
+            </a>
+          </div>
+          <!-- 会社情報 -->
+          <address class="footer__info-wrap">
+            <ul class="footer__info-list">
+              <li class="footer__info-item postalCode">〒000-0000 </li>
+              <li class="footer__info-item address">大阪府○○○○○○○○○○○○○○○○○</li>
+              <li class="footer__info-item tel">
+                <a href="tel:123-456-789">TEL 123-456-7890</a>
+              </li>
+              <li class="footer__info-item mail">
+                <a href="mailto:aaaaaaaa@ehack.com">E-mail aaaaaaaaa@ehack.com</a>
+              </li>
+            </ul>
+          </address>
+        </div>
+        <!-- 2.footerナビメニュー -->
+        <div class="footer-nav">
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item">
+              <a href="#top" class="footer-nav__link">top</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="company.html" class="footer-nav__link">company</a>
+            </li>
+            <li class="footer-nav__item">
+              <!-- アコーディオン -->
+              <details class="footer-nav__dropdown footer-dropdown">
+                <summary class="footer-nav__dropdown-head">
+                  <span class="footer-nav__dropdown-title">service</span>
+                  <span class="footer-nav__dropdown-icon"></span>
+                </summary>
+                <ul class="footer-nav__dropdown-list footer-dropdown__list">
+                  <li class="footer-nav__dropdown-item">
+                    <a href="ecycle.html" class="footer-nav__dropdown-link">e-cycle</a>
+                  </li>
+                  <li class="footer-nav__dropdown-item">
+                    <a href="movie.html" class="footer-nav__dropdown-link">minutes movie</a>
+                  </li>
+                  <li class="footer-nav__dropdown-item">
+                    <a href="step.html" class="footer-nav__dropdown-link">AGI-Step</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="footer-nav__item">
+              <a href="contact.html" class="footer-nav__link">contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- 3.コピーライト -->
+        <div class="footer__copy-wrap">
+          <p class="footer__copyright">
+            <small>Copyright©&copy; EHACK Inc. All Rights Reserved.</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ローディング画面 一時的にOFF -->
+  <div class="loading" id="js-loading">
+    <p class="loading__text" id="loading__typewriter-text">想像を超えたその先へ</p>
+  </div>
+</body>
+</html>

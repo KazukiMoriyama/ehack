@@ -1,0 +1,16 @@
+@use "../global" as *;
+//serviceセクション
+.layout-service {
+  padding-top: rrem(160);
+  padding-bottom: rrem(90);
+  //position: relative;
+  //overflow: hidden;
+  width: 100%;
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+
+
