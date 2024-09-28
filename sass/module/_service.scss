@@ -1,20 +1,13 @@
 @use "../global" as *;
+
 //serviceセクション
-.service {
+.service {}
 
-}
+.layout-service {}
 
-.layout-service {
+.service__inner {}
 
-}
-
-.service__inner {
-
-}
-
-.inner {
-
-}
+.inner {}
 
 // .service__title {
 //   text-align: center;
@@ -27,6 +20,7 @@
 
 .service__container {
   margin-top: rrem(170);
+
   @include mq("md") {
     margin-top: rrem(50);
   }
@@ -36,6 +30,7 @@
   display: flex;
   //grid-template-columns: repeat(2, 1fr);
   gap: rrem(36);
+
   //margin-top: rrem(14);
   @include mq("md") {
     //grid-template-columns: repeat(1, 1fr);
@@ -47,13 +42,15 @@
 
 .service__block.service__block--reverse {
   flex-direction: row-reverse;
+
   @include mq("md") {
     flex-direction: column;
   }
 }
 
-.service__block + .service__block {
+.service__block+.service__block {
   margin-top: rrem(174);
+
   @include mq("md") {
     margin-top: rrem(50);
   }
@@ -66,6 +63,7 @@
   line-height: calc(104/104);
   font-weight: $bold;
   letter-spacing: 5px;
+
   //text-align: right;
   @include mq("md") {
     order: 0;
@@ -82,9 +80,10 @@
   line-height: calc(48/30);
   font-weight: $bold;
   letter-spacing: 1.4px;
+
   @include mq("md") {
     order: 1;
-    margin-top: rrem(20) ;
+    margin-top: rrem(20);
     font-size: rrem(20);
     line-height: calc(32/20);
     letter-spacing: 1px;
@@ -95,8 +94,10 @@
 
 
 .service__block-item {
-  //flex: 1;
+  width: 520px;
+
   @include mq("md") {
+    width: 100%;
     display: contents;
   }
 }
@@ -106,6 +107,8 @@
   aspect-ratio: 440/293;
   max-width: rrem(440);
   width: 100%;
+  flex: 1;
+
   //margin-top: rrem(52);
   //margin-bottom: rrem(63.67);
   @include mq("md") {
@@ -127,14 +130,20 @@
   line-height: calc(28/18);
   font-weight: $bold;
   letter-spacing: 0.72px;
+
   @include mq("md") {
     order: 3;
     margin-top: initial;
   }
 }
 
+.service__block-description+.service__block-description {
+  margin-top: 0;
+}
+
 .service__btn-wrap {
   margin-top: rrem(64);
+
   @include mq("md") {
     order: 4;
     margin-top: initial;
@@ -204,14 +213,14 @@
   content: "";
   position: absolute;
   top: 0;
-  left: -7px;
+  left: 0;
   width: 14px;
   height: 14px;
   background-image: url(../images/common/arrow-gradient.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: translateX(-7px);
+  transform: translateX(0);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -223,7 +232,7 @@
 }
 
 .service-btn__circle:hover .service-btn__arrow {
-  animation: arrow-slide 0.5s ;
+  animation: arrow-slide 0.5s;
   opacity: 1;
   //transform: translateX(7px);
   transition-delay: 0.2s;
@@ -231,20 +240,26 @@
 
 @keyframes arrow-slide {
   0% {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
+
   50% {
-      opacity: 1;
-      transform: translateX(20px); /* 右に消える */
+    opacity: 1;
+    transform: translateX(20px);
+    /* 右に消える */
   }
+
   50.1% {
-      opacity: 0;
-      transform: translateX(-10px); /* 左に戻る */
+    opacity: 0;
+    transform: translateX(-10px);
+    /* 左に戻る */
   }
+
   100% {
-      opacity: 1;
-      transform: translateX(0); /* 左から現れる */
+    opacity: 1;
+    transform: translateX(0);
+    /* 左から現れる */
   }
 }
 
@@ -262,7 +277,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  transform: rotate(-90deg); /* 回転の起点を変更 */
+  transform: rotate(-90deg);
+  /* 回転の起点を変更 */
 }
 
 /* 初期状態でグレー線を表示 */
@@ -274,9 +290,12 @@
 ////円の外側を一周なので、数字の調整が必要
 /// HTMLの cx="50" cy="50" r="48" を調整かな？？
 .service-btn__circle .gradient-border {
-  stroke-dasharray: 301.6; /* 円周の長さ */
-  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.5s ease; /* スピード */
+  stroke-dasharray: 301.6;
+  /* 円周の長さ */
+  stroke-dashoffset: 301.6;
+  /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.5s ease;
+  /* スピード */
 }
 
 /* ホバー時 背景は黒、ボタンを拡大 */
@@ -295,4 +314,3 @@
 .service-btn__circle:hover .black-border {
   stroke: none;
 }
-

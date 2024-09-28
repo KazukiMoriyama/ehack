@@ -14,7 +14,7 @@ $padding-pc: 25px;
 $padding-sp: 20px;
 
 // ================================================
-    // 色に関する設定
+// 色に関する設定
 // ================================================
 
 //色指定（デザインを見てよく使う色は設定！）
@@ -23,7 +23,7 @@ $c-white: #FFF;
 $c-text: #28292B; //背景・文字色
 $c-main: #00CF35; //メインカラー
 $c-accent: #F74A3F; //アクセントカラー
-$c-gradation: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);//グラデーション
+$c-gradation: linear-gradient(270deg, #FDE005 0%, #00CF35 100%); //グラデーション
 $c-Mgray: #959595;
 $c-Dgray: #5f5f5f;
 $c-BgGray: #f5f5f5;
@@ -31,13 +31,25 @@ $c-BgGray: #f5f5f5;
 
 body {
   color: $c-text;
+  background: rgba(40, 41, 43);
+  transition: 1s;
+  color: #fff;
+}
+
+body.bg-w {
+  background: rgba(40, 41, 43, 0);
+  color: #000;
+}
+
+body.top_body::-webkit-scrollbar {
+  display: none;
 }
 
 // ================================================
-  // フォントについての設定
+// フォントについての設定
 // ================================================
 
-$base-font: 'Noto Sans JP',sans-serif;
+$base-font: 'Noto Sans JP', sans-serif;
 $en-font: "Montserrat", sans-serif;
 
 // フォントウェイト
@@ -56,7 +68,7 @@ body {
 }
 
 // ================================================
-  // メディアクエリとブレークポイントの設定
+// メディアクエリとブレークポイントの設定
 // ================================================
 //ブレイクポイント(デザインによって異なる)
 $breakpoints: (
@@ -81,11 +93,13 @@ $mediaquerys: (
     @content;
   }
 }
+
 /*  PCとSPの表示非表示の切り替え */
 
 /*PCのみ表示*/
 .pc-only {
   display: block;
+
   @include mq("md") {
     display: none;
   }
@@ -94,6 +108,7 @@ $mediaquerys: (
 /*(md)px以下で表示*/
 .sp-only {
   display: none;
+
   @include mq("md") {
     display: block;
   }
@@ -101,7 +116,7 @@ $mediaquerys: (
 
 
 // ================================================
-  // remへ変換
+// remへ変換
 // ================================================
 // remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
 @function rrem($pixels) {
@@ -123,8 +138,9 @@ img {
 /* aタグのスタイルリセット*/
 a {
   text-decoration: none;
-  transition: opacity, 0.5s 0s ease;
+  transition: opacity, 0.3s 0s ease;
 }
+
 a:hover {
   opacity: 0.8;
 }
@@ -140,23 +156,26 @@ address {
 }
 
 /* 電話発信 PCではしない*/
-a[href^="tel:"]{
-  pointer-events: none;//クリックやタップなどのイベントを無効
+a[href^="tel:"] {
+  pointer-events: none; //クリックやタップなどのイベントを無効
   color: inherit;
+
   @include mq("md") {
     pointer-events: auto;
   }
 }
 
 /* 横スクロール防止 */
-html, body {
+html,
+body {
   overflow-x: clip;
 }
 
 .anker-link {
   scroll-margin-top: rrem(150);
+
   @include mq("md") {
-  scroll-margin-top: rrem(50);
+    scroll-margin-top: rrem(50);
   }
 }
 
@@ -171,9 +190,10 @@ body.js-fixed {
 
 /* ▼を非表示にする（detailsとsummaryタグ） */
 summary {
-	display: block;
+  display: block;
 }
+
 /* Safariで表示されるデフォルトの三角形アイコンを消します */
 summary::-webkit-details-marker {
-	display: none;
+  display: none;
 }

@@ -324,18 +324,21 @@
 
 /* ローディング画面全体 */
 .loading {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background: $c-text; /* ローディング背景は黒 */
+  background: $c-text;
+  /* ローディング背景は黒 */
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 1000; /* 最前面 */
+  z-index: 1000;
+  /* 最前面 */
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity 2s ease; /* ふわっとフェードアウト */
+  transition: .3s;
+  /* ふわっとフェードアウト */
 }
 
 /* タイプライター風テキスト */
@@ -344,19 +347,24 @@
   font-weight: $bold;
   line-height: 150%;
   letter-spacing: 6.4px;
-  color: $c-text; /* 最初は黒文字 */
-  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff; /* 白い枠線 */
+  color: $c-text;
+  /* 最初は黒文字 */
+  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
+  /* 白い枠線 */
   opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%; /* 幅を広げて改行を防ぐ */
-  transition: color 2s ease-in-out, text-shadow 2s ease-in-out; /* 滑らかに色を変える */
+  width: 100%;
+  /* 幅を広げて改行を防ぐ */
+  transition: color 2s ease-in-out, text-shadow 2s ease-in-out;
+  /* 滑らかに色を変える */
 
   @include mq("md") {
-    font-size: rrem(40); /* モバイル対応時に小さくする */
+    font-size: rrem(40);
+    /* モバイル対応時に小さくする */
     width: 100%;
     padding-left: rrem(15);
     padding-right: rrem(15);
@@ -365,8 +373,10 @@
 
 /* 黒文字から白文字へ変わるアニメーション */
 .white-text {
-  color: rgba(255, 255, 255, 1); /* 白文字に変更 */
-  text-shadow: none; /* 白文字時に枠を消す */
+  color: rgba(255, 255, 255, 1);
+  /* 白文字に変更 */
+  text-shadow: none;
+  /* 白文字時に枠を消す */
   transition: color 2s ease-in-out, text-shadow 2s ease-in-out;
 }
 
@@ -374,7 +384,8 @@
 .fade-out {
   opacity: 0;
   transition: opacity 2s ease;
-  pointer-events: none; /* クリック無効化 */
+  pointer-events: none;
+  /* クリック無効化 */
 }
 
 /* ファーストビューのテキスト */
@@ -385,14 +396,18 @@
   font-weight: $bold;
   line-height: 150%;
   letter-spacing: 6.4px;
-  color: rgba(255, 255, 255, 1); /* 初期は白文字 */
+  color: rgba(255, 255, 255, 1);
+  /* 初期は白文字 */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 1; /* 初期状態で表示 */
-  text-align: center; /* 中央揃え */
-  transition: opacity 2s ease, color 2s ease-in-out; /* フェードイン */
+  opacity: 1;
+  /* 初期状態で表示 */
+  text-align: center;
+  /* 中央揃え */
+  transition: opacity 2s ease, color 2s ease-in-out;
+  /* フェードイン */
 
   @include mq("md") {
     font-size: rrem(40);
@@ -403,6 +418,7 @@
 /* ファーストビュー表示時のテキスト */
 #fv-typewriter-text.show-text {
   opacity: 1;
-  color: rgba(255, 255, 255, 1); /* 白文字にする */
+  color: rgba(255, 255, 255, 1);
+  /* 白文字にする */
   transition: opacity 2s ease, color 2s ease-in-out;
 }

@@ -1,54 +1,72 @@
 @use "../global" as *;
+
 //TOP-contactセクション
-.contact__inner {
-}
+.contact__inner {}
 
 .contact__wrap {
-  position: relative;
-  padding-top: rrem(142);
-  padding-bottom: rrem(122);
-  @include mq("md") {
-    padding-top: rrem(70);
-    padding-bottom: rrem(70);
-  }
-}
-.contact__wrap::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  border-radius: 12px;
-  opacity: 0.1;
-  background: $c-Dgray;
-  box-shadow: 0px 0px 24px 0px #000;
+    position: relative;
+    padding-top: rrem(142);
+    padding-bottom: rrem(122);
+
+    @include mq("md") {
+        padding-top: rrem(70);
+        padding-bottom: rrem(70);
+    }
 }
 
+.contact__wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 12px;
+    opacity: 0.1;
+    background: $c-Dgray;
+    box-shadow: 0px 0px 24px 0px #000;
+}
+
+.contact__wrap::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: $c-gradation;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .3s;
+    z-index: -1;
+    border-radius: 12px;
+}
 
 .contact__title-wrap {
-  text-align: center;
+    text-align: center;
 }
 
 .contact__title {
-  color: $c-white;
+    color: $c-white;
 }
 
 .contact__text {
-  color: $c-white;
-  text-align: center;
-  padding-top: rrem(52);
-  @include mq("md") {
-    padding-top: rrem(30);
-    font-size: rrem(15);
-  }
+    color: $c-white;
+    text-align: center;
+    padding-top: rrem(52);
+
+    @include mq("md") {
+        padding-top: rrem(30);
+        font-size: rrem(15);
+    }
 }
 
 .contact__btn-wrap {
-  text-align: center;
-  margin-top: rrem(50);
+    text-align: center;
+    margin-top: rrem(50);
 }
 
 
@@ -57,166 +75,177 @@
 ======================================================*/
 
 /* 背景とテキストの変化時のスタイル */
-.contact__wrap.active::before {
-  background: $c-gradation;
-  opacity: 1; // 透過なし
-  transition: background 0.5s ease, opacity 0.5s ease; /* ふわっと変わる */
+.contact__wrap.active::after {
+    background: $c-gradation;
+    opacity: 1; // 透過なし
+    transition: background 0.3s ease, opacity 0.3s ease;
+    /* ふわっと変わる */
 }
 
 /* 文字色の変化をスムーズに */
 .contact__wrap .contact__title,
 .contact__wrap .contact__text {
-  transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
 /* 文字色を$c-textに変える */
 .contact__wrap.active .contact__title,
 .contact__wrap.active .contact__text {
-  color: $c-text;
+    color: $c-text;
 }
 
 /* ボーダー色の変化をスムーズに */
 .contact__title {
-  transition: border-bottom-color 0.5s ease;
+    transition: border-bottom-color 0.3s ease;
 }
 
 /* ボーダー色を$c-textに変える */
 .contact__wrap.active .contact__title {
-  border-bottom-color: $c-text;
+    border-bottom-color: $c-text;
 }
 
 
 /* contactボタン ホバーアニメーション ボタン自体の変化
 ======================================================*/
 .contact-btn__wrap {
-  text-align: center;
-  margin-top: rrem(50);
+    text-align: center;
+    margin-top: rrem(50);
 }
 
 .contact-btn.btn-gradient {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  //line-height: 100px;
-  vertical-align: middle;
-  background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    //line-height: 100px;
+    vertical-align: middle;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.contact-btn__circle{
-  position: relative;//外側のグラデーション線の基準
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  //text-align: center;
-  //vertical-align: middle;
-  line-height: 100px;
-  background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+.contact-btn__circle {
+    position: relative; //外側のグラデーション線の基準
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    //text-align: center;
+    //vertical-align: middle;
+    line-height: 100px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* 初期で表示される矢印 */
 .btn-gradient__arrow,
 .contact-btn__arrow {
-  position: relative;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-image: url(../images/common/arrow-gradient.svg);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/common/arrow-gradient.svg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .btn-gradient__arrow:after,
 .contact-btn__arrow:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -21px;
-  width: 14px;
-  height: 14px;
-  background-image: url(../images/common/arrow-black.svg);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transform: translateX(-7px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/common/arrow-black.svg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ホバー時のアニメーション */
 .contact-btn__circle:hover {
-  transform: scale(1.2);
-  background-color: transparent;
+    transform: scale(1.2);
+    background-color: transparent;
 }
 
 .contact-btn__circle:hover .contact-btn__arrow {
-  animation: arrow-slide 0.5s ;
-  opacity: 1;
-  //transform: translateX(7px);
-  transition-delay: 0.2s;
+    animation: arrow-slide 0.3s;
+    opacity: 1;
+    //transform: translateX(7px);
+    transition-delay: 0.2s;
 }
 
 @keyframes arrow-slide {
-  0% {
-      opacity: 1;
-      transform: translateX(0);
-  }
-  50% {
-      opacity: 1;
-      transform: translateX(20px); /* 右に消える */
-  }
-  50.1% {
-      opacity: 0;
-      transform: translateX(-10px); /* 左に戻る */
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0); /* 左から現れる */
-  }
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(20px);
+        /* 右に消える */
+    }
+
+    50.1% {
+        opacity: 0;
+        transform: translateX(-10px);
+        /* 左に戻る */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* 左から現れる */
+    }
 }
 
 .contact-btn__circle:hover .contact-btn__arrow:after {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.2s;
-  left: 0;
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s;
+    left: 0;
 }
 
 /* SVGを使用したグレー線とグラデーション線の表示 */
 .contact-btn__circle .circle-border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg); /* 回転の起点を変更 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    /* 回転の起点を変更 */
 }
 
 /* 初期状態でグラデーション線を表示 */
 .contact-btn__circle .gradient-border {
-  stroke: url(#gradientSVG);
+    stroke: url(#gradientSVG);
 }
 
 /* 黒線のスタイル（初期状態では見えない） */
 .contact-btn__circle .black-border {
-  stroke-dasharray: 301.6; /* 円周の長さ */
-  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.5s ease; /* スピード */
+    stroke-dasharray: 301.6;
+    /* 円周の長さ */
+    stroke-dashoffset: 301.6;
+    /* 初期状態は線が見えない */
+    transition: stroke-dashoffset 0.3s ease;
+    /* スピード */
 }
 
 /* ホバー時も背景は透明、ボタンを拡大 */
 .contact-btn__circle:hover {
-  background-color: transparent;
-  transform: scale(1.2);
+    background-color: transparent;
+    transform: scale(1.2);
 }
 
 /* ホバー時に黒線が一周し、グラデーション線を非表示 */
 .contact-btn__circle:hover .black-border {
-  stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
 }
 
 /* グラデーション線を消す */
 .contact-btn__circle:hover .gradient-border {
-  stroke: none;
+    stroke: none;
 }

@@ -1,4 +1,5 @@
 @use "../global" as *;
+
 //ヘッダー
 .header {
   position: fixed;
@@ -11,7 +12,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-  transition: background-color 0.3s ease, transform 0.5s ease; //背景色と位置を0.3秒かけて変化
+  transition: .3s;
 }
 
 .header__inner,
@@ -27,11 +28,28 @@
   justify-content: space-between;
   align-items: center;
   max-width: rrem(1330);
+  position: relative;
+}
+
+.header__inner::before {
+  content: "";
+  display: inline-block;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(40, 41, 43, 1);
+  opacity: 0;
+  transition: .3s;
+  z-index: -1;
 }
 
 .header__logo {
   max-width: rrem(127);
   width: 100%;
+
   @include mq("md") {
     max-width: rrem(100);
   }
@@ -56,6 +74,14 @@
   position: relative;
 }
 
+.header.change-color .header__nav-item a {
+  color: #fff !important;
+}
+
+.header.change-color .header__nav-item--contact a {
+  color: #28292B !important;
+}
+
 .header__nav-item a::after {
   content: "";
   position: absolute;
@@ -64,7 +90,7 @@
   left: 0;
   height: 2px;
   background: $c-gradation;
-  transition: width 0.5s;
+  transition: width 0.3s;
 }
 
 .header__nav-item a:hover::after {
@@ -147,7 +173,6 @@
 
 
 .header__nav-item .dropdown__list {
-
   position: absolute;
   top: 100%;
   left: 0;
@@ -160,19 +185,22 @@
   border-radius: 0 0 rrem(36) rrem(36);
   z-index: 1;
   visibility: hidden;
-
   opacity: 0;
-  transition: visibility .3s,opacity .3s
+  transition: visibility .2s, opacity .5s;
+  pointer-events: none;
+}
 
+.header__nav-item.show-subnav .dropdown__list {
+  pointer-events: unset;
 }
 
 .header__nav-item .dropdown__item {
-  visibility: hidden;//隠しておく
+  visibility: hidden; //隠しておく
   opacity: 0;
-  transition: visibility .2s .2s,opacity .2s .2s;
+  transition: visibility .2s .2s, opacity .2s .2s;
 }
 
-.header__nav-item .dropdown__item + .dropdown__item {
+.header__nav-item .dropdown__item+.dropdown__item {
   gap: rrem(35);
 }
 
@@ -186,7 +214,7 @@
 
 .header.show-bg {
   background: $c-white;
-  box-shadow: 0 0 rrem(20) rgba(0,0,0,.06);
+  box-shadow: 0 0 rrem(20) rgba(0, 0, 0, .06);
   border-radius: rrem(36) rrem(36) 0 0;
 }
 
@@ -234,8 +262,8 @@
   width: 0%;
   left: 0;
   height: 2px;
-  background: $c-gradation;  // グラデーションの色
-  transition: width 0.5s;
+  background: $c-gradation; // グラデーションの色
+  transition: width 0.3s;
 }
 
 /* ホバー時に下線を表示 */
@@ -245,7 +273,7 @@
 
 /* ドロップダウンメニュー内のリンクには下線を付けないようにする */
 .dropdown__list a::after {
-  content: none;  // 下線を無効にする
+  content: none; // 下線を無効にする
 }
 
 /* ドロップダウンメニュー内の img をホバーしたときにスケールダウン */
@@ -261,17 +289,19 @@
 .header.slide-down {
   top: rrem(28); // 画面内にスライドダウン
   opacity: 1;
-  transition: top 1s ease;//下りてくる速さ＆
+  transition: .5s; //下りてくる速さ＆
 }
 
 /* ファーストビューを超えたらheader背景色が変わる */
 .header.change-color {
-  background-color: $c-text;
   top: 0;
   width: 100%;
   height: rrem(90);
 }
 
+.header.change-color .header__inner::before {
+  opacity: 1;
+}
 
 /* ドロップダウンメニューのアニメーション */
 /* 左から順番に表示される */

@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: bottom 1s ease, opacity 1s ease;
+  transition: bottom .5s ease, opacity .5s ease;
   opacity: 0;
 }
 
@@ -75,7 +75,6 @@
 /* loadingがフェードアウト後に消えるように設定 */
 .loading.fade-out {
   opacity: 0;
-  transition: opacity 1s ease;
-  display: none; /* 追加: 完全に非表示にする */
+  transition: opacity .3s ease;
 }
 

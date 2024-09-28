@@ -34,6 +34,7 @@
 .about__container {
   margin-top: rrem(70);
   display: flex;
+  align-items: flex-start;
   gap: rrem(24);
   @include mq("md") {
     margin-top: rrem(20);
@@ -42,6 +43,7 @@
 }
 
 .about__description {
+    width: 440px;
   @include mq("md") {
     order: 1;
   }
@@ -101,7 +103,7 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn--gray__text,
@@ -127,7 +129,7 @@
   vertical-align: middle;
   line-height: 64px;
   background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* 初期で表示される矢印 */
@@ -141,7 +143,7 @@
   background-image: url(../images/common/arrow-gray.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   //transform: translateX(0px);//試しに追加
 }
 
@@ -150,15 +152,15 @@
   content: "";
   position: absolute;
   top: 0;
-  left: -7px;
+  left: 0;
   width: 14px;
   height: 14px;
   background-image: url(../images/common/arrow-gradient.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: translateX(-7px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ホバー時のアニメーション */
@@ -169,7 +171,7 @@
 }
 
 .about-btn__circle:hover .about-btn__arrow {
-  animation: arrow-slide 0.5s ;
+  animation: arrow-slide 0.3s ;
   opacity: 1;
   //transform: translateX(7px);
   transition-delay: 0.2s;
@@ -220,7 +222,7 @@
 .about-btn__circle .gradient-border {
   stroke-dasharray: 301.6; /* 円周の長さ */
   stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.5s ease; /* スピード */
+  transition: stroke-dashoffset 0.3s ease; /* スピード */
 }
 
 /* ホバー時も背景は透明、ボタンを拡大 */
