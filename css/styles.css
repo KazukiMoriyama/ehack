@@ -2875,6 +2875,9 @@ select::-ms-expand {
 .mmovie-page .plan-table__head {
   padding-block: 0.25rem;
   max-width: 100%;
+  border-top: 1px solid rgb(245, 245, 245);
+  border-bottom: 1px solid rgb(245, 245, 245);
+  box-shadow: inset 0 0 0 4px #FFF;
 }
 
 .mmovie-page .plan-table__body {
@@ -2883,6 +2886,15 @@ select::-ms-expand {
   line-height: 1.75;
   letter-spacing: 0.6px;
   padding: 0.25rem 1.25rem;
+  border-bottom: 1px solid rgb(245, 245, 245);
+  box-shadow: inset 0 0 0 4px #FFF;
+}
+
+.mmovie-page .plan-table__note {
+  text-align: right;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 /* 表の真ん中だけ赤
@@ -2898,8 +2910,4 @@ select::-ms-expand {
 
 .mmovie-page .plan-table__head.plan-table__ehack {
   color: #28292B;
-}
-
-th, td {
-  border: dashed 1px #777;
 }/*# sourceMappingURL=styles.css.map */
