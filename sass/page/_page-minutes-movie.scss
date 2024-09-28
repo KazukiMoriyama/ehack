@@ -101,6 +101,9 @@
   font-weight: $bold;
   line-height: calc(48 / 30);
   letter-spacing: 2.4px;
+  @include mq("md") {
+    font-size: rrem(24);
+  }
 }
 
 .mmovie-page__process-list .cards-item__text {
@@ -121,6 +124,10 @@
   background-color: $c-text;
   padding-top: rrem(104);
   padding-bottom: rrem(104);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
 }
 
 
@@ -139,9 +146,11 @@
   text-align: center;
 }
 
-
 .mmovie-page__introduction-textBox {
   margin-top: rrem(174);
+  @include mq("md") {
+    margin-top: rrem(40);
+  }
 }
 
 .mmovie-page__introduction-text {
@@ -152,11 +161,17 @@
 }
 
 .mmovie-page__achievement {
-
+  margin-top: rrem(72);
+  @include mq("md") {
+    margin-top: rrem(40);
+  }
 }
 
 .mmovie-page__achievement-title {
-
+  font-size: rrem(22);
+  font-weight: $bold;
+  line-height: calc(35.2 / 22);
+  letter-spacing: 1.76px;
 }
 
 .mmovie-page__achievement-video {
@@ -167,69 +182,35 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//制作実績mock-up動画
-// .mmovie-page__achievement .video__container {
-//   position: relative;
-//   padding-top: 56.25%;
-//   height: 0;
-//   overflow: hidden;
-// }
-
-// .mmovie-page__achievement .video__container  {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
-
-
 .mmovie-page__achievement-title {
 
 }
+/* 制作実績mock-up動画
+======================================*/
 .mmovie-page__achievement-video {
   position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
 }
-.mmovie-page__achievement-video::after {
-  content: "";
+
+.mmovie-page__achievement-video img {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mmovie-page__achievement-video #ehack-video {
+  position: absolute;
+  top: 48.5%;
+  left: 49.7%;
   transform: translate(-50%, -50%);
-  background-image: url(../images/minutes-movie/mock-up@2x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 120%;
-  height: 120%;
-  z-index: -1;
-  background-position: bottom;
+  width: 89%;
+  height: 100%;
+  @include mq("md") {
+    width: 77%;
+  }
 }
