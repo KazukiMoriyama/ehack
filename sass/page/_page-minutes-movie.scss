@@ -217,6 +217,15 @@
 
 /* 下層--Minutes Movieページ plan セクション
 ======================================*/
+.mmovie-page__plan {
+  padding-top: rrem(120);
+  padding-bottom: rrem(69);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
 .mmovie-page__plan-description {
   margin-top: rrem(48);
   max-width: rrem(800);
@@ -225,6 +234,11 @@
   padding-top: rrem(42);
   padding-bottom: rrem(33);
   text-align: center;
+  @include mq("md") {
+    margin-top: rrem(20);
+    padding-top: rrem(20);
+    padding-bottom: rrem(20);
+  }
 }
 
 .mmovie-page .plan-description__subtitle {
@@ -240,6 +254,9 @@
   font-weight: $bold;
   line-height: calc(28.8 / 18);
   letter-spacing: 0.72px;
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
 }
 
 .mmovie-page  .plan-description__price {
@@ -249,11 +266,17 @@
   font-weight: $bold;
   line-height: calc(48 / 30);
   letter-spacing: 2.4px;
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
 }
 /* サポート内容
 ======================================*/
 .mmovie-page__plan-support {
   margin-top: rrem(32);
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
 }
 
 .mmovie-page  .plan-support__title {
@@ -272,6 +295,10 @@
   gap: rrem(8);
   justify-content: center;
   align-items: center;
+  @include mq("md") {
+    flex-direction: column;
+    max-width: rrem(300);
+  }
 }
 
 .mmovie-page  .plan-support__item {
@@ -284,6 +311,10 @@
   padding: rrem(8) rrem(32);
   display: inline-block;
   border-radius: 99px;
+  @include mq("md") {
+    max-width: rrem(270);
+    width: 100%;
+  }
 }
 
 /* プラン比較表
@@ -294,26 +325,41 @@
   margin-top: rrem(32);
   overflow-x: scroll;
   text-align: center;
+  @include mq("md") {
+    max-width: rrem(600);
+  }
 }
 
 .mmovie-page  .plan-table {
   border-collapse: collapse;
   width: rrem(800);
+  @include mq("md") {
+    max-width: rrem(600);
+  }
 
 }
 
 .mmovie-page .plan-table__head:first-child {
   width: rrem(200);
+  @include mq("md") {
+    width: rrem(100);
+  }
 }
 .mmovie-page .plan-table__head:nth-child(2) {
   width: rrem(360);
+  @include mq("md") {
+    width: rrem(200);
+  }
 }
 .mmovie-page .plan-table__head:nth-child(3) {
   width: rrem(240);
+  @include mq("md") {
+    width: rrem(200);
+  }
 }
 
 .mmovie-page .plan-table__head {
-  padding-block: rrem(4);
+  padding-block: rrem(8);
   max-width: 100%;
   border-top: 1px solid rgb(245, 245, 245);
   border-bottom: 1px solid rgb(245, 245, 245);
@@ -333,18 +379,13 @@
   font-weight: $medium;
   line-height: calc(26.25 / 15);
   letter-spacing: 0.6px;
-  padding: rrem(4) rrem(20);
+  padding: rrem(8) rrem(20);
   border-bottom: 1px solid rgb(245, 245, 245);
   box-shadow: inset 0 0 0 4px $c-white;
+  @include mq("md") {
+    padding: rrem(8) rrem(8);
+  }
 }
-
-.mmovie-page .plan-table__note {
-  text-align: right;
-  font-size: 11px;
-  font-weight: $medium;
-  line-height: calc(13.75 / 11);
-}
-
 
 /* 表の真ん中だけ赤
 ======================================*/
@@ -360,4 +401,97 @@
 .mmovie-page .plan-table__head.plan-table__ehack {
   color: $c-text;
 }
+
+.mmovie-page .plan-table__note {
+  text-align: right;
+  font-size: 11px;
+  font-weight: $medium;
+  line-height: calc(13.75 / 11);
+  margin-top: rrem(8);
+}
+
+
+/* 下層--Minutes Movieページ flow セクション
+======================================*/
+// .flow-item__image {
+//   aspect-ratio: 56 / 79;
+//   width: rrem(56);
+// }
+
+.mmovie-page__flow {
+  padding-top: rrem(80);
+  padding-bottom: rrem(147);
+  @include mq("md") {
+    padding-top: rrem(40);
+    padding-bottom: rrem(60);
+  }
+}
+
+.mmovie-page__flow-list {
+  height: rrem(200);
+  @include mq("md") {
+    max-width: rrem(300);
+    margin-inline: auto;
+    //height: auto;
+  }
+}
+
+.mmovie-page {
+
+}
+
+.mmovie-page.flow-list {
+  margin-top: rrem(48);
+  display: grid;
+  //grid-template-columns: repeat(auto-fit, minmax(rrem(160), 1fr)); // 画像の数に応じて列の数を調整
+  grid-template-columns: repeat(6, 1fr);
+  gap: rrem(8);
+  height: rrem(200);
+  @include mq("md") {
+    grid-template-columns: repeat(1, 1fr);
+    gap: rrem(16);
+  }
+}
+.mmovie-page.flow-list + .mmovie-page.flow-list {
+  margin-top: rrem(16);
+}
+
+.mmovie-page .flow-item {
+  display: grid;
+  place-items: center;
+  gap: rrem(18);
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  background: linear-gradient(to bottom, $c-white 13px, $c-BgGray 13px);
+}
+
+.flow-item__number {
+  font-family: $en-font;
+  font-size: rrem(36);
+  font-weight: $bold;
+  line-height: calc(36 / 36);
+  letter-spacing: 2.88px;
+}
+
+.mmovie-page .flow-item__image {
+  //margin-top: rrem(18);
+  // overflow: hidden;
+  //  padding-top: 56.25%;
+  //  position: relative;
+}
+
+.mmovie-page .flow-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mmovie-page .flow-item__text {
+  //margin-top: rrem(18);
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+}
+
 
