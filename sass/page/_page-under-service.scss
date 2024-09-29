@@ -119,14 +119,12 @@
   
 /* 下層serviceページ(共通) セクションタイトル
 ======================================*/
-// .mmovie-page__setion-titleBox,
-// .mmovie-page__section-subtitle,
 .under-service__section-titlebox,
 .under-service__section-subtitle {
   text-align: center;
 }
 
-// .mmovie-page__section-subtitle,
+
 .under-service__section-subtitle {
     font-size: rrem(22);
     font-weight: $bold;
@@ -137,38 +135,60 @@
       font-size: rrem(18);
     }
 }
-//   .mmovie-page__section-subtitle::after,
-  .under-service__section-subtitle::after {
-    content: "";
-    position: absolute;
-    bottom: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 1px;
-    background-color: $c-Dgray;
+
+.under-service__section-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: $c-Dgray;
+}
+
+
+.under-service__section-title {
+  font-family: $en-font;
+  font-size: rrem(44);
+  font-weight: $bold;
+  line-height: calc(66 / 44);
+  letter-spacing: 3.52px;
+  margin-top: rrem(32);
+  @include mq("md") {
+    font-size: rrem(30);
   }
-  
-//   .mmovie-page__section-title,
-  .under-service__section-title {
-    font-family: $en-font;
-    font-size: rrem(44);
-    font-weight: $bold;
-    line-height: calc(66 / 44);
-    letter-spacing: 3.52px;
-    margin-top: rrem(32);
-    @include mq("md") {
-      font-size: rrem(30);
-    }
+}
+
+/* 装飾の縦線 */
+.under-service__section-title.vertical-line {
+  position: relative;
+}
+.under-service__section-title.vertical-line::after {
+  content: "";
+  position: absolute;
+  top: rrem(138);
+  left: 45.5%;
+  width: 94px;
+  height: 1px;
+  background-color: $c-Dgray;
+  transform: rotate(90deg);
+  @include mq("md") {
+    width: 20px;
+    top: rrem(60);
+    left: 45%;
   }
-//   .mmovie-page__section-title span,
-  .under-service__section-title span {
-    font-family: $base-font;
-    font-size: rrem(22);
-    font-weight: $bold;
-    line-height: calc(33 / 22);
-    letter-spacing: 1.76px;
-  }
+}
+
+
+
+.under-service__section-title span {
+  font-family: $base-font;
+  font-size: rrem(22);
+  font-weight: $bold;
+  line-height: calc(33 / 22);
+  letter-spacing: 1.76px;
+}
 /* 下層serviceページ(共通) qa よくある質問セクション
 ======================================*/
 .under-service__qa {

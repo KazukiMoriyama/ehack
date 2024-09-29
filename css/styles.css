@@ -3082,6 +3082,29 @@ select::-ms-expand {
   }
 }
 
+/* 装飾の縦線 */
+.under-service__section-title.vertical-line {
+  position: relative;
+}
+
+.under-service__section-title.vertical-line::after {
+  content: "";
+  position: absolute;
+  top: 8.625rem;
+  left: 45.5%;
+  width: 94px;
+  height: 1px;
+  background-color: #5f5f5f;
+  transform: rotate(90deg);
+}
+@media screen and (max-width: 767px) {
+  .under-service__section-title.vertical-line::after {
+    width: 20px;
+    top: 3.75rem;
+    left: 45%;
+  }
+}
+
 .under-service__section-title span {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1.375rem;
@@ -3185,4 +3208,313 @@ select::-ms-expand {
   font-weight: 500;
   line-height: 1.75;
   letter-spacing: 0.72px;
+}
+
+/* E-Cycleページ fv
+======================================*/
+.ecycle-page__fv-box {
+  gap: 2.1875rem;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__fv-box {
+    gap: 0.625rem;
+  }
+}
+
+.ecycle-page-fv__subtitle {
+  margin-top: 2.1875rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page-fv__subtitle {
+    margin-top: initial;
+  }
+}
+
+/* E-Cycleページ sns セクション
+======================================*/
+.ecycle-page__sns {
+  padding-top: 10.1rem;
+  padding-bottom: 6.625rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.ecycle-page__sns-wrap {
+  text-align: center;
+}
+
+.ecycle-page__sns-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 3.52px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-title {
+    font-size: 1.75rem;
+    line-height: 1.6;
+    letter-spacing: 2.4px;
+  }
+}
+
+.ecycle-page__sns-text {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-text {
+    margin-top: 1.25rem;
+  }
+}
+
+.ecycle-page__sns-list {
+  margin-top: 5.5rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list {
+    margin-top: 3.125rem;
+  }
+}
+
+.ecycle-page__sns-list .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.25rem;
+  place-items: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list .cards {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 18.75rem;
+    margin-inline: auto;
+  }
+}
+
+.ecycle-page__sns-list .cards-item {
+  display: grid;
+  place-content: center;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list .cards-item {
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list .cards-item + .cards-item {
+    margin-top: 2.5rem;
+  }
+}
+
+.ecycle-page__sns-list .cards-item__image {
+  aspect-ratio: 320/267;
+  max-width: 20rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list .cards-item__image {
+    width: 15.625rem;
+  }
+}
+
+.ecycle-page__sns-list .cards-item__bottom {
+  margin-top: 2.4rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list .cards-item__bottom {
+    margin-top: 0.3125rem;
+  }
+}
+
+.ecycle-page__sns-list .cards-item__title {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list .cards-item__title {
+    font-size: 1.5rem;
+  }
+}
+
+.ecycle-page__sns-list .cards-item__text {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  margin-top: 0.8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__sns-list .cards-item__text {
+    margin-top: 0.625rem;
+    padding-left: initial;
+    padding-right: initial;
+  }
+}
+
+/* E-Cycleページ 動画 quick セクション
+======================================*/
+.ecycle-page__quick {
+  background-color: #28292B;
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__quick {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+/* E-Cycleページ features セクション
+======================================*/
+.ecycle-page__features {
+  padding-top: 10.5rem;
+  padding-bottom: 10.6875rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.ecycle-page__features-textBox {
+  margin-top: 10.875rem;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-textBox {
+    margin-top: 2.5rem;
+  }
+}
+
+.ecycle-page__features-text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+}
+
+.ecycle-page__features-diagram01 {
+  aspect-ratio: 740/740;
+  max-width: 46.25rem;
+  margin-inline: auto;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-diagram01 {
+    margin-top: 1.25rem;
+    width: 18.75rem;
+  }
+}
+
+/* E-Cycleページ features セクション 図表02
+======================================*/
+.ecycle-page__features-description {
+  display: flex;
+  align-items: center;
+  gap: 3.8125rem;
+  margin-top: 3.5rem;
+  max-width: 55.625rem;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-description {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-textBox {
+    text-align: center;
+  }
+}
+
+.ecycle-page__feature-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-title {
+    font-size: 1.375rem;
+  }
+}
+
+.ecycle-page__feature-text {
+  margin-top: 2.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-text {
+    margin-top: 1.25rem;
+  }
+}
+
+.ecycle-page__feature-diagram02 {
+  aspect-ratio: 400/320;
+  max-width: 25rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-diagram02 {
+    width: 15.625rem;
+  }
+}
+
+/* E-Cycleページ features カードレイアウト
+======================================*/
+.ecycle-page__features-list {
+  margin-top: 6rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list {
+    margin-top: 2.5rem;
+  }
+}
+
+.ecycle-page__features-list .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6.75rem;
+  row-gap: 1.5rem;
+}
+
+.ecycle-page__features-list .cards-item__image {
+  aspect-ratio: 320/267;
+  max-width: 20rem;
+}
+
+.ecycle-page__features-list .cards-item__box {
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.ecycle-page__features-list .cards-item__box-list {
+  list-style: disc;
+  padding-left: 0.625rem;
+}
+
+.ecycle-page__features-list .cards-item__box-image {
+  aspect-ratio: 176/136;
+  max-width: 11rem;
 }/*# sourceMappingURL=styles.css.map */
