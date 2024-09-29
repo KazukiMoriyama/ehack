@@ -345,6 +345,9 @@
 
 .ecycle-page__plan-wrap {
   margin-top: rrem(64);
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
 }
 
 .ecycle-page__plan-subtitle {
@@ -354,6 +357,9 @@
   line-height: calc(35.2 / 22);
   letter-spacing: 1.76px;
   position: relative;
+  @include mq("md") {
+    font-size: rrem(16);
+  }
 }
 .ecycle-page__plan-subtitle::after {
   content: "";
@@ -364,8 +370,10 @@
   width: rrem(420);
   height: 1px;
   background: #00CF35;
+  @include mq("md") {
+    width: rrem(320);
+  }
 }
-
 
 .ecycle-page__plan-details {
   margin-top: rrem(64);
@@ -373,12 +381,20 @@
   column-gap: rrem(40);
   @include mq("md") {
     margin-top: rrem(40);
+    flex-direction: column;
+    row-gap: rrem(20);
+    column-gap: initial;
+    max-width: rrem(320);
+    margin-inline: auto;
   }
 }
 
 .ecycle-page .plan-details__cost {
   width: 50%;
   text-align: center;
+  @include mq("md") {
+    width: 100%;
+  }
 }
 
 .ecycle-page .plan-details__cost-title.bg-green {
@@ -396,6 +412,9 @@
   line-height: calc(28.8 / 18);
   letter-spacing: 0.72px;
   padding-block: rrem(10);
+  @include mq("md") {
+    padding-block: rrem(5);
+  }
 }
 
 .ecycle-page .plan-details__cost-item {
@@ -404,10 +423,17 @@
   font-weight: $bold;
   line-height: calc(28.8 / 18);
   letter-spacing: 0.72px;
+  @include mq("md") {
+    margin-top: rrem(10);
+    font-size: rrem(16);
+  }
 }
 
 .ecycle-page .plan-details__cost-item .text-highlight {
   font-size: rrem(30);
+  @include mq("md") {
+    font-size: rrem(24);
+  }
 }
 
 .ecycle-page .plan-details__cost-item + .plan-details__cost-item {
@@ -418,6 +444,10 @@
   margin-top: rrem(40);
   padding: rrem(38) rrem(56) rrem(43);
   background-color: $c-BgGray;
+  @include mq("md") {
+    margin-top: rrem(20);
+    padding: rrem(18);
+  }
 }
 
 .ecycle-page .plan-calculation__title-box {
@@ -445,14 +475,22 @@
   font-weight: $bold;
   line-height: calc(18 / 18);
   letter-spacing: 0.72px;
+  @include mq("md") {
+    width: 100%;
+  }
 }
 
 .ecycle-page .plan-calculation__wrap {
   margin-top: rrem(23);
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: rrem(44);
-  
+  @include mq("md") {
+    flex-direction: column;
+    margin-top: rrem(20);
+    gap: rrem(20);
+  }
 }
 
 .ecycle-page .plan-calculation__textbox {
@@ -460,15 +498,20 @@
 }
 
 .ecycle-page .plan-calculation__text {
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+}
 
+.ecycle-page .plan-calculation__text + .plan-calculation__text  {
+  margin-top: rrem(9);
 }
 
 .ecycle-page .plan-calculation__image {
   aspect-ratio: 400 / 120;
   max-width: rrem(400);
 }
-
-
 
 
 

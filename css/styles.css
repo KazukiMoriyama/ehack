@@ -3596,6 +3596,11 @@ select::-ms-expand {
 .ecycle-page__plan-wrap {
   margin-top: 4rem;
 }
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-wrap {
+    margin-top: 1.25rem;
+  }
+}
 
 .ecycle-page__plan-subtitle {
   text-align: center;
@@ -3604,6 +3609,11 @@ select::-ms-expand {
   line-height: 1.6;
   letter-spacing: 1.76px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-subtitle {
+    font-size: 1rem;
+  }
 }
 
 .ecycle-page__plan-subtitle::after {
@@ -3616,6 +3626,11 @@ select::-ms-expand {
   height: 1px;
   background: #00CF35;
 }
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-subtitle::after {
+    width: 20rem;
+  }
+}
 
 .ecycle-page__plan-details {
   margin-top: 4rem;
@@ -3625,12 +3640,22 @@ select::-ms-expand {
 @media screen and (max-width: 767px) {
   .ecycle-page__plan-details {
     margin-top: 2.5rem;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    column-gap: initial;
+    max-width: 20rem;
+    margin-inline: auto;
   }
 }
 
 .ecycle-page .plan-details__cost {
   width: 50%;
   text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost {
+    width: 100%;
+  }
 }
 
 .ecycle-page .plan-details__cost-title.bg-green {
@@ -3649,6 +3674,11 @@ select::-ms-expand {
   letter-spacing: 0.72px;
   padding-block: 0.625rem;
 }
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost-title {
+    padding-block: 0.3125rem;
+  }
+}
 
 .ecycle-page .plan-details__cost-item {
   margin-top: 1.5rem;
@@ -3657,9 +3687,20 @@ select::-ms-expand {
   line-height: 1.6;
   letter-spacing: 0.72px;
 }
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost-item {
+    margin-top: 0.625rem;
+    font-size: 1rem;
+  }
+}
 
 .ecycle-page .plan-details__cost-item .text-highlight {
   font-size: 1.875rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost-item .text-highlight {
+    font-size: 1.5rem;
+  }
 }
 
 .ecycle-page .plan-details__cost-item + .plan-details__cost-item {
@@ -3670,6 +3711,12 @@ select::-ms-expand {
   margin-top: 2.5rem;
   padding: 2.375rem 3.5rem 2.6875rem;
   background-color: #f5f5f5;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-calculation {
+    margin-top: 1.25rem;
+    padding: 1.125rem;
+  }
 }
 
 .ecycle-page .plan-calculation__title-box {
@@ -3698,12 +3745,36 @@ select::-ms-expand {
   line-height: 1;
   letter-spacing: 0.72px;
 }
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-calculation__description {
+    width: 100%;
+  }
+}
 
 .ecycle-page .plan-calculation__wrap {
   margin-top: 1.4375rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 2.75rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-calculation__wrap {
+    flex-direction: column;
+    margin-top: 1.25rem;
+    gap: 1.25rem;
+  }
+}
+
+.ecycle-page .plan-calculation__text {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.ecycle-page .plan-calculation__text + .plan-calculation__text {
+  margin-top: 0.5625rem;
 }
 
 .ecycle-page .plan-calculation__image {
