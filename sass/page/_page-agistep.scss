@@ -247,200 +247,83 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-/* E-Cycleページ features セクション
+/* AGI-Step feature セクション
 ======================================*/
-.ecycle-page__features {
-  padding-top: rrem(158);
-  padding-bottom: rrem(171);
+.agistep-page__feature-list {
+  margin-top: rrem(166);
+  max-width: rrem(760);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
   @include mq("md") {
-    padding-top: rrem(80);
-    padding-bottom: rrem(60);
-  }
-}
-
-.ecycle-page__features-textBox {
-  margin-top: rrem(150);
-  text-align: center;
-  @include mq("md") {
+    flex-direction: column;
+    align-items: center;
     margin-top: rrem(40);
   }
 }
 
-.ecycle-page__features-text {
-  font-size: rrem(15);
-  font-weight: $medium;
-  line-height: calc(26.25 / 15);
-  letter-spacing: 0.6px;
-}
-
-.ecycle-page__features-diagram01 {
-  aspect-ratio: 740 / 740;
-  max-width: rrem(740);
-  margin-inline: auto;
-  margin-top: rrem(44);
+.agistep-page__feature-image {
+  aspect-ratio: 288 / 416;
+  width: rrem(288);
   @include mq("md") {
-    margin-top: rrem(20);
-    width: rrem(300);
+    width: rrem(250);
   }
 }
 
-/* E-Cycleページ features セクション 図表02
-======================================*/
-.ecycle-page__features-description {
+.agistep-page__description {
+  margin-top: rrem(30);
   display: flex;
   align-items: center;
-  gap: rrem(61);
-  margin-top: rrem(50);
-  max-width: rrem(890);
+  gap: rrem(15);
+  max-width: rrem(810);
   margin-inline: auto;
   @include mq("md") {
     flex-direction: column;
-    gap: rrem(20);
-}
-}
-
-.ecycle-page__feature-textBox {
-  @include mq("md") {
-    text-align: center;
   }
+  
 }
 
-.ecycle-page__feature-title {
+.agistep-page__discription-wrap {
+
+}
+
+.agistep-page__description-title {
+  color: $c-white;
   font-size: rrem(30);
   font-weight: $bold;
   line-height: calc(48 / 30);
   letter-spacing: 2.4px;
-  @include mq("md") {
-    font-size: rrem(22);
-  }
 }
 
-.ecycle-page__feature-text {
-  margin-top: rrem(40);
+.agistep-page__description-text {
+  color: $c-white;
   font-size: rrem(15);
   font-weight: $medium;
   line-height: calc(26.25 / 15);
   letter-spacing: 0.6px;
-  @include mq("md") {
-    margin-top: rrem(20);
-  }
 }
 
-.ecycle-page__feature-diagram02 {
-  aspect-ratio: 400 / 320;
-  max-width: rrem(400);
+.agistep-page__description-image {
+  aspect-ratio: 384 / 320;
+  width: rrem(384);
+  flex-shrink: 0;
   @include mq("md") {
     width: rrem(250);
   }
+
 }
 
-/* E-Cycleページ features カードレイアウト
-======================================*/
-.ecycle-page__features-list {
-  margin-top: rrem(105);
-  @include mq("md") {
-    margin-top: rrem(60);
-  }
-}
 
-.ecycle-page__features-list .cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: rrem(108);
-  row-gap: rrem(24);
-  display: grid;
-  place-content: center;
-  @include mq("md") {
-    grid-template-columns: repeat(1, 1fr);
-    width: rrem(320);
-    margin-inline: auto;
-  }
-}
 
-.ecycle-page__features-list .cards-item {
-  width: rrem(440);
-  height: rrem(574);
-  display: grid;
-  place-content: center;
-  place-items: center;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  @include mq("md") {
-    width: rrem(320);
-    height: rrem(320);
-  }
-}
 
-.ecycle-page__features-list .cards-item__image {
-  aspect-ratio: 320 / 267;
-  max-width: rrem(320);
-  @include mq("md") {
-    width: rrem(250);
-  }
-}
 
-.ecycle-page__features-list .cards-item__bottom {
-  //margin-top: rrem(18);
-}
 
-.ecycle-page__features-list .cards-item__title {
-  font-size: rrem(30);
-  font-weight: $bold;
-  line-height: calc(48 / 30);
-  letter-spacing: 2.4px;
-  text-align: center;
-  
-}
 
-.ecycle-page__features-list .cards-item__box {
-  display: flex;
-  column-gap: rrem(20);
-  margin-top: rrem(25);
-  @include mq("md") {
-    column-gap: rrem(5);
-    margin-top: rrem(10);
-  }
-}
 
-.ecycle-page__features-list .cards-item__box-list {
-  list-style: disc;
-  padding-left: rrem(30);
-}
 
-.ecycle-page__features-list .cards-item__box-list.second-list {
-  margin-top: rrem(32);
-  @include mq("md") {
-    margin-top: rrem(10);
-  }
-}
 
-.ecycle-page__features-list .cards-item__box-item {
-  
-}
 
-.ecycle-page__features-list .cards-item__box-image {
-  aspect-ratio: 176 / 136;
-  max-width: rrem(176);
-}
 
-/* E-Cycleページ results 制作実績
-======================================*/
-
-/* （仮） 画像 */
-.ecycle-page__results-slider {
-  margin-inline: auto;
-  aspect-ratio: 840 / 420;
-  width: rrem(840);
-}
 
 
 
