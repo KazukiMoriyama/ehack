@@ -338,7 +338,12 @@
   align-items: center;
   opacity: 1;
   transition: .3s;
+
   /* ふわっとフェードアウト */
+  @include mq("md") {
+    height: 100vh;
+    height: 100svh;
+  }
 }
 
 /* タイプライター風テキスト */
