@@ -143,6 +143,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 ul,
 ol,
@@ -3060,7 +3061,7 @@ select::-ms-expand {
 .under-service__section-subtitle::after {
   content: "";
   position: absolute;
-  bottom: -16px;
+  bottom: -7px;
   left: 50%;
   transform: translateX(-50%);
   width: 40px;
@@ -3074,7 +3075,7 @@ select::-ms-expand {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 3.52px;
-  margin-top: 2rem;
+  margin-top: 0.9375rem;
 }
 @media screen and (max-width: 767px) {
   .under-service__section-title {
@@ -3371,7 +3372,7 @@ select::-ms-expand {
 .ecycle-page__quick {
   background-color: #28292B;
   padding-top: 6.5rem;
-  padding-bottom: 6.5rem;
+  padding-bottom: 5rem;
 }
 @media screen and (max-width: 767px) {
   .ecycle-page__quick {
@@ -3383,7 +3384,7 @@ select::-ms-expand {
 /* E-Cycleページ features セクション
 ======================================*/
 .ecycle-page__features {
-  padding-top: 10.5rem;
+  padding-top: 9.875rem;
   padding-bottom: 10.6875rem;
 }
 @media screen and (max-width: 767px) {
@@ -3394,7 +3395,7 @@ select::-ms-expand {
 }
 
 .ecycle-page__features-textBox {
-  margin-top: 10.875rem;
+  margin-top: 9.375rem;
   text-align: center;
 }
 @media screen and (max-width: 767px) {
@@ -3414,7 +3415,7 @@ select::-ms-expand {
   aspect-ratio: 740/740;
   max-width: 46.25rem;
   margin-inline: auto;
-  margin-top: 3rem;
+  margin-top: 2.75rem;
 }
 @media screen and (max-width: 767px) {
   .ecycle-page__features-diagram01 {
@@ -3429,7 +3430,7 @@ select::-ms-expand {
   display: flex;
   align-items: center;
   gap: 3.8125rem;
-  margin-top: 3.5rem;
+  margin-top: 3.125rem;
   max-width: 55.625rem;
   margin-inline: auto;
 }
@@ -3484,11 +3485,11 @@ select::-ms-expand {
 /* E-Cycleページ features カードレイアウト
 ======================================*/
 .ecycle-page__features-list {
-  margin-top: 6rem;
+  margin-top: 6.5625rem;
 }
 @media screen and (max-width: 767px) {
   .ecycle-page__features-list {
-    margin-top: 2.5rem;
+    margin-top: 3.75rem;
   }
 }
 
@@ -3497,21 +3498,75 @@ select::-ms-expand {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 6.75rem;
   row-gap: 1.5rem;
+  display: grid;
+  place-content: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards {
+    grid-template-columns: repeat(1, 1fr);
+    width: 20rem;
+    margin-inline: auto;
+  }
+}
+
+.ecycle-page__features-list .cards-item {
+  width: 27.5rem;
+  height: 35.875rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item {
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 .ecycle-page__features-list .cards-item__image {
   aspect-ratio: 320/267;
   max-width: 20rem;
 }
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item__image {
+    width: 15.625rem;
+  }
+}
+
+.ecycle-page__features-list .cards-item__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+  text-align: center;
+}
 
 .ecycle-page__features-list .cards-item__box {
   display: flex;
   column-gap: 1.25rem;
+  margin-top: 1.5625rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item__box {
+    column-gap: 0.3125rem;
+    margin-top: 0.625rem;
+  }
 }
 
 .ecycle-page__features-list .cards-item__box-list {
   list-style: disc;
-  padding-left: 0.625rem;
+  padding-left: 1.875rem;
+}
+
+.ecycle-page__features-list .cards-item__box-list.second-list {
+  margin-top: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item__box-list.second-list {
+    margin-top: 0.625rem;
+  }
 }
 
 .ecycle-page__features-list .cards-item__box-image {

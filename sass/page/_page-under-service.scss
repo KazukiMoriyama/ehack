@@ -139,7 +139,7 @@
 .under-service__section-subtitle::after {
   content: "";
   position: absolute;
-  bottom: -16px;
+  bottom: -7px;
   left: 50%;
   transform: translateX(-50%);
   width: 40px;
@@ -154,7 +154,7 @@
   font-weight: $bold;
   line-height: calc(66 / 44);
   letter-spacing: 3.52px;
-  margin-top: rrem(32);
+  margin-top: rrem(15);
   @include mq("md") {
     font-size: rrem(30);
   }
