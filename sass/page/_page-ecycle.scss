@@ -326,6 +326,13 @@
 /* E-Cycleページ results 制作実績
 ======================================*/
 
+/* （仮） 画像 */
+.ecycle-page__results-slider {
+  margin-inline: auto;
+  aspect-ratio: 840 / 420;
+  width: rrem(840);
+}
+
 
 
 /* E-Cycleページ plan プラン

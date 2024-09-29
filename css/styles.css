@@ -2,6 +2,18 @@
 /* リキッドレイアウト対応のための設定 */
 body {
   color: #28292B;
+  background: rgb(40, 41, 43);
+  transition: 1s;
+  color: #fff;
+}
+
+body.bg-w {
+  background: rgba(40, 41, 43, 0);
+  color: #000;
+}
+
+body.top_body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -44,7 +56,7 @@ img {
 /* aタグのスタイルリセット*/
 a {
   text-decoration: none;
-  transition: opacity, 0.5s 0s ease;
+  transition: opacity, 0.3s 0s ease;
 }
 
 a:hover {
@@ -73,7 +85,8 @@ a[href^="tel:"] {
 }
 
 /* 横スクロール防止 */
-html, body {
+html,
+body {
   overflow-x: clip;
 }
 
@@ -87,14 +100,6 @@ html, body {
 }
 
 /* ハンバーガーメニュー開いているとき、背景固定 */
-@media screen and (max-width: 767px) {
-  body.js-fixed {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-  }
-}
-
 /* ▼を非表示にする（detailsとsummaryタグ） */
 summary {
   display: block;
@@ -357,12 +362,34 @@ select::-ms-expand {
   right: 0;
 }
 
+.fadein_overflow {
+  overflow: hidden;
+  display: block;
+}
+
+.fadein-action {
+  display: block;
+  transform: translate(0, 100%);
+  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); /* 最初は速く、終わりにかけて遅くなる */
+}
+
+.fadein-action.open {
+  transform: translate(0, 0);
+}
+
 .fv {
   width: 100%;
   height: 100vh;
   padding: 1.75rem 1.75rem 3.125rem 1.75rem;
   box-sizing: border-box;
   background-color: #28292B;
+}
+@media screen and (max-width: 767px) {
+  .fv {
+    padding: 1.75rem 0.625rem 1.75rem;
+    height: 100vh;
+    height: 100svh;
+  }
 }
 
 .fv__inner {
@@ -387,7 +414,11 @@ select::-ms-expand {
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-  transition: background-color 0.3s ease, transform 0.5s ease;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    height: auto;
+  }
 }
 
 .header__inner,
@@ -403,14 +434,44 @@ select::-ms-expand {
   justify-content: space-between;
   align-items: center;
   max-width: 83.125rem;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .header__inner {
+    padding: 1.25rem 1.25rem;
+    transition: 0.3s;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header.change-color .header__inner {
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+.header__inner::before {
+  content: "";
+  display: inline-block;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(40, 41, 43);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
 }
 
 .header__logo {
   max-width: 7.9375rem;
+  transition: 0.3s;
   width: 100%;
 }
+
 @media screen and (max-width: 767px) {
-  .header__logo {
+  .change-color .header__logo {
     max-width: 6.25rem;
   }
 }
@@ -432,6 +493,14 @@ select::-ms-expand {
   place-items: center;
   margin-block: auto;
   position: relative;
+}
+
+.header.change-color .header__nav-item a {
+  color: #fff !important;
+}
+
+.header.change-color .header__nav-item--contact a {
+  color: #28292B !important;
 }
 
 .header__nav-item a::after {
@@ -528,7 +597,12 @@ select::-ms-expand {
   z-index: 1;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.3s, opacity 0.3s;
+  transition: visibility 0.2s, opacity 0.5s;
+  pointer-events: none;
+}
+
+.header__nav-item.show-subnav .dropdown__list {
+  pointer-events: unset;
 }
 
 .header__nav-item .dropdown__item {
@@ -543,7 +617,7 @@ select::-ms-expand {
 
 /* ヘッダー背景色変更 JSで制御中 */
 .header {
-  transition: background-color 0.3s ease;
+  border-radius: 2.25rem 2.25rem 0 0;
 }
 
 .header.show-bg {
@@ -608,7 +682,7 @@ select::-ms-expand {
 
 /* ドロップダウンメニュー内の img をホバーしたときにスケールダウン */
 .header__nav-item .dropdown__item img {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .header__nav-item .dropdown__item img:hover {
@@ -619,15 +693,28 @@ select::-ms-expand {
 .header.slide-down {
   top: 1.75rem;
   opacity: 1;
-  transition: top 1s ease;
+  transition: 0.5s;
+}
+@media screen and (max-width: 767px) {
+  .header.slide-down {
+    top: 0;
+  }
 }
 
 /* ファーストビューを超えたらheader背景色が変わる */
 .header.change-color {
-  background-color: #28292B;
   top: 0;
   width: 100%;
   height: 5.625rem;
+}
+@media screen and (max-width: 767px) {
+  .header.change-color {
+    height: auto;
+  }
+}
+
+.header.change-color .header__inner::before {
+  opacity: 1;
 }
 
 /* ドロップダウンメニューのアニメーション */
@@ -656,18 +743,27 @@ select::-ms-expand {
 ＝＝＝＝＝＝＝*/
 /* ローディング画面全体 */
 .loading {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background: #28292B; /* ローディング背景は黒 */
+  background: #28292B;
+  /* ローディング背景は黒 */
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 1000; /* 最前面 */
+  z-index: 1000;
+  /* 最前面 */
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity 2s ease; /* ふわっとフェードアウト */
+  transition: 0.3s;
+  /* ふわっとフェードアウト */
+}
+@media screen and (max-width: 767px) {
+  .loading {
+    height: 100vh;
+    height: 100svh;
+  }
 }
 
 /* タイプライター風テキスト */
@@ -676,30 +772,39 @@ select::-ms-expand {
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 6.4px;
-  color: #28292B; /* 最初は黒文字 */
-  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff; /* 白い枠線 */
+  color: #28292B;
+  /* 最初は黒文字 */
+  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
+  /* 白い枠線 */
   opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%; /* 幅を広げて改行を防ぐ */
-  transition: color 2s ease-in-out, text-shadow 2s ease-in-out; /* 滑らかに色を変える */
+  width: 100%;
+  /* 幅を広げて改行を防ぐ */
+  transition: color 2s ease-in-out, text-shadow 2s ease-in-out;
+  /* 滑らかに色を変える */
 }
 @media screen and (max-width: 767px) {
   .loading__text {
-    font-size: 2.5rem; /* モバイル対応時に小さくする */
+    font-size: 2.5rem;
+    /* モバイル対応時に小さくする */
     width: 100%;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 1.3125rem;
+    padding-right: 0;
+    text-align: left;
+    height: 7.5rem;
   }
 }
 
 /* 黒文字から白文字へ変わるアニメーション */
 .white-text {
-  color: rgb(255, 255, 255); /* 白文字に変更 */
-  text-shadow: none; /* 白文字時に枠を消す */
+  color: rgb(255, 255, 255);
+  /* 白文字に変更 */
+  text-shadow: none;
+  /* 白文字時に枠を消す */
   transition: color 2s ease-in-out, text-shadow 2s ease-in-out;
 }
 
@@ -707,7 +812,8 @@ select::-ms-expand {
 .fade-out {
   opacity: 0;
   transition: opacity 2s ease;
-  pointer-events: none; /* クリック無効化 */
+  pointer-events: none;
+  /* クリック無効化 */
 }
 
 /* ファーストビューのテキスト */
@@ -718,26 +824,33 @@ select::-ms-expand {
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 6.4px;
-  color: rgb(255, 255, 255); /* 初期は白文字 */
+  color: rgb(255, 255, 255);
+  /* 初期は白文字 */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 1; /* 初期状態で表示 */
-  text-align: center; /* 中央揃え */
-  transition: opacity 2s ease, color 2s ease-in-out; /* フェードイン */
+  opacity: 1;
+  /* 初期状態で表示 */
+  text-align: center;
+  /* 中央揃え */
+  transition: opacity 2s ease, color 2s ease-in-out;
+  /* フェードイン */
 }
 @media screen and (max-width: 767px) {
   #fv-typewriter-text {
     font-size: 2.5rem;
     max-width: 37.5rem;
+    text-align: left;
+    padding-left: 1.3125rem;
   }
 }
 
 /* ファーストビュー表示時のテキスト */
 #fv-typewriter-text.show-text {
   opacity: 1;
-  color: rgb(255, 255, 255); /* 白文字にする */
+  color: rgb(255, 255, 255);
+  /* 白文字にする */
   transition: opacity 2s ease, color 2s ease-in-out;
 }
 
@@ -750,7 +863,7 @@ select::-ms-expand {
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: bottom 1s ease, opacity 1s ease;
+  transition: bottom 0.5s ease, opacity 0.5s ease;
   opacity: 0;
 }
 
@@ -812,8 +925,7 @@ select::-ms-expand {
 /* loadingがフェードアウト後に消えるように設定 */
 .loading.fade-out {
   opacity: 0;
-  transition: opacity 1s ease;
-  display: none; /* 追加: 完全に非表示にする */
+  transition: opacity 0.3s ease;
 }
 
 @media screen and (max-width: 767px) {
@@ -874,6 +986,9 @@ select::-ms-expand {
     transform: translate(-2px, -2px) rotate(45deg);
     width: 24px;
     height: 1px;
+    top: 52%;
+    border-radius: 0;
+    left: calc(50% - 10.5px);
   }
 }
 
@@ -888,6 +1003,9 @@ select::-ms-expand {
     transform: translate(-21px, -2px) rotate(-45deg);
     width: 24px;
     height: 1px;
+    top: 52%;
+    border-radius: 0;
+    left: calc(50% + 9.5px);
   }
 }
 
@@ -897,12 +1015,13 @@ select::-ms-expand {
     width: 100%;
     height: 100svh;
     position: fixed;
-    top: -3rem;
+    top: 0;
     left: 0;
     z-index: 9998;
     transform: translateX(100%);
     overflow-x: auto;
     transition: transform 0.3s ease;
+    padding-bottom: 6.25rem;
   }
 }
 
@@ -915,8 +1034,7 @@ select::-ms-expand {
 
 @media screen and (max-width: 767px) {
   .sp-nav__logo {
-    padding-top: 3rem;
-    padding-left: 1.25rem;
+    padding-top: 1.25rem;
     display: block;
   }
 }
@@ -1040,7 +1158,7 @@ select::-ms-expand {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 6rem;
-  line-height: 1;
+  line-height: 0.75;
   font-weight: 700;
   position: relative;
 }
@@ -1053,7 +1171,7 @@ select::-ms-expand {
 .about__title::before {
   content: "";
   position: absolute;
-  bottom: 0.8125rem;
+  bottom: 0rem;
   left: 0;
   width: 100%;
   height: 1px;
@@ -1061,13 +1179,14 @@ select::-ms-expand {
 }
 @media screen and (max-width: 767px) {
   .about__title::before {
-    bottom: 0.375rem;
+    bottom: 0rem;
   }
 }
 
 .about__container {
   margin-top: 4.375rem;
   display: flex;
+  align-items: flex-start;
   gap: 1.5rem;
 }
 @media screen and (max-width: 767px) {
@@ -1077,9 +1196,13 @@ select::-ms-expand {
   }
 }
 
+.about__description {
+  width: 440px;
+}
 @media screen and (max-width: 767px) {
   .about__description {
     order: 1;
+    width: 100%;
   }
 }
 
@@ -1137,13 +1260,18 @@ select::-ms-expand {
 .about-btn__wrap {
   margin-top: 2.75rem;
 }
+@media screen and (max-width: 767px) {
+  .about-btn__wrap {
+    text-align: right;
+  }
+}
 
 .about-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn--gray__text,
@@ -1169,7 +1297,7 @@ select::-ms-expand {
   vertical-align: middle;
   line-height: 64px;
   background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* 初期で表示される矢印 */
@@ -1182,7 +1310,7 @@ select::-ms-expand {
   background-image: url(../images/common/arrow-gray.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .btn--gray__arrow:after,
@@ -1190,15 +1318,15 @@ select::-ms-expand {
   content: "";
   position: absolute;
   top: 0;
-  left: -7px;
+  left: 0;
   width: 14px;
   height: 14px;
   background-image: url(../images/common/arrow-gradient.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: translateX(-7px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ホバー時のアニメーション */
@@ -1208,7 +1336,7 @@ select::-ms-expand {
 }
 
 .about-btn__circle:hover .about-btn__arrow {
-  animation: arrow-slide 0.5s;
+  animation: arrow-slide 0.3s;
   opacity: 1;
   transition-delay: 0.2s;
 }
@@ -1220,15 +1348,18 @@ select::-ms-expand {
   }
   50% {
     opacity: 1;
-    transform: translateX(20px); /* 右に消える */
+    transform: translateX(20px);
+    /* 右に消える */
   }
   50.1% {
     opacity: 0;
-    transform: translateX(-10px); /* 左に戻る */
+    transform: translateX(-10px);
+    /* 左に戻る */
   }
   100% {
     opacity: 1;
-    transform: translateX(0); /* 左から現れる */
+    transform: translateX(0);
+    /* 左から現れる */
   }
 }
 .about-btn__circle:hover .about-btn__arrow:after {
@@ -1245,7 +1376,8 @@ select::-ms-expand {
   left: 0;
   width: 100%;
   height: 100%;
-  transform: rotate(-90deg); /* 回転の起点を変更 */
+  transform: rotate(-90deg);
+  /* 回転の起点を変更 */
 }
 
 /* 初期状態でグレー線を表示 */
@@ -1255,9 +1387,12 @@ select::-ms-expand {
 
 /* グラデーション線のスタイル（初期状態では見えない） */
 .about-btn__circle .gradient-border {
-  stroke-dasharray: 301.6; /* 円周の長さ */
-  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.5s ease; /* スピード */
+  stroke-dasharray: 301.6;
+  /* 円周の長さ */
+  stroke-dashoffset: 301.6;
+  /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.3s ease;
+  /* スピード */
 }
 
 /* ホバー時も背景は透明、ボタンを拡大 */
@@ -1296,7 +1431,7 @@ select::-ms-expand {
 @media screen and (max-width: 767px) {
   .service__block {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.25rem;
   }
 }
@@ -1332,11 +1467,12 @@ select::-ms-expand {
     font-size: 3.75rem;
     letter-spacing: 4.8px;
     text-align: center;
+    width: 100%;
   }
 }
 
 .service__block-subtitle {
-  margin-top: 3.75rem;
+  margin-top: 2.5rem;
   font-size: clamp(1.313rem, 0.67rem + 1.34vw, 1.875rem);
   line-height: 1.6;
   font-weight: 700;
@@ -1350,11 +1486,17 @@ select::-ms-expand {
     line-height: 1.6;
     letter-spacing: 1px;
     text-align: center;
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
   }
 }
 
+.service__block-item {
+  width: 520px;
+}
 @media screen and (max-width: 767px) {
   .service__block-item {
+    width: 100%;
     display: contents;
   }
 }
@@ -1364,6 +1506,7 @@ select::-ms-expand {
   aspect-ratio: 440/293;
   max-width: 27.5rem;
   width: 100%;
+  flex: 1;
 }
 @media screen and (max-width: 767px) {
   .service__block-image {
@@ -1392,6 +1535,10 @@ select::-ms-expand {
   }
 }
 
+.service__block-description + .service__block-description {
+  margin-top: 0;
+}
+
 .service__btn-wrap {
   margin-top: 4rem;
 }
@@ -1399,6 +1546,8 @@ select::-ms-expand {
   .service__btn-wrap {
     order: 4;
     margin-top: initial;
+    width: 100%;
+    text-align: right;
   }
 }
 
@@ -1461,14 +1610,14 @@ select::-ms-expand {
   content: "";
   position: absolute;
   top: 0;
-  left: -7px;
+  left: 0;
   width: 14px;
   height: 14px;
   background-image: url(../images/common/arrow-gradient.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: translateX(-7px);
+  transform: translateX(0);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -1491,15 +1640,18 @@ select::-ms-expand {
   }
   50% {
     opacity: 1;
-    transform: translateX(20px); /* 右に消える */
+    transform: translateX(20px);
+    /* 右に消える */
   }
   50.1% {
     opacity: 0;
-    transform: translateX(-10px); /* 左に戻る */
+    transform: translateX(-10px);
+    /* 左に戻る */
   }
   100% {
     opacity: 1;
-    transform: translateX(0); /* 左から現れる */
+    transform: translateX(0);
+    /* 左から現れる */
   }
 }
 .service-btn__circle:hover .service-btn__arrow:after {
@@ -1512,11 +1664,12 @@ select::-ms-expand {
 /* SVGを使用したグレー線とグラデーション線の表示 */
 .service-btn__circle .circle-border {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg); /* 回転の起点を変更 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 103%;
+  height: 103%;
+  /* 回転の起点を変更 */
 }
 
 /* 初期状態でグレー線を表示 */
@@ -1526,9 +1679,12 @@ select::-ms-expand {
 
 /* グラデーション線のスタイル（初期状態では見えない） */
 .service-btn__circle .gradient-border {
-  stroke-dasharray: 301.6; /* 円周の長さ */
-  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.5s ease; /* スピード */
+  stroke-dasharray: 301.6;
+  /* 円周の長さ */
+  stroke-dashoffset: 301.6;
+  /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.5s ease;
+  /* スピード */
 }
 
 /* ホバー時 背景は黒、ボタンを拡大 */
@@ -1587,6 +1743,22 @@ select::-ms-expand {
   box-shadow: 0px 0px 24px 0px #000;
 }
 
+.contact__wrap::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -1;
+  border-radius: 12px;
+}
+
 .contact__title-wrap {
   text-align: center;
 }
@@ -1616,16 +1788,17 @@ select::-ms-expand {
 // 背景＆テキストの変化 jsあり
 ======================================================*/
 /* 背景とテキストの変化時のスタイル */
-.contact__wrap.active::before {
+.contact__wrap.active::after {
   background: linear-gradient(270deg, #FDE005 0%, #00CF35 100%);
   opacity: 1;
-  transition: background 0.5s ease, opacity 0.5s ease; /* ふわっと変わる */
+  transition: background 0.3s ease, opacity 0.3s ease;
+  /* ふわっと変わる */
 }
 
 /* 文字色の変化をスムーズに */
 .contact__wrap .contact__title,
 .contact__wrap .contact__text {
-  transition: color 0.5s ease;
+  transition: color 0.3s ease;
 }
 
 /* 文字色を$c-textに変える */
@@ -1636,7 +1809,7 @@ select::-ms-expand {
 
 /* ボーダー色の変化をスムーズに */
 .contact__title {
-  transition: border-bottom-color 0.5s ease;
+  transition: border-bottom-color 0.3s ease;
 }
 
 /* ボーダー色を$c-textに変える */
@@ -1657,7 +1830,7 @@ select::-ms-expand {
   height: 100px;
   vertical-align: middle;
   background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-btn__circle {
@@ -1667,7 +1840,7 @@ select::-ms-expand {
   height: 100px;
   line-height: 100px;
   background-color: transparent;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* 初期で表示される矢印 */
@@ -1680,7 +1853,7 @@ select::-ms-expand {
   background-image: url(../images/common/arrow-gradient.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .btn-gradient__arrow:after,
@@ -1688,15 +1861,15 @@ select::-ms-expand {
   content: "";
   position: absolute;
   top: 0;
-  left: -21px;
+  left: 0;
   width: 14px;
   height: 14px;
   background-image: url(../images/common/arrow-black.svg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   opacity: 0;
-  transform: translateX(-7px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ホバー時のアニメーション */
@@ -1706,7 +1879,7 @@ select::-ms-expand {
 }
 
 .contact-btn__circle:hover .contact-btn__arrow {
-  animation: arrow-slide 0.5s;
+  animation: arrow-slide 0.3s;
   opacity: 1;
   transition-delay: 0.2s;
 }
@@ -1718,15 +1891,18 @@ select::-ms-expand {
   }
   50% {
     opacity: 1;
-    transform: translateX(20px); /* 右に消える */
+    transform: translateX(20px);
+    /* 右に消える */
   }
   50.1% {
     opacity: 0;
-    transform: translateX(-10px); /* 左に戻る */
+    transform: translateX(-10px);
+    /* 左に戻る */
   }
   100% {
     opacity: 1;
-    transform: translateX(0); /* 左から現れる */
+    transform: translateX(0);
+    /* 左から現れる */
   }
 }
 .contact-btn__circle:hover .contact-btn__arrow:after {
@@ -1743,7 +1919,8 @@ select::-ms-expand {
   left: 0;
   width: 100%;
   height: 100%;
-  transform: rotate(-90deg); /* 回転の起点を変更 */
+  transform: rotate(-90deg);
+  /* 回転の起点を変更 */
 }
 
 /* 初期状態でグラデーション線を表示 */
@@ -1753,9 +1930,12 @@ select::-ms-expand {
 
 /* 黒線のスタイル（初期状態では見えない） */
 .contact-btn__circle .black-border {
-  stroke-dasharray: 301.6; /* 円周の長さ */
-  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.5s ease; /* スピード */
+  stroke-dasharray: 301.6;
+  /* 円周の長さ */
+  stroke-dashoffset: 301.6;
+  /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.3s ease;
+  /* スピード */
 }
 
 /* ホバー時も背景は透明、ボタンを拡大 */
@@ -3576,6 +3756,13 @@ select::-ms-expand {
 
 /* E-Cycleページ results 制作実績
 ======================================*/
+/* （仮） 画像 */
+.ecycle-page__results-slider {
+  margin-inline: auto;
+  aspect-ratio: 840/420;
+  width: 52.5rem;
+}
+
 /* E-Cycleページ plan プラン
 ======================================*/
 .ecycle-page__plan {
