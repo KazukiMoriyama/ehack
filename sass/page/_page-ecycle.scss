@@ -323,11 +323,36 @@
   max-width: rrem(176);
 }
 
+/* E-Cycleページ results 制作実績
+======================================*/
+
+
+
+/* E-Cycleページ plan プラン
+======================================*/
+.ecycle-page__plan {
+  padding-top: rrem(168);
+  padding-bottom: rrem(101);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.ecycle-page__plan-inner {
+  max-width: rrem(890);
+}
 
 
 
 
-
-
-
-
+/* E-Cycleページ qa セクション
+======================================*/
+.ecycle-page__qa {
+  padding-top: rrem(72);
+  padding-bottom: rrem(89);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
