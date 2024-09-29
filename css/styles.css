@@ -4268,7 +4268,7 @@ select::-ms-expand {
   }
 }
 
-.agistep-page__description {
+.agistep-page__feature-description {
   margin-top: 1.875rem;
   display: flex;
   align-items: center;
@@ -4277,7 +4277,7 @@ select::-ms-expand {
   margin-inline: auto;
 }
 @media screen and (max-width: 767px) {
-  .agistep-page__description {
+  .agistep-page__feature-description {
     flex-direction: column;
   }
 }
@@ -4306,6 +4306,29 @@ select::-ms-expand {
 @media screen and (max-width: 767px) {
   .agistep-page__description-image {
     width: 15.625rem;
+  }
+}
+
+/* AGI-Step feature セクション 自動化
+======================================*/
+.agistep-page__feature-automation {
+  margin-top: 3.5rem;
+  padding: 2.75rem 3.125rem;
+  background-color: #FFF;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__feature-automation {
+    margin-top: 2.5rem;
+  }
+}
+
+.agistep-page__automation-image {
+  aspect-ratio: 682/389;
+  width: 42.625rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__automation-image {
+    width: 20rem;
   }
 }
 
