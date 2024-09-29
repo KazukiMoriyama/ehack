@@ -3593,6 +3593,124 @@ select::-ms-expand {
   max-width: 55.625rem;
 }
 
+.ecycle-page__plan-wrap {
+  margin-top: 4rem;
+}
+
+.ecycle-page__plan-subtitle {
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1.76px;
+  position: relative;
+}
+
+.ecycle-page__plan-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26.25rem;
+  height: 1px;
+  background: #00CF35;
+}
+
+.ecycle-page__plan-details {
+  margin-top: 4rem;
+  display: flex;
+  column-gap: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-details {
+    margin-top: 2.5rem;
+  }
+}
+
+.ecycle-page .plan-details__cost {
+  width: 50%;
+  text-align: center;
+}
+
+.ecycle-page .plan-details__cost-title.bg-green {
+  background-color: #00CF35;
+}
+
+.ecycle-page .plan-details__cost-title.bg-red {
+  background-color: #F74A3F;
+}
+
+.ecycle-page .plan-details__cost-title {
+  color: #FFF;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+  padding-block: 0.625rem;
+}
+
+.ecycle-page .plan-details__cost-item {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+}
+
+.ecycle-page .plan-details__cost-item .text-highlight {
+  font-size: 1.875rem;
+}
+
+.ecycle-page .plan-details__cost-item + .plan-details__cost-item {
+  margin-top: 0.3125rem;
+}
+
+.ecycle-page__plan-calculation {
+  margin-top: 2.5rem;
+  padding: 2.375rem 3.5rem 2.6875rem;
+  background-color: #f5f5f5;
+}
+
+.ecycle-page .plan-calculation__title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecycle-page .plan-calculation__title {
+  text-align: center;
+  color: #000;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.52px;
+}
+
+.ecycle-page .plan-calculation__description {
+  text-align: center;
+  padding-block: 0.8125rem;
+  border: solid 1px #00CF35;
+  width: 25rem;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.72px;
+}
+
+.ecycle-page .plan-calculation__wrap {
+  margin-top: 1.4375rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.75rem;
+}
+
+.ecycle-page .plan-calculation__image {
+  aspect-ratio: 400/120;
+  max-width: 25rem;
+}
+
 /* E-Cycleページ qa セクション
 ======================================*/
 .ecycle-page__qa {

@@ -367,39 +367,64 @@
     <!-- mE-Cycleページ plan -->
     <section class="ecycle-page__plan">
       <div class="inner ecycle-page__plan-inner">
+        <!-- セクションタイトル（共通） -->
+        <div class="under-service__section-titlebox">
+          <p class="under-service__section-subtitle" aria-label="イーサイクル">E-cycle</p>
+          <h3 class="under-service__section-title">プラン</h3>
+        </div>
         <div class="ecycle-page__plan-wrap">
-          <!-- セクションタイトル（共通） -->
-          <div class="under-service__section-titlebox">
-            <p class="under-service__section-subtitle" aria-label="イーサイクル">E-cycle</p>
-            <h3 class="under-service__section-title">プラン</h3>
-          </div>
           <h4 class="ecycle-page__plan-subtitle">
             助成金利用 最大75%オフで実施可能！
           </h4>
-          <div class="ecycle-page__plan-ditails ecycle-page">
+          <div class="ecycle-page__plan-details ecycle-page">
             <!-- 左：緑 -->
-            <div class="plan-ditails__cost plan-ditails__cost--basic">
-              <h5 class="plan-ditails__cost-title">基本費用</h5>
-              <p class="plan-ditails__cost-item">
-                入学金：<span class="text-highlight">10万円</span>/法人
+            <div class="plan-details__cost">
+              <h5 class="plan-details__cost-title bg-green">基本費用</h5>
+              <p class="plan-details__cost-item">
+                入学金：<span class="text-highlight">10</span>万円/法人
               </p>
-              <p class="training-plan__cost-item">
-                研修費：<span class="text-highlight">60万円</span>/法人
+              <p class="plan-details__cost-item">
+                研修費：<span class="text-highlight">60</span>万円/法人
               </p>
             </div>
             <!-- 右：赤 -->
-            <div class="plan-ditails__cost plan-ditails__cost--subsidy">
-              <h5 class="plan-ditails__cost-title">助成金</h5>
-              <p class="plan-ditails__cost-item">
+            <div class="plan-details__cost">
+              <h5 class="plan-details__cost-title bg-red">助成金</h5>
+              <p class="plan-details__cost-item">
                 入学金+研修費の<span class="text-highlight">45</span>%の助成
               </p>
-              <p class="training-plan__cost-item">
+              <p class="plan-details__cost-item">
                 <span class="text-highlight">760</span>円×時間×人数の助成
               </p>
             </div>
           </div>
           <!-- 助成金の計算 -->
-          <div class="ecycle-page__plan-calculation"></div>
+          <div class="ecycle-page__plan-calculation ecycle-page">
+            <div class="plan-calculation__title-box">
+              <p class="plan-calculation__title">助成金（例）</p>
+              <p class="plan-calculation__description">
+                受講人数2人＋受講25講座/人
+              </p>
+            </div>
+            <!-- 計算式 -->
+            <div class="plan-calculation__wrap">
+              <div class="plan-calculation__textbox">
+                <p class="plan-calculation__text">
+                  2人×15万円＝30万円
+                </p>
+                <p class="plan-calculation__text">
+                  760円/h×50講座(2人合計)＝3.8万円
+                </p>
+                <p class="plan-calculation__text">
+                  合計助成額：33.8万円
+                </p>
+              </div>
+              <figure class="plan-calculation__image">
+                <img src="../images/ecycle/plan-text1.svg" alt="1パック料金70万円-助成額33.8万円、実質負担額＝36.2万円" width="400" height="120" decoding="async">
+              </figure>
+            </div>
+
+          </div>
 
 
         </div>
