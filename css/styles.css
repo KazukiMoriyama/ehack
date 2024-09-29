@@ -3130,7 +3130,7 @@ select::-ms-expand {
 .under-service-fv__label {
   font-size: 1.375rem;
   font-weight: 300;
-  line-height: cl(28.6/22);
+  line-height: 1.3;
 }
 
 .under-service-fv__title {
@@ -3558,6 +3558,686 @@ select::-ms-expand {
   .ecycle-page__quick {
     padding-top: 5rem;
     padding-bottom: 3.75rem;
+  }
+}
+
+/* E-Cycleページ features セクション
+======================================*/
+.ecycle-page__features {
+  padding-top: 9.875rem;
+  padding-bottom: 10.6875rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.ecycle-page__features-textBox {
+  margin-top: 9.375rem;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-textBox {
+    margin-top: 2.5rem;
+  }
+}
+
+.ecycle-page__features-text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+}
+
+.ecycle-page__features-diagram01 {
+  aspect-ratio: 740/740;
+  max-width: 46.25rem;
+  margin-inline: auto;
+  margin-top: 2.75rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-diagram01 {
+    margin-top: 1.25rem;
+    width: 18.75rem;
+  }
+}
+
+/* E-Cycleページ features セクション 図表02
+======================================*/
+.ecycle-page__features-description {
+  display: flex;
+  align-items: center;
+  gap: 3.8125rem;
+  margin-top: 3.125rem;
+  max-width: 55.625rem;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-description {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-textBox {
+    text-align: center;
+  }
+}
+
+.ecycle-page__feature-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-title {
+    font-size: 1.375rem;
+  }
+}
+
+.ecycle-page__feature-text {
+  margin-top: 2.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-text {
+    margin-top: 1.25rem;
+  }
+}
+
+.ecycle-page__feature-diagram02 {
+  aspect-ratio: 400/320;
+  max-width: 25rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__feature-diagram02 {
+    width: 15.625rem;
+  }
+}
+
+/* E-Cycleページ features カードレイアウト
+======================================*/
+.ecycle-page__features-list {
+  margin-top: 6.5625rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list {
+    margin-top: 3.75rem;
+  }
+}
+
+.ecycle-page__features-list .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6.75rem;
+  row-gap: 1.5rem;
+  display: grid;
+  place-content: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards {
+    grid-template-columns: repeat(1, 1fr);
+    width: 20rem;
+    margin-inline: auto;
+  }
+}
+
+.ecycle-page__features-list .cards-item {
+  width: 27.5rem;
+  height: 35.875rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.ecycle-page__features-list .cards-item__image {
+  aspect-ratio: 320/267;
+  max-width: 20rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item__image {
+    width: 15.625rem;
+  }
+}
+
+.ecycle-page__features-list .cards-item__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+  text-align: center;
+}
+
+.ecycle-page__features-list .cards-item__box {
+  display: flex;
+  column-gap: 1.25rem;
+  margin-top: 1.5625rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item__box {
+    column-gap: 0.3125rem;
+    margin-top: 0.625rem;
+  }
+}
+
+.ecycle-page__features-list .cards-item__box-list {
+  list-style: disc;
+  padding-left: 1.875rem;
+}
+
+.ecycle-page__features-list .cards-item__box-list.second-list {
+  margin-top: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__features-list .cards-item__box-list.second-list {
+    margin-top: 0.625rem;
+  }
+}
+
+.ecycle-page__features-list .cards-item__box-image {
+  aspect-ratio: 176/136;
+  max-width: 11rem;
+}
+
+/* E-Cycleページ results 制作実績
+======================================*/
+/* （仮） 画像 */
+.ecycle-page__results-slider {
+  margin-inline: auto;
+  aspect-ratio: 840/420;
+  width: 52.5rem;
+}
+
+/* E-Cycleページ plan プラン
+======================================*/
+.ecycle-page__plan {
+  padding-top: 10.5rem;
+  padding-bottom: 6.3125rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.ecycle-page__plan-inner {
+  max-width: 55.625rem;
+}
+
+.ecycle-page__plan-wrap {
+  margin-top: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-wrap {
+    margin-top: 1.25rem;
+  }
+}
+
+.ecycle-page__plan-subtitle {
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1.76px;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.ecycle-page__plan-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26.25rem;
+  height: 1px;
+  background: #00CF35;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-subtitle::after {
+    width: 20rem;
+  }
+}
+
+.ecycle-page__plan-details {
+  margin-top: 4rem;
+  display: flex;
+  column-gap: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-details {
+    margin-top: 2.5rem;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    column-gap: initial;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+}
+
+.ecycle-page .plan-details__cost {
+  width: 50%;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost {
+    width: 100%;
+  }
+}
+
+.ecycle-page .plan-details__cost-title.bg-green {
+  background-color: #00CF35;
+}
+
+.ecycle-page .plan-details__cost-title.bg-red {
+  background-color: #F74A3F;
+}
+
+.ecycle-page .plan-details__cost-title {
+  color: #FFF;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+  padding-block: 0.625rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost-title {
+    padding-block: 0.3125rem;
+  }
+}
+
+.ecycle-page .plan-details__cost-item {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost-item {
+    margin-top: 0.625rem;
+    font-size: 1rem;
+  }
+}
+
+.ecycle-page .plan-details__cost-item .text-highlight {
+  font-size: 1.875rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-details__cost-item .text-highlight {
+    font-size: 1.5rem;
+  }
+}
+
+.ecycle-page .plan-details__cost-item + .plan-details__cost-item {
+  margin-top: 0.3125rem;
+}
+
+.ecycle-page__plan-calculation {
+  margin-top: 2.5rem;
+  padding: 2.375rem 3.5rem 2.6875rem;
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__plan-calculation {
+    margin-top: 1.25rem;
+    padding: 1.125rem;
+  }
+}
+
+.ecycle-page .plan-calculation__title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecycle-page .plan-calculation__title {
+  text-align: center;
+  color: #000;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.52px;
+}
+
+.ecycle-page .plan-calculation__description {
+  text-align: center;
+  padding-block: 0.8125rem;
+  border: solid 1px #00CF35;
+  width: 25rem;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.72px;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-calculation__description {
+    width: 100%;
+  }
+}
+
+.ecycle-page .plan-calculation__wrap {
+  margin-top: 1.4375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.75rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page .plan-calculation__wrap {
+    flex-direction: column;
+    margin-top: 1.25rem;
+    gap: 1.25rem;
+  }
+}
+
+.ecycle-page .plan-calculation__text {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.ecycle-page .plan-calculation__text + .plan-calculation__text {
+  margin-top: 0.5625rem;
+}
+
+.ecycle-page .plan-calculation__image {
+  aspect-ratio: 400/120;
+  max-width: 25rem;
+}
+
+/* E-Cycleページ qa セクション
+======================================*/
+.ecycle-page__qa {
+  padding-top: 4.5rem;
+  padding-bottom: 5.5625rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__qa {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+/* AGI-Stepページ fv
+======================================*/
+.agistep-page__fv-wrap {
+  gap: 2.1875rem;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__fv-wrap {
+    gap: 0.625rem;
+  }
+}
+
+.ecycle-page-fv__subtitle {
+  margin-top: 2.1875rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page-fv__subtitle {
+    margin-top: initial;
+  }
+}
+
+.agistep-page__fv-inner {
+  max-width: 72.5rem;
+}
+
+.agistep-page__fv-box {
+  align-items: center;
+}
+
+.agistep-page__fv-title {
+  font-size: clamp(3.875rem, 0.875rem + 6.25vw, 6.5rem);
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__fv-title {
+    font-size: 3.125rem;
+  }
+}
+
+.agistep-page__fv-subtitle {
+  margin-top: 0.625rem;
+}
+
+.agistep-page__fv-image {
+  aspect-ratio: 480/400;
+  width: 30rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__fv-image {
+    width: 20rem;
+  }
+}
+
+/* AGI-Step quick動画
+======================================*/
+.agistep-page__quick {
+  padding-top: 6.5rem;
+  padding-bottom: 5.75rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__quick {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+/* AGI-Step problem 問題提起
+======================================*/
+.agistep-page__problem {
+  padding-top: 9rem;
+  padding-bottom: 9.5rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__problem {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.agistep-page__problem-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__problem-title {
+    font-size: 1.375rem;
+  }
+}
+
+.agistep-page__problem-list {
+  margin-top: 4.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.25rem;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__problem-list {
+    margin-top: 2.5rem;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1.875rem;
+    max-width: 15.625rem;
+    margin-inline: auto;
+  }
+}
+
+.agistep-page__problem-list::after {
+  content: "";
+  position: absolute;
+  bottom: -7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 23rem;
+  height: 4.5rem;
+  background-image: url(../images/agi-step/arrow-down-white.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__problem-list::after {
+    width: 12.5rem;
+    background-size: contain;
+  }
+}
+
+.agistep-page__problem-image {
+  aspect-ratio: 320/387;
+  max-width: 20rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__problem-image {
+    width: 15.625rem;
+  }
+}
+
+.agistep-page__problem-textBox {
+  margin-top: 3.625rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__problem-textBox {
+    margin-top: 1.25rem;
+  }
+}
+
+.agistep-page__problem-text {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__problem-text {
+    margin-top: 0.625rem;
+  }
+}
+
+/* AGI-Step problem 解決策
+======================================*/
+.agistep-page__solution-wrap {
+  margin-top: 9rem;
+  max-width: 50rem;
+  margin-inline: auto;
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__solution-wrap {
+    flex-direction: column;
+    margin-top: 7rem;
+  }
+}
+
+.agistep-page__solution-subtitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__solution-subtitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+.agistep-page__solution-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 3.52px;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__solution-title {
+    font-size: 1.875rem;
+    text-align: center;
+    margin-top: 1.25rem;
+  }
+}
+
+.agistep-page__solution-title .text-highlight {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.75rem;
+  line-height: 100%;
+  letter-spacing: 4.8px;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__solution-title .text-highlight {
+    font-size: 2.5rem;
+  }
+}
+
+.agistep-page__solution-text {
+  margin-top: 2.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+}
+
+.agistep-page__solution-image {
+  aspect-ratio: 480/400;
+  width: 26.125rem;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__solution-image {
+    width: 15.625rem;
+  }
+}
+
+/* AGI-Step benefits セクション
+======================================*/
+.agistep-page__benefits-list {
+  display: flex;
+  gap: 1.25rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__benefits-list {
+    flex-direction: column;
+    max-width: 15.625rem;
+    margin-inline: auto;
+    gap: 1.875rem;
+  }
+}
+
+.agistep-page__benefits-image {
+  aspect-ratio: 320/483;
+  max-width: 20rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__benefits-image {
+    width: 15.625rem;
   }
 }
 
