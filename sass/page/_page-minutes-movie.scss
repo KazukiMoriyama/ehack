@@ -1,10 +1,8 @@
 @use "../global" as *;
 //下層--Minutes Movieページ (page-minutes-movie)
 
-/* 下層serviceページ(共通) セクションタイトル → commonに記載
+/* 下層serviceページ(共通) セクションタイトル → page-under-service.scssに記載
 ======================================*/
-
-
 
 .mmovie-page__process {
   padding-top: rrem(184);
@@ -118,7 +116,7 @@
 }
 
 
-/* 下層--Minutes Movieページ 動画 quick セクション
+/* Minutes Movieページ 動画 quick セクション
 ======================================*/
 .mmovie-page__quick {
   background-color: $c-text;
@@ -131,7 +129,7 @@
 }
 
 
-/* 下層--Minutes Movieページ introduction セクション
+/* Minutes Movieページ introduction セクション
 ======================================*/
 .mmovie-page__introduction {
   padding-top: rrem(168);
@@ -215,7 +213,7 @@
   }
 }
 
-/* 下層--Minutes Movieページ plan セクション
+/* Minutes Movieページ plan セクション
 ======================================*/
 .mmovie-page__plan {
   padding-top: rrem(120);
@@ -411,7 +409,7 @@
 }
 
 
-/* 下層--Minutes Movieページ flow セクション
+/* Minutes Movieページ flow セクション
 ======================================*/
 // .flow-item__image {
 //   aspect-ratio: 56 / 79;
@@ -428,9 +426,8 @@
 }
 
 .mmovie-page__flow-list {
-  height: rrem(200);
   @include mq("md") {
-    max-width: rrem(300);
+    max-width: rrem(250);
     margin-inline: auto;
     //height: auto;
   }
@@ -443,26 +440,31 @@
 .mmovie-page.flow-list {
   margin-top: rrem(48);
   display: grid;
-  //grid-template-columns: repeat(auto-fit, minmax(rrem(160), 1fr)); // 画像の数に応じて列の数を調整
   grid-template-columns: repeat(6, 1fr);
-  gap: rrem(8);
-  height: rrem(200);
+  column-gap: rrem(8);
+  height: 200px;
   @include mq("md") {
     grid-template-columns: repeat(1, 1fr);
-    gap: rrem(16);
+    height: auto;
+    margin-top: rrem(20);
   }
 }
-.mmovie-page.flow-list + .mmovie-page.flow-list {
-  margin-top: rrem(16);
+.mmovie-page .flow-item +  .flow-item {
+  @include mq("md") {
+    margin-top: rrem(25);
+  }
 }
 
 .mmovie-page .flow-item {
   display: grid;
   place-items: center;
-  gap: rrem(18);
   grid-template-rows: subgrid;
   grid-row: span 3;
   background: linear-gradient(to bottom, $c-white 13px, $c-BgGray 13px);
+  @include mq("md") {
+    row-gap: rrem(15);
+    //padding-bottom: rrem(15);
+  }
 }
 
 .flow-item__number {
@@ -471,6 +473,11 @@
   font-weight: $bold;
   line-height: calc(36 / 36);
   letter-spacing: 2.88px;
+  margin-top: -10px;
+  @include mq("md") {
+    font-size: rrem(30);
+    margin-top: initial;
+  }
 }
 
 .mmovie-page .flow-item__image {
@@ -482,8 +489,11 @@
 
 .mmovie-page .flow-item__image img {
   width: 100%;
-  height: 100%;
+  height: 81px;
   object-fit: cover;
+  @include mq("md") {
+    height: 70px;
+  }
 }
 
 .mmovie-page .flow-item__text {
@@ -492,6 +502,17 @@
   font-weight: $bold;
   line-height: calc(24 / 16);
   letter-spacing: 0.64px;
+  height: rrem(48);
 }
 
 
+/* Minutes Movieページ qa セクション
+======================================*/
+.mmovie-page__qa {
+  padding-top: rrem(72);
+  padding-bottom: rrem(89);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}

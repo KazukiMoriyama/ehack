@@ -1,0 +1,527 @@
+@use "../global" as *;
+//E-Cycleページ (page-ecycle)
+
+/* E-Cycleページ fv
+======================================*/
+.ecycle-page__fv-box {
+  gap: rrem(35);
+  align-items: center;
+  @include mq("md") {
+    gap: rrem(10);
+  }
+}
+
+.ecycle-page-fv__subtitle {
+  margin-top: rrem(35);
+  @include mq("md") {
+    margin-top: initial;
+  }
+}
+
+
+/* E-Cycleページ sns セクション
+======================================*/
+.ecycle-page__sns {
+  padding-top: rrem(161.6);
+  padding-bottom: rrem(106);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.ecycle-page__sns-wrap {
+  text-align: center;
+}
+
+.ecycle-page__sns-title {
+  font-size: rrem(44);
+  font-weight: $bold;
+  line-height: calc(66 / 44);
+  letter-spacing: 3.52px;
+  @include mq("md") {
+    font-size: rrem(28);
+    line-height: calc(48 / 30);
+    letter-spacing: 2.4px;
+  }
+}
+
+
+.ecycle-page__sns-text {
+  margin-top: rrem(12.8);
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
+.ecycle-page__sns-list {
+  margin-top: rrem(88);
+  @include mq("md") {
+    margin-top: rrem(50);
+  }
+}
+
+.ecycle-page__sns-list .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rrem(20);
+  place-items: center;
+  @include mq("md") {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: rrem(300);
+    margin-inline: auto;
+  }
+}
+
+.ecycle-page__sns-list .cards-item {
+  display: grid;
+  place-content: center;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  @include mq("md") {
+    justify-items: center;
+  }
+}
+
+.ecycle-page__sns-list .cards-item + .cards-item {
+  @include mq("md") {
+    margin-top: rrem(40);
+  }
+}
+
+.ecycle-page__sns-list .cards-item__image {
+  aspect-ratio: 320 / 267;
+  max-width: rrem(320);
+  @include mq("md") {
+    width: rrem(250);
+  }
+}
+
+.ecycle-page__sns-list .cards-item__bottom {
+  margin-top: rrem(38.4);
+  @include mq("md") {
+    margin-top: rrem(5);
+  }
+}
+
+.ecycle-page__sns-list .cards-item__title {
+  text-align: center;
+  font-size: rrem(30);
+  font-weight: $bold;
+  line-height: calc(48 / 30);
+  letter-spacing: 2.4px;
+  @include mq("md") {
+    font-size: rrem(24);
+  }
+}
+
+.ecycle-page__sns-list  .cards-item__text {
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+  margin-top: rrem(12.8);
+  padding-left: rrem(24);
+  padding-right: rrem(24);
+  text-align: left;
+  @include mq("md") {
+    margin-top: rrem(10);
+    padding-left: initial;
+    padding-right: initial;
+  }
+}
+
+/* E-Cycleページ 動画 quick セクション
+======================================*/
+.ecycle-page__quick {
+  background-color: $c-text;
+  padding-top: rrem(104);
+  padding-bottom: rrem(80);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+/* E-Cycleページ features セクション
+======================================*/
+.ecycle-page__features {
+  padding-top: rrem(158);
+  padding-bottom: rrem(171);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.ecycle-page__features-textBox {
+  margin-top: rrem(150);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rrem(40);
+  }
+}
+
+.ecycle-page__features-text {
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(26.25 / 15);
+  letter-spacing: 0.6px;
+}
+
+.ecycle-page__features-diagram01 {
+  aspect-ratio: 740 / 740;
+  max-width: rrem(740);
+  margin-inline: auto;
+  margin-top: rrem(44);
+  @include mq("md") {
+    margin-top: rrem(20);
+    width: rrem(300);
+  }
+}
+
+/* E-Cycleページ features セクション 図表02
+======================================*/
+.ecycle-page__features-description {
+  display: flex;
+  align-items: center;
+  gap: rrem(61);
+  margin-top: rrem(50);
+  max-width: rrem(890);
+  margin-inline: auto;
+  @include mq("md") {
+    flex-direction: column;
+    gap: rrem(20);
+}
+}
+
+.ecycle-page__feature-textBox {
+  @include mq("md") {
+    text-align: center;
+  }
+}
+
+.ecycle-page__feature-title {
+  font-size: rrem(30);
+  font-weight: $bold;
+  line-height: calc(48 / 30);
+  letter-spacing: 2.4px;
+  @include mq("md") {
+    font-size: rrem(22);
+  }
+}
+
+.ecycle-page__feature-text {
+  margin-top: rrem(40);
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(26.25 / 15);
+  letter-spacing: 0.6px;
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
+.ecycle-page__feature-diagram02 {
+  aspect-ratio: 400 / 320;
+  max-width: rrem(400);
+  @include mq("md") {
+    width: rrem(250);
+  }
+}
+
+/* E-Cycleページ features カードレイアウト
+======================================*/
+.ecycle-page__features-list {
+  margin-top: rrem(105);
+  @include mq("md") {
+    margin-top: rrem(60);
+  }
+}
+
+.ecycle-page__features-list .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rrem(108);
+  row-gap: rrem(24);
+  display: grid;
+  place-content: center;
+  @include mq("md") {
+    grid-template-columns: repeat(1, 1fr);
+    width: rrem(320);
+    margin-inline: auto;
+  }
+}
+
+.ecycle-page__features-list .cards-item {
+  width: rrem(440);
+  height: rrem(574);
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  @include mq("md") {
+    width: rrem(320);
+    height: rrem(320);
+  }
+}
+
+.ecycle-page__features-list .cards-item__image {
+  aspect-ratio: 320 / 267;
+  max-width: rrem(320);
+  @include mq("md") {
+    width: rrem(250);
+  }
+}
+
+.ecycle-page__features-list .cards-item__bottom {
+  //margin-top: rrem(18);
+}
+
+.ecycle-page__features-list .cards-item__title {
+  font-size: rrem(30);
+  font-weight: $bold;
+  line-height: calc(48 / 30);
+  letter-spacing: 2.4px;
+  text-align: center;
+  
+}
+
+.ecycle-page__features-list .cards-item__box {
+  display: flex;
+  column-gap: rrem(20);
+  margin-top: rrem(25);
+  @include mq("md") {
+    column-gap: rrem(5);
+    margin-top: rrem(10);
+  }
+}
+
+.ecycle-page__features-list .cards-item__box-list {
+  list-style: disc;
+  padding-left: rrem(30);
+}
+
+.ecycle-page__features-list .cards-item__box-list.second-list {
+  margin-top: rrem(32);
+  @include mq("md") {
+    margin-top: rrem(10);
+  }
+}
+
+.ecycle-page__features-list .cards-item__box-item {
+  
+}
+
+.ecycle-page__features-list .cards-item__box-image {
+  aspect-ratio: 176 / 136;
+  max-width: rrem(176);
+}
+
+/* E-Cycleページ results 制作実績
+======================================*/
+
+
+
+/* E-Cycleページ plan プラン
+======================================*/
+.ecycle-page__plan {
+  padding-top: rrem(168);
+  padding-bottom: rrem(101);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
+.ecycle-page__plan-inner {
+  max-width: rrem(890);
+}
+
+.ecycle-page__plan-wrap {
+  margin-top: rrem(64);
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
+.ecycle-page__plan-subtitle {
+  text-align: center;
+  font-size: rrem(22);
+  font-weight: $bold;
+  line-height: calc(35.2 / 22);
+  letter-spacing: 1.76px;
+  position: relative;
+  @include mq("md") {
+    font-size: rrem(16);
+  }
+}
+.ecycle-page__plan-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: rrem(420);
+  height: 1px;
+  background: #00CF35;
+  @include mq("md") {
+    width: rrem(320);
+  }
+}
+
+.ecycle-page__plan-details {
+  margin-top: rrem(64);
+  display: flex;
+  column-gap: rrem(40);
+  @include mq("md") {
+    margin-top: rrem(40);
+    flex-direction: column;
+    row-gap: rrem(20);
+    column-gap: initial;
+    max-width: rrem(320);
+    margin-inline: auto;
+  }
+}
+
+.ecycle-page .plan-details__cost {
+  width: 50%;
+  text-align: center;
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.ecycle-page .plan-details__cost-title.bg-green {
+  background-color: $c-main;
+}
+
+.ecycle-page .plan-details__cost-title.bg-red {
+  background-color: $c-accent;
+}
+
+.ecycle-page .plan-details__cost-title {
+  color: $c-white;
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(28.8 / 18);
+  letter-spacing: 0.72px;
+  padding-block: rrem(10);
+  @include mq("md") {
+    padding-block: rrem(5);
+  }
+}
+
+.ecycle-page .plan-details__cost-item {
+  margin-top: rrem(24);
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(28.8 / 18);
+  letter-spacing: 0.72px;
+  @include mq("md") {
+    margin-top: rrem(10);
+    font-size: rrem(16);
+  }
+}
+
+.ecycle-page .plan-details__cost-item .text-highlight {
+  font-size: rrem(30);
+  @include mq("md") {
+    font-size: rrem(24);
+  }
+}
+
+.ecycle-page .plan-details__cost-item + .plan-details__cost-item {
+  margin-top: rrem(5);
+}
+
+.ecycle-page__plan-calculation {
+  margin-top: rrem(40);
+  padding: rrem(38) rrem(56) rrem(43);
+  background-color: $c-BgGray;
+  @include mq("md") {
+    margin-top: rrem(20);
+    padding: rrem(18);
+  }
+}
+
+.ecycle-page .plan-calculation__title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecycle-page .plan-calculation__title {
+  text-align: center;
+  color: $c-black;
+  font-size: rrem(13);
+  font-weight: $medium;
+  line-height: calc(20.8 / 13);
+  letter-spacing: 0.52px;
+}
+
+.ecycle-page .plan-calculation__description {
+  text-align: center;
+  padding-block: rrem(13);
+  border: solid 1px $c-main;
+  width: rrem(400);
+  margin-top: rrem(16);
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(18 / 18);
+  letter-spacing: 0.72px;
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.ecycle-page .plan-calculation__wrap {
+  margin-top: rrem(23);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rrem(44);
+  @include mq("md") {
+    flex-direction: column;
+    margin-top: rrem(20);
+    gap: rrem(20);
+  }
+}
+
+.ecycle-page .plan-calculation__textbox {
+
+}
+
+.ecycle-page .plan-calculation__text {
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+}
+
+.ecycle-page .plan-calculation__text + .plan-calculation__text  {
+  margin-top: rrem(9);
+}
+
+.ecycle-page .plan-calculation__image {
+  aspect-ratio: 400 / 120;
+  max-width: rrem(400);
+}
+
+
+
+/* E-Cycleページ qa セクション
+======================================*/
+.ecycle-page__qa {
+  padding-top: rrem(72);
+  padding-bottom: rrem(89);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}

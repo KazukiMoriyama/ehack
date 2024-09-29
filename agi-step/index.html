@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!-- 修正必要。コピーしただけ！ -->
+
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# article: http://ogp.me/ns/ article#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- noindex 検索させたくない時だけ入れる-->
   <meta name="robots" content="noindex">
   <!-- meta情報 -->
-  <title>EHACK | Company</title>
+  <title>EHACK | AGI-Step</title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
   <!-- ogp -->
@@ -28,8 +28,8 @@
   <!-- JavaScript -->
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script defer src="../js/script.js"></script>
-
 </head>
+<!-- AGI-Stepページ -->
 <body>
   <!-- グラデーション定義 -->
   <svg class="gradient-svg" height="0" width="0">
@@ -58,11 +58,11 @@
           </li>
           <!-- 2.company -->
           <li class="header__nav-item">
-            <a href="#">company</a>
+            <a href="../company/index.html">company</a>
           </li>
           <!-- 3.service ドロップダウンメニュー含む -->
           <li class="header__nav-item has-dropdown">
-            <a href="../e-cycle/html">service</a>
+            <a href="#">service</a>
             <!-- ドロップダウンメニュー -->
             <ul class="dropdown dropdown__list">
               <li class="dropdown__item">
@@ -141,32 +141,34 @@
     </div>
   </header>
   <main>
-    <!-- companyページ ファーストビュー -->
-    <section class="company-fv under-page__fv layout-under-fv" id="js-fv">
+    <!-- AGI-Step fv -->
+    <section class="under-service-fv layout-under-fv" id="js-fv">
       <!-- 背景動画 -->
       <video class="background_video" src="../images/video/bg_movie.mp4" autoplay muted loop></video>
-      <div class="company-fv__inner inner">
-        <div class="company-fv__wrap under-page__fv-wrap">
-          <h1 class="company-fv__title under-page__fv-title">company</h1>
-          <p class="company-fv__subtitle under-page__fv-subtitle">ehackについて</p>
+      <div class="under-service-fv__inner inner">
+        <div class="under-service-fv__box ecycle-page__fv-box">
+          <div class="under-service-fv__wrap ecycle-page-fv__wrap">
+            <p class="under-service-fv__label ecycle-page-fv__label ">service</p>
+            <h1 class="under-service-fv__title ecycle-page-fv__title">AGI-Step</h1>
+            <h2 class="under-service-fv__subtitle ecycle-page-fv__subtitle">ムカつくほどわかりやすいIT研修</h2>
+          </div>
+          <figure class="under-service-fv__image">
+            <img src="../images/ecycle/fv-ecycle@2x.png" alt="巨大なスマートフォンの上に「SOCIAL MEDIA」と書かれており、周りには4人のキャラクターが配置されている画像" width="480" height="320" decoding="async" loading="eager">
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- companyページ banner -->
-    <section class="company-page__banner">
-      <div class="inner company-page__inner">
+    <!-- AGI-Step quick動画 -->
+    <section class="ecycle-page__quick under-service-quick">
+      <div class="inner">
         <!-- section タイトル -->
-        <div class="section__title-wrap">
-          <h2 class="section__title">ehack</h2>
-          <p class="section__subtitle">1分でわかるehack</p>title
+        <div class="under-service-quick__title-wrap">
+          <h3 class="under-service-quick__title">1分でわかる</h3>
+          <p class="under-service-quick__subtitle">e-cycle</p>
         </div>
         <!-- 動画 -->
-        <!-- <div class="company-page__video video__container">
-          <video src="../images/video/ehack_fv.mp4">
-            "Your browser does not support the video tag."
-          </video> -->
-          <!-- 動画 -->
+        <div class="under-service-quick__video video__container">
           <video id="ehack-video" playsinline autoplay loop muted controls>
             <source src="../images/video/ehack_fv.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -175,14 +177,326 @@
       </div>
     </section>
 
-    <!-- Contact セクション -->
+    <!-- E-Cycle sns -->
+    <section class="ecycle-page__sns">
+      <div class="inner">
+        <div class="ecycle-page__sns-wrap">
+          <h3 class="ecycle-page__sns-title">自社でSNS運用をして<br class="sp-only">利益UP</h3>
+          <p class="ecycle-page__sns-text">
+            マーケティング・クリエイティブ・<br class="sp-only">オペレーションの<br>
+            SNS運用に必要な３つのスキルを<br class="sp-only">体系的に学べる体験型研修
+          </p>
+          <!-- カードリスト -->
+          <div class="ecycle-page__sns-list">
+            <ul class="cards">
+              <!-- 1 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/ecycle/sns01@2x.png" alt="イラスト" width="320" height="267" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <h4 class="cards-item__title">明日から使える<br>スキルの獲得</h4>
+                  <p class="cards-item__text">
+                    動画編集スキル、マーケティング、デザインスキルなど明日から使える実践的なスキルを習得可能。
+                  </p>
+                </div>
+              </li>
+              <!-- 2 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/ecycle/sns02@2x.png" alt="イラスト" width="320" height="267" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <h4 class="cards-item__title">どこでも<br>繰り返し学べる</h4>
+                  <p class="cards-item__text">
+                    業務時間を効率的に活用したE-ラーニングを用いた受講スタイルで隙間時間にスキル獲得可能
+                  </p>
+                </div>
+              </li>
+              <!-- 3 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/ecycle/sns03@2x.png" alt="イラスト" width="320" height="267" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <h4 class="cards-item__title">最小限のリスクで<br>始められる</h4>
+                  <p class="cards-item__text">
+                    100万以上かかる受講料が助成金で受講料最大75％OFF
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGI-Step features 特徴 -->
+    <section class="ecycle-page__features">
+      <div class="inner">
+        <div class="ecycle-page__introduction-wrap">
+          <!-- セクションタイトル（共通） -->
+          <div class="under-service__section-titlebox">
+            <p class="under-service__section-subtitle">SNSマーケティング研修</p>
+            <h3 class="under-service__section-title vertical-line">E-cycle<span>とは</span></h3>
+          </div>
+          <!-- テキスト -->
+          <div class="ecycle-page__features-textBox">
+            <p class="ecycle-page__features-text">
+              この文章はダミーです。テキストの大きさ、行間を確認するために入力しています。<br>
+              この文章はダミーです。テキストの大きさ、行間を確認するために<br>
+              入力しています。この文章はダミーです。テキストの大きさ、<br>
+              行間を確認するために入力しています。
+            </p>
+          </div>
+          <!-- 図表01 -->
+          <figure class="ecycle-page__features-diagram01">
+            <img src="../images/ecycle/diagram01@2x.png" alt="イラスト" width="740" height="740" decoding="async">
+          </figure>
+          <!-- 図表02 -->
+          <div class="ecycle-page__features-description">
+            <div class="ecycle-page__feature-textBox">
+              <h4 class="ecycle-page__feature-title">
+                コンテンツを組み合わせて、<br>
+                運用者候補に合った<br>
+                研修をご提供
+              </h4>
+              <p class="ecycle-page__feature-text">
+                3つの講座コンテンツとサポートで貴社に合わせてカリキュラムを組み、クリエイティブ人材を育てる研修です。
+              </p>
+            </div>
+            <figure class="ecycle-page__feature-diagram02">
+              <img src="../images/ecycle/diagram02@2x.png" alt="イラスト" width="400" height="320" decoding="async">
+            </figure>
+          </div>
+          <!-- カードレイアウト -->
+          <div class="ecycle-page__features-list">
+            <ul class="cards">
+              <!-- 01 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/ecycle/feature01@2x.png" alt="イラスト" width="320" height="267" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <h5 class="cards-item__title">e-learning</h5>
+                  <div class="cards-item__box">
+                    <!-- リスト -->
+                    <ul class="cards-item__box-list">
+                      <li class="cards-item__box-item">30講座（随時更新）</li>
+                      <li class="cards-item__box-item">アニメーションで取り組みやすい内容</li>
+                      <li class="cards-item__box-item">初心者〜実践レベルまで対応</li>
+                      <li class="cards-item__box-item">デザイン・マーケティング・動画編集の知識を幅広く網羅</li>
+                    </ul>
+                    <!-- 画像 -->
+                    <figure class="cards-item__box-image">
+                      <img src="../images/ecycle/feature01-1@2x.png" alt="イラスト" width="176" height="136" decoding="async">
+                    </figure>
+                  </div>
+                </div>
+              </li>
+              <!-- 02 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/ecycle/feature02@2x.png" alt="イラスト" width="320" height="267" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <h5 class="cards-item__title">オンライン講義</h5>
+                  <div class="cards-item__box">
+                    <!-- リスト -->
+                    <ul class="cards-item__box-list">
+                      <li class="cards-item__box-item">2時間×4回</li>
+                      <li class="cards-item__box-item">習熟度テストの実施で理解度の計測</li>
+                      <li class="cards-item__box-item">マーケティングの基礎をリアルタイムの講座で学習</li>
+                    </ul>
+                    <!-- 画像 -->
+                    <figure class="cards-item__box-image">
+                      <img src="../images/ecycle/feature02-1@2x.png" alt="イラスト" width="176" height="136" decoding="async">
+                    </figure>
+                  </div>
+                </div>
+              </li>
+              <!-- 03 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/ecycle/feature03@2x.png" alt="イラスト" width="320" height="267" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <h5 class="cards-item__title">クリエイティブ実践</h5>
+                  <!-- リスト -->
+                  <ul class="cards-item__box-list second-list">
+                    <li class="cards-item__box-item">2時間×3項目</li>
+                    <li class="cards-item__box-item">撮影研修<br>→オンサイトで実施</li>
+                    <li class="cards-item__box-item">フィードデザイン、動画編集研修<br>→WEB会議でプロが直接指導</li>
+                  </ul>
+                </div>
+              </li>
+              <!-- 04 -->
+              <li class="cards-item">
+                <figure class="cards-item__image">
+                  <img src="../images/ecycle/feature04@2x.png" alt="イラスト" width="320" height="267" decoding="async">
+                </figure>
+                <div class="cards-item__bottom">
+                  <h5 class="cards-item__title">運用サポート</h5>
+                  <!-- リスト -->
+                  <ul class="cards-item__box-list second-list">
+                    <li class="cards-item__box-item">WEB会議（基本1回/月）</li>
+                    <li class="cards-item__box-item">チャットサポート</li>
+                    <li class="cards-item__box-item">運用状況に応じたサポート<br>（改善点のフィードバック、Q&A）</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AGI-Step results 回答例-->
+    <section class="ecycle-page__results">
+      <div class="inner">
+        <!-- セクションタイトル（共通） -->
+        <div class="under-service__section-titlebox">
+          <p class="under-service__section-subtitle" aria-label="イーサイクル">E-cycle</p>
+          <h3 class="under-service__section-title">研修実績</h3>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AGI-Step plan 流れ -->
+    <section class="ecycle-page__plan">
+      <div class="inner ecycle-page__plan-inner">
+        <!-- セクションタイトル（共通） -->
+        <div class="under-service__section-titlebox">
+          <p class="under-service__section-subtitle" aria-label="イーサイクル">E-cycle</p>
+          <h3 class="under-service__section-title">プラン</h3>
+        </div>
+        <div class="ecycle-page__plan-wrap">
+          <h4 class="ecycle-page__plan-subtitle">
+            助成金利用&thinsp;最大75%オフで実施可能！
+          </h4>
+          <div class="ecycle-page__plan-details ecycle-page">
+            <!-- 左：緑 -->
+            <div class="plan-details__cost">
+              <h5 class="plan-details__cost-title bg-green">基本費用</h5>
+              <p class="plan-details__cost-item">
+                入学金：<span class="text-highlight">10</span>万円/法人
+              </p>
+              <p class="plan-details__cost-item">
+                研修費：<span class="text-highlight">60</span>万円/法人
+              </p>
+            </div>
+            <!-- 右：赤 -->
+            <div class="plan-details__cost">
+              <h5 class="plan-details__cost-title bg-red">助成金</h5>
+              <p class="plan-details__cost-item">
+                入学金+研修費の<span class="text-highlight">45</span>%の助成
+              </p>
+              <p class="plan-details__cost-item">
+                <span class="text-highlight">760</span>円×時間×人数の助成
+              </p>
+            </div>
+          </div>
+          <!-- 助成金の計算 -->
+          <div class="ecycle-page__plan-calculation ecycle-page">
+            <div class="plan-calculation__title-box">
+              <p class="plan-calculation__title">助成金（例）</p>
+              <p class="plan-calculation__description">
+                受講人数2人＋受講25講座/人
+              </p>
+            </div>
+            <!-- 計算式 -->
+            <div class="plan-calculation__wrap">
+              <div class="plan-calculation__textbox">
+                <p class="plan-calculation__text">
+                  2人×15万円＝30万円
+                </p>
+                <p class="plan-calculation__text">
+                  760円/h×50講座(2人合計)＝3.8万円
+                </p>
+                <p class="plan-calculation__text">
+                  合計助成額：33.8万円
+                </p>
+              </div>
+              <figure class="plan-calculation__image">
+                <img src="../images/ecycle/plan-text1.svg" alt="1パック料金70万円-助成額33.8万円、実質負担額＝36.2万円" width="400" height="120" decoding="async">
+              </figure>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AGI-Step qa -->
+    <section class="ecycle-page__qa under-service__qa">
+      <div class="inner">
+        <!-- セクションタイトル -->
+        <h3 class="under-service__qa-title">よくある質問</h3>
+        <!-- よくある質問 -->
+        <div class="under-service__qa-wrap">
+          <ul class="under-service qa-list">
+            <!-- 01 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 02 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 03 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 04 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 05 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGI-Step Contact -->
     <section class="contact layout-contact">
       <!-- 背景動画 -->
       <video class="background_video" src="../images/video/bg_movie.mp4" autoplay muted loop></video>
       <div class="contact__inner inner">
         <div class="contact__wrap">
           <div class="contact__title-wrap section__title-wrap">
-            <h2 class="contact__title section__title">contact us</h2>
+            <h3 class="contact__title section__title">contact us</h3>
           </div>
           <p class="contact__text">
             お仕事のご相談やお問い合わせはこちらまで。<br>
@@ -203,6 +517,7 @@
         </div>
       </div>
     </section>
+
   </main>
   <!-- フッター -->
   <footer class="footer layout-footer">

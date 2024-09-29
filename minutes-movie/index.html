@@ -46,7 +46,7 @@
       <!-- ロゴ -->
       <div class="header__logo">
         <a href="../index.html" id="js-logo">
-          <img src="../images/common/logo-white.svg" alt="EHACK" width="127" height="70" decoding="async" loading="eager">
+          <img src="../images/common/logo-white.svg" alt="EHACK" width="127" height="70" decoding="async">
         </a>
       </div>
       <!-- PCのみ ナビメニュー -->
@@ -58,11 +58,11 @@
           </li>
           <!-- 2.company -->
           <li class="header__nav-item">
-            <a href="#">company</a>
+            <a href="../company/index.html">company</a>
           </li>
           <!-- 3.service ドロップダウンメニュー含む -->
           <li class="header__nav-item has-dropdown">
-            <a href="../e-cycle/html">service</a>
+            <a href="#">service</a>
             <!-- ドロップダウンメニュー -->
             <ul class="dropdown dropdown__list">
               <li class="dropdown__item">
@@ -234,10 +234,10 @@
     <section class="mmovie-page__introduction">
       <div class="inner">
         <div class="mmovie-page__introduction-wrap">
-          <!-- セクションタイトル -->
-          <div class="mmovie-page__setion-titleBox under-service__section-titlebox">
-            <p class="mmovie-page__section-subtitle">シンプルな映像制作サービス</p>
-            <h3 class="mmovie-page__section-title">MinutesMovie<span>とは</span></h3>
+          <!-- セクションタイトル（共通） -->
+          <div class="under-service__section-titlebox">
+            <p class="under-service__section-subtitle">シンプルな映像制作サービス</p>
+            <h3 class="under-service__section-title vertical-line">MinutesMovie<span>とは</span></h3>
           </div>
           <!-- テキスト -->
           <div class="mmovie-page__introduction-textBox">
@@ -256,7 +256,7 @@
             <h4 class="mmovie-page__achievement-title">制作実績</h4>
             <div class="mmovie-page__achievement-video video__container">
               <img src="../images/minutes-movie/mock-up@2x.png" alt="黒い枠のタブレットのモックアップ画像" width="840" height="546" decoding="async">
-              <video id="ehack-video" playsinline autoplay loop muted controls>
+              <video id="ehack-video" playsinline autoplay loop muted>
                 <source src="../images/video/ehack_fv.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -270,10 +270,10 @@
     <section class="mmovie-page__plan">
       <div class="inner">
         <div class="mmovie-page__plan-wrap">
-          <!-- セクションタイトル -->
-          <div class="mmovie-page__setion-titleBox">
-            <p class="mmovie-page__section-subtitle" aria-label="イーサイクル">E-cycle</p>
-            <h3 class="mmovie-page__section-title">プラン</h3>
+          <!-- セクションタイトル（共通） -->
+          <div class="under-service__section-titlebox">
+            <p class="under-service__section-subtitle" aria-label="イーサイクル">E-cycle</p>
+            <h3 class="under-service__section-title">プラン</h3>
           </div>
           <!-- プラン説明 -->
           <div class="mmovie-page__plan-description mmovie-page">
@@ -341,10 +341,10 @@
     <!-- minutes-movieページ flow -->
     <section class="mmovie-page__flow">
       <div class="inner">
-        <!-- セクションタイトル -->
-        <div class="mmovie-page__setion-titleBox">
-          <p class="mmovie-page__section-subtitle" aria-label="イーサイクル">E-cycle</p>
-          <h3 class="mmovie-page__section-title">制作までの流れ</h3>
+        <!-- セクションタイトル（共通） -->
+        <div class="under-service__section-titlebox">
+          <p class="under-service__section-subtitle" aria-label="イーサイクル">E-cycle</p>
+          <h3 class="under-service__section-title">制作までの流れ</h3>
         </div>
         <!-- 流れ -->
         <div class="mmovie-page__flow-list">
@@ -404,9 +404,59 @@
 
     <!-- minutes-movieページ qa -->
     <section class="mmovie-page__qa under-service__qa">
-      <!-- セクションタイトル -->
-      <div class="mmovie-page__setion-titleBox">
-        <h3 class="mmovie-page__section-title under-service__qa-title">よくある質問</h3>
+      <div class="inner">
+        <!-- セクションタイトル -->
+        <h3 class="under-service__qa-title">よくある質問</h3>
+        <!-- よくある質問 -->
+        <div class="under-service__qa-wrap">
+          <ul class="under-service qa-list">
+            <!-- 01 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 02 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 03 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 04 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+            <!-- 05 -->
+            <li class="qa-item">
+              <h4 class="qa-item__title">
+                この文章はダミーです。後から差替えます。
+              </h4>
+              <p class="qa-item__text">
+                この文章はダミーです。文字の大きさ、行間を確認するために入れています。
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
