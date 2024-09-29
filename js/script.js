@@ -68,6 +68,8 @@ $(window).on('scroll', function () {
 ========================================*/
 
 $(function () {
+  var scrollPos;
+
   // ハンバーガーメニューをクリックしたときの処理
   $('#js-hamburger').on('click', function () {
     // メニューが開いている場合は閉じる
@@ -75,8 +77,12 @@ $(function () {
       $('#js-drawer-menu, #js-hamburger').removeClass('is-openSP');
       $(this).removeClass('active');  // activeクラスを削除
       $('body').removeClass('js-fixed');
+
+      // スクロール位置を元に戻す
+      window.scrollTo(0, scrollPos);
     } else {
       // メニューが閉じている場合は開く
+      scrollPos = $(window).scrollTop();  // 現在のスクロール位置を保存
       $('#js-drawer-menu, #js-hamburger').addClass('is-openSP');
       $(this).addClass('active');  // activeクラスを追加
       $('body').addClass('js-fixed');
@@ -88,6 +94,7 @@ $(function () {
     $('#js-hamburger').trigger('click');
   });
 });
+
 
 
 /*3. タイプライターアニメーション
@@ -129,8 +136,20 @@ $(function () {
   // タイプライター風に一文字ずつ表示する関数
   function typeText() {
     if (index < text.length) {
-      textDOM.innerHTML += text[index]; // 一文字ずつ追加
-      index++;
+      // 現在の位置から <br> タグを探す
+      const nextBreakIndex = text.indexOf('<br', index);
+      
+      if (nextBreakIndex === index) {
+        // <br> タグの終了位置を探す
+        const endOfTag = text.indexOf('>', index) + 1;
+        // タグ全体を追加
+        textDOM.innerHTML += text.substring(index, endOfTag);
+        index = endOfTag; // タグの後ろから再開
+      } else {
+        // 一文字ずつ追加
+        textDOM.innerHTML += text[index];
+        index++;
+      }
     } else {
       clearInterval(intervalId);
       // タイピング終了後に黒文字から白文字に変える処理を開始
@@ -159,7 +178,6 @@ $(function () {
 
   intervalId = setInterval(typeText, delay); // タイピングアニメーションを開始
 });
-
 
 
 
@@ -208,13 +226,14 @@ document.addEventListener('scroll', function () {
     const windowHeight = window.innerHeight;
 
     // bg-wクラスを追加する条件
-    if (scrollPosition > elementTop - 100 && scrollPosition < elementBottom - windowHeight + 50) {
+    if (scrollPosition > elementTop - 300 && scrollPosition < elementBottom - 300) {
       body.classList.add('bg-w');
     } else {
       body.classList.remove('bg-w');
     }
   }
 });
+
 
 function typeWriter(element, text, delay = 100) {
   let i = 0;
@@ -241,7 +260,7 @@ $(function () {
 
     $(window).scroll(function () {
       var windowHeight = $(window).height(),
-          topWindow = $(window).scrollTop();
+        topWindow = $(window).scrollTop();
 
       $('.typewriter').each(function (index) {
         var objectPosition = $(this).offset().top;
@@ -306,8 +325,37 @@ $(function () {
           callback();
         }
       }
-      
+
       typeNext();
     };
   });
 });
+
+$(document).ready(function () {
+  $('.text-fadein').each(function () {
+    // Wrap the content with the desired span elements
+    $(this).html('<span class="fadein_overflow"><span class="fadein-action">' + $(this).html() + '</span></span>');
+  });
+
+  // Add event listeners and check positions
+  const fadeInElements = document.querySelectorAll('.fadein-action');
+
+  function checkPosition() {
+    fadeInElements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // 50px以上画面内に入ったときにクラスを追加
+      if (elementPosition < windowHeight - 50) {
+        element.classList.add('open');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', checkPosition);
+
+  // 初回ロード時にもチェック
+  checkPosition();
+});
+

@@ -2,80 +2,86 @@
 //ハンバーガーメニュー
 
 .hamburger {
-  @include mq("md") {
-    cursor: pointer;
-    border: none;
-    background-color: #959595; // 背景色をグレーに設定
-    display: flex;
-    justify-content: space-around; // ドットを均等に配置
-    align-items: center;
-    height: 48px;
-    width: 48px;
-    padding: 0;
-    position: relative; // 相対位置を設定
-    border-radius: 50%; // 丸形
-    z-index: 9999;
-  }
+    @include mq("md") {
+        cursor: pointer;
+        border: none;
+        background-color: #959595; // 背景色をグレーに設定
+        display: flex;
+        justify-content: space-around; // ドットを均等に配置
+        align-items: center;
+        height: 48px;
+        width: 48px;
+        padding: 0;
+        position: relative; // 相対位置を設定
+        border-radius: 50%; // 丸形
+        z-index: 9999;
+    }
 }
 
 .hamburger .dot {
-  @include mq("md") {
-    display: block;
-    height: 2px; // 初期の高さ
-    width: 2px; // 初期の幅
-    background: white; // 白色に設定
-    border-radius: 50%;
-    position: absolute;
-    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
-  }
+    @include mq("md") {
+        display: block;
+        height: 2px; // 初期の高さ
+        width: 2px; // 初期の幅
+        background: white; // 白色に設定
+        border-radius: 50%;
+        position: absolute;
+        transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
 }
 
 // 各ドットを初期位置に配置
 .hamburger .dot:nth-child(1) {
-  @include mq("md") {
-    left: calc(50% - 10px); // 左側に配置
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+    @include mq("md") {
+        left: calc(50% - 10px); // 左側に配置
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .hamburger .dot:nth-child(2) {
-  @include mq("md") {
-  left: 50%; // 中心に配置
-  top: 50%;
-  transform: translate(-50%, -50%);
-  }
+    @include mq("md") {
+        left: 50%; // 中心に配置
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .hamburger .dot:nth-child(3) {
-  @include mq("md") {
-    left: calc(50% + 10px); // 右側に配置
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+    @include mq("md") {
+        left: calc(50% + 10px); // 右側に配置
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 // アクティブ状態での変形
 .hamburger.active .dot:nth-child(1) {
-  @include mq("md") {
-    transform: translate(-2px, -2px) rotate(45deg);
-    width: 24px; // 長さを24pxに設定
-    height: 1px; // 太さを1pxに設定
-  }
+    @include mq("md") {
+        transform: translate(-2px, -2px) rotate(45deg);
+        width: 24px; // 長さを24pxに設定
+        height: 1px; // 太さを1pxに設定
+        top: 52%;
+        border-radius: 0;
+        left: calc(50% - 10.5px);
+    }
 }
 
 .hamburger.active .dot:nth-child(2) {
-  @include mq("md") {
-    opacity: 0; // アクティブ時は透明にする
-  }
+    @include mq("md") {
+        opacity: 0; // アクティブ時は透明にする
+    }
 }
 
 .hamburger.active .dot:nth-child(3) {
-  @include mq("md") {
-    transform: translate(-21px, -2px) rotate(-45deg);
-    width: 24px; // 長さを24pxに設定
-    height: 1px; // 太さを1pxに設定
-  }
+    @include mq("md") {
+        transform: translate(-21px, -2px) rotate(-45deg);
+        width: 24px; // 長さを24pxに設定
+        height: 1px; // 太さを1pxに設定
+        top: 52%;
+        border-radius: 0;
+        left: calc(50% + 9.5px); // 右側に配置
+    }
 }
 
 

@@ -12,7 +12,10 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-  transition: .3s;
+
+  @include mq("md") {
+    height: auto;
+  }
 }
 
 .header__inner,
@@ -29,6 +32,17 @@
   align-items: center;
   max-width: rrem(1330);
   position: relative;
+
+  @include mq("md") {
+    padding: rrem(20) rrem(20);
+    transition: .3s;
+  }
+}
+
+.header.change-color .header__inner {
+  @include mq("md") {
+    padding: rrem(10) rrem(20);
+  }
 }
 
 .header__inner::before {
@@ -42,14 +56,17 @@
   transform: translate(-50%, -50%);
   background-color: rgba(40, 41, 43, 1);
   opacity: 0;
-  transition: .3s;
+  transition: .5s;
   z-index: -1;
 }
 
 .header__logo {
   max-width: rrem(127);
+  transition: .3s;
   width: 100%;
+}
 
+.change-color .header__logo {
   @include mq("md") {
     max-width: rrem(100);
   }
@@ -90,7 +107,7 @@
   left: 0;
   height: 2px;
   background: $c-gradation;
-  transition: width 0.3s;
+  transition: width 0.5s;
 }
 
 .header__nav-item a:hover::after {
@@ -209,7 +226,7 @@
 
 /* ヘッダー背景色変更 JSで制御中 */
 .header {
-  transition: background-color 0.3s ease; //背景色を0.3秒かけて変化
+  border-radius: rrem(36) rrem(36) 0 0;
 }
 
 .header.show-bg {
@@ -263,7 +280,7 @@
   left: 0;
   height: 2px;
   background: $c-gradation; // グラデーションの色
-  transition: width 0.3s;
+  transition: width 0.5s;
 }
 
 /* ホバー時に下線を表示 */
@@ -278,7 +295,7 @@
 
 /* ドロップダウンメニュー内の img をホバーしたときにスケールダウン */
 .header__nav-item .dropdown__item img {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .header__nav-item .dropdown__item img:hover {
@@ -290,6 +307,10 @@
   top: rrem(28); // 画面内にスライドダウン
   opacity: 1;
   transition: .5s; //下りてくる速さ＆
+
+  @include mq("md") {
+    top: 0;
+  }
 }
 
 /* ファーストビューを超えたらheader背景色が変わる */
@@ -297,6 +318,10 @@
   top: 0;
   width: 100%;
   height: rrem(90);
+
+  @include mq("md") {
+    height: auto;
+  }
 }
 
 .header.change-color .header__inner::before {

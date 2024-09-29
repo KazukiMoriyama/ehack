@@ -1,153 +1,154 @@
 @use "../global" as *;
+
 //ハンバーガーメニュー　スマホメニュー
 .sp-nav {
-  @include mq("md") {
-  background-color: $c-text;
-  width: 100%;
-  height: 100svh;
-  position: fixed;
-  top: rrem(-48);
-  left: 0;
-  z-index: 9998;
-  transform: translateX(100%);
-  overflow-x: auto;
-  transition: transform 0.3s ease;
-  }
+    @include mq("md") {
+        background-color: $c-text;
+        width: 100%;
+        height: 100svh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+        transform: translateX(100%);
+        overflow-x: auto;
+        transition: transform 0.3s ease;
+        padding-bottom:rrem(100)
+    }
 }
 
 .sp-nav.is-openSP {
-  @include mq("md") {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    
-  }
+    @include mq("md") {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+
+    }
 }
+
 .sp-nav__logo {
-  @include mq("md") {
-    padding-top: rrem(48);
-    padding-left: rrem(20);
-    display: block;
-    //width: rrem(127);
-  }
+    @include mq("md") {
+        padding-top: rrem(20);
+        display: block;
+        //width: rrem(127);
+    }
 }
 
 .sp-nav__logo img {
-  @include mq("md") {
-    width: rrem(127);
-  }
+    @include mq("md") {
+        width: rrem(127);
+    }
 }
 
 .sp-nav__items {
-  @include mq("md") {
-    padding-block: rrem(20) rrem(20);
-    display: grid;
-    gap: rrem(30);
-    margin-inline: auto;
-    width: calc(230/335*100%);
-  }
+    @include mq("md") {
+        padding-block: rrem(20) rrem(20);
+        display: grid;
+        gap: rrem(30);
+        margin-inline: auto;
+        width: calc(230/335*100%);
+    }
 }
+
 .sp-nav__item {
-  @include mq("md") {
-    font-family: $en-font;
-    font-size: rrem(32);
-    font-weight: 200;
-    line-height: calc(32 / 41.6);
-  }
+    @include mq("md") {
+        font-family: $en-font;
+        font-size: rrem(32);
+        font-weight: 200;
+        line-height: calc(32 / 41.6);
+    }
 }
+
 .sp-nav__item a {
-  @include mq("md") {
-    color: $c-white;
-    width: 100%;
-    height: inherit;
-    display: block;
-  }
+    @include mq("md") {
+        color: $c-white;
+        width: 100%;
+        height: inherit;
+        display: block;
+    }
 }
+
 .sp-nav__item span {
-  @include mq("md") {
-    font-family: $base-font;
-    font-size: rrem(13);
-    font-weight: $bold;
-    line-height: calc(20.8/13);
-    display: block;
-    padding-top: rrem(12);
-  }
+    @include mq("md") {
+        font-family: $base-font;
+        font-size: rrem(13);
+        font-weight: $bold;
+        line-height: calc(20.8/13);
+        display: block;
+        padding-top: rrem(12);
+    }
 }
 
 .sp-nav__item--contact a {
-  @include mq("md") {
-    display: grid;
-    width: 100%;
-    height: rrem(48);
-    border-radius: rrem(25);
-    color: $c-text;
-    font-family: $base-font;
-    
-    background: $c-gradation;
-    justify-content: center;
+    @include mq("md") {
+        display: grid;
+        width: 100%;
+        height: rrem(48);
+        border-radius: rrem(25);
+        color: $c-text;
+        font-family: $base-font;
+
+        background: $c-gradation;
+        justify-content: center;
 
 
-  }
+    }
 }
 
 .sp-nav__item--contact span {
-  @include mq("md") {
-    padding-left: rrem(40);
-    position: relative;
-    font-size: rrem(16);
-    font-weight: $medium;
-    //line-height: 1;
-  }
+    @include mq("md") {
+        padding-left: rrem(40);
+        position: relative;
+        font-size: rrem(16);
+        font-weight: $medium;
+        //line-height: 1;
+    }
 }
 
 .sp-nav__item--contact span::before {
-  @include mq("md") {
-    content: "";
-    position: absolute;
-    background-image: url(../images/common/icon-mail.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: rrem(29);
-    height: rrem(29);
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-  }
+    @include mq("md") {
+        content: "";
+        position: absolute;
+        background-image: url(../images/common/icon-mail.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: rrem(29);
+        height: rrem(29);
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
 }
 
 .sp-nav__info {
-  @include mq("md") {
-    margin-inline: auto;
-    //width: calc(280/335*100%);
-    width: 70%;
-  }
+    @include mq("md") {
+        margin-inline: auto;
+        //width: calc(280/335*100%);
+        width: 70%;
+    }
 }
 
 .sp-nav__info-item {
-  @include mq("md") {
-    color: $c-white;
-    font-size: rrem(13);
-    //line-height: calc();
-    font-weight: $bold;
-  }
+    @include mq("md") {
+        color: $c-white;
+        font-size: rrem(13);
+        //line-height: calc();
+        font-weight: $bold;
+    }
 }
 
 .sp-nav__info-item a {
-  @include mq("md") {
-    color: $c-white;
-  }
+    @include mq("md") {
+        color: $c-white;
+    }
 }
 
 .sp-nav__copyright {
-  @include mq("md") {
-    margin-top: rrem(10);
-    color: $c-Mgray;
-    font-size: rrem(11);
-    font-weight: 200;
-    font-family: $en-font;
-    text-align: center;
-  }
+    @include mq("md") {
+        margin-top: rrem(10);
+        color: $c-Mgray;
+        font-size: rrem(11);
+        font-weight: 200;
+        font-family: $en-font;
+        text-align: center;
+    }
 }
-
-
-
-

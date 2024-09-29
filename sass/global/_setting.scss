@@ -180,13 +180,13 @@ body {
 }
 
 /* ハンバーガーメニュー開いているとき、背景固定 */
-body.js-fixed {
-  @include mq("md") {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-  }
-}
+// body.js-fixed {
+//   @include mq("md") {
+//     width: 100%;
+//     height: 100%;
+//     position: fixed;
+//   }
+// }
 
 /* ▼を非表示にする（detailsとsummaryタグ） */
 summary {

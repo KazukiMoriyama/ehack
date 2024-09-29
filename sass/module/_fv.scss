@@ -1,11 +1,15 @@
 @use "../global" as *;
+
 //ファーストビュー
 .fv {
   width: 100%;
   height: 100vh;
-  padding: rrem(28) rrem(28) rrem(50) rrem(28);
   box-sizing: border-box; // パディングを含めたサイズ計算
   background-color: $c-text;
+
+  @include mq("md") {
+    padding: rrem(28) rrem(10) rrem(28);
+  }
 }
 
 .fv__inner {

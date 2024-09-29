@@ -366,8 +366,10 @@
     font-size: rrem(40);
     /* モバイル対応時に小さくする */
     width: 100%;
-    padding-left: rrem(15);
-    padding-right: rrem(15);
+    padding-left: rrem(21);
+    padding-right: 0;
+    text-align: left;
+    height: rrem(120);
   }
 }
 
@@ -412,6 +414,8 @@
   @include mq("md") {
     font-size: rrem(40);
     max-width: rrem(600);
+    text-align: left;
+    padding-left: rrem(21);
   }
 }
 

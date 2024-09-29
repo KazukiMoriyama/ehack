@@ -4,90 +4,99 @@
 
 
 .about__title {
-  color: $c-white;
-  text-transform: uppercase;
-  font-family: $en-font;
-  font-size: rrem(96);
-  line-height: 1;
-  font-weight: $bold;
-  position: relative;
-  @include mq("md") {
-    font-size: rrem(48);
-  }
+    color: $c-white;
+    text-transform: uppercase;
+    font-family: $en-font;
+    font-size: rrem(96);
+    line-height: 0.75;
+    font-weight: $bold;
+    position: relative;
+
+    @include mq("md") {
+        font-size: rrem(48);
+    }
 }
 
 .about__title::before {
-  content: "";
-  position: absolute;
-  bottom: rrem(13);
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: $c-white;
-  @include mq("md") {
-    bottom: rrem(6);
-  }
+    content: "";
+    position: absolute;
+    bottom: rrem(0);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+
+    @include mq("md") {
+        bottom: rrem(0);
+    }
 }
 
 
 
 .about__container {
-  margin-top: rrem(70);
-  display: flex;
-  align-items: flex-start;
-  gap: rrem(24);
-  @include mq("md") {
-    margin-top: rrem(20);
-    flex-direction: column;
-  }
+    margin-top: rrem(70);
+    display: flex;
+    align-items: flex-start;
+    gap: rrem(24);
+
+    @include mq("md") {
+        margin-top: rrem(20);
+        flex-direction: column;
+    }
 }
 
 .about__description {
     width: 440px;
-  @include mq("md") {
-    order: 1;
-  }
+
+    @include mq("md") {
+        order: 1;
+        width: 100%;
+    }
 }
 
 .about__text {
-  color: $c-white;
-  font-size: rrem(18);
-  line-height: calc(28.8 / 18);
-  font-weight: $bold;
-  @include mq("md") {
-    font-size: rrem(16);
-    line-height: calc(24 / 16);
-  }
+    color: $c-white;
+    font-size: rrem(18);
+    line-height: calc(28.8 / 18);
+    font-weight: $bold;
+
+    @include mq("md") {
+        font-size: rrem(16);
+        line-height: calc(24 / 16);
+    }
 }
 
-.about__text + .about__text {
-  margin-top: rrem(40);
-  @include mq("md") {
-    margin-top: rrem(20);
-  }
+.about__text+.about__text {
+    margin-top: rrem(40);
+
+    @include mq("md") {
+        margin-top: rrem(20);
+    }
 }
 
 .about__image {
-  margin-top: rrem(37);
-  aspect-ratio: 529 / 390;
-  max-width: rrem(529);
-  flex-shrink: 0;
-  @include mq("md") {
-    width: rrem(300);
-    margin-inline: auto;
-  }
+    margin-top: rrem(37);
+    aspect-ratio: 529 / 390;
+    max-width: rrem(529);
+    flex-shrink: 0;
+
+    @include mq("md") {
+        width: rrem(300);
+        margin-inline: auto;
+    }
 }
 
 .about__image img {
-  height: 100%;
+    height: 100%;
 }
 
 .about__btn-wrap {
-  margin-top: rrem(44);
-  @include mq("md") {
-    margin-top: rrem(20);
-    text-align: center;
-  }
+    margin-top: rrem(44);
+
+    @include mq("md") {
+        margin-top: rrem(20);
+        text-align: center;
+    }
 }
 
 
@@ -95,150 +104,163 @@
 /* Aboutセクション ボタン
 ==========================================*/
 .about-btn__wrap {
-  margin-top: rrem(44);
+    margin-top: rrem(44);
+
+    @include mq("md") {
+        text-align: right;
+    }
 }
 
 .about-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn--gray__text,
 .about-btn__text {
-  color: $c-white;
-  margin-right: 12px;
-  font-family: $en-font;
-  font-size: 14px;
-  font-weight: $regular;
-  text-transform: capitalize;
-  letter-spacing: 1.12px;
+    color: $c-white;
+    margin-right: 12px;
+    font-family: $en-font;
+    font-size: 14px;
+    font-weight: $regular;
+    text-transform: capitalize;
+    letter-spacing: 1.12px;
 }
 
 .btn--gray__circle,
 .about-btn__circle {
-  flex-shrink: 0;
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 64px;
-  background-color: transparent;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 64px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* 初期で表示される矢印 */
 .btn--gray__arrow,
 .about-btn__arrow {
-  position: relative;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  //margin-left: 7px;
-  background-image: url(../images/common/arrow-gray.svg);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  //transform: translateX(0px);//試しに追加
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    //margin-left: 7px;
+    background-image: url(../images/common/arrow-gray.svg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    //transform: translateX(0px);//試しに追加
 }
 
 .btn--gray__arrow:after,
 .about-btn__arrow:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  background-image: url(../images/common/arrow-gradient.svg);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/common/arrow-gradient.svg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ホバー時のアニメーション */
 .about-btn__circle:hover {
-  transform: scale(1.2);
-  background-color: transparent;
+    transform: scale(1.2);
+    background-color: transparent;
 
 }
 
 .about-btn__circle:hover .about-btn__arrow {
-  animation: arrow-slide 0.3s ;
-  opacity: 1;
-  //transform: translateX(7px);
-  transition-delay: 0.2s;
+    animation: arrow-slide 0.3s;
+    opacity: 1;
+    //transform: translateX(7px);
+    transition-delay: 0.2s;
 }
 
 @keyframes arrow-slide {
-  0% {
-      opacity: 1;
-      transform: translateX(0);
-  }
-  50% {
-      opacity: 1;
-      transform: translateX(20px); /* 右に消える */
-  }
-  50.1% {
-      opacity: 0;
-      transform: translateX(-10px); /* 左に戻る */
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0); /* 左から現れる */
-  }
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(20px);
+        /* 右に消える */
+    }
+
+    50.1% {
+        opacity: 0;
+        transform: translateX(-10px);
+        /* 左に戻る */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* 左から現れる */
+    }
 }
 
 .about-btn__circle:hover .about-btn__arrow:after {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.2s;
-  left: 0;
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s;
+    left: 0;
 }
 
 /* SVGを使用したグレー線とグラデーション線の表示 */
 .about-btn__circle .circle-border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg); /* 回転の起点を変更 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    /* 回転の起点を変更 */
 }
 
 /* 初期状態でグレー線を表示 */
 .about-btn__circle .gray-border {
-  stroke: #5f5f5f;
+    stroke: #5f5f5f;
 }
 
 /* グラデーション線のスタイル（初期状態では見えない） */
 .about-btn__circle .gradient-border {
-  stroke-dasharray: 301.6; /* 円周の長さ */
-  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.3s ease; /* スピード */
+    stroke-dasharray: 301.6;
+    /* 円周の長さ */
+    stroke-dashoffset: 301.6;
+    /* 初期状態は線が見えない */
+    transition: stroke-dashoffset 0.3s ease;
+    /* スピード */
 }
 
 /* ホバー時も背景は透明、ボタンを拡大 */
 .about-btn__circle:hover {
-  background-color: transparent;
-  transform: scale(1.2);
-  //background-color: $c-text;
+    background-color: transparent;
+    transform: scale(1.2);
+    //background-color: $c-text;
 }
 
 /* ホバー時にグラデーション線が一周し、グラデーション線を非表示 */
 .about-btn__circle:hover .gradient-border {
-  stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
 }
 
 /* グレー線を消す */
 .about-btn__circle:hover .gray-border {
-  stroke: none;
+    stroke: none;
 }
-
