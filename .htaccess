@@ -1,7 +1,0 @@
-AuthUserFile /home/xs027134/xs027134.xsrv.jp/public_html/ehack-test01/.htpasswd
-AuthName "hogehoge"
-AuthType Basic
-require valid-user
-<Files ~ "^.(htpasswd|htaccess)$">
-  deny from all
-</Files>
