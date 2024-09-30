@@ -249,6 +249,16 @@
 
 /* AGI-Step feature セクション
 ======================================*/
+.agistep-page__feature {
+  background-color: $c-text;
+  padding-top: rrem(168);
+  padding-bottom: rrem(120);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(60);
+  }
+}
+
 .agistep-page__feature-list {
   margin-top: rrem(166);
   max-width: rrem(760);
@@ -392,10 +402,8 @@
 ======================================*/
 .agistep-page__feature-case {
   margin-top: rrem(120);
-  padding-bottom: rrem(120);
   @include mq("md") {
     margin-top: rrem(40);
-    padding-bottom: rrem(60);
   }
 }
 
@@ -443,11 +451,12 @@
 /* AGI-Step chatbot chatボット
 ======================================*/
 .agistep-page__chatbot {
-
-}
-
-.inner {
-
+  padding-top: rrem(120);
+  padding-bottom: rrem(45);
+  @include mq("md") {
+    padding-top: rrem(80);
+    padding-bottom: rrem(30);
+  }
 }
 
 .under-service__section-titlebox {
@@ -463,68 +472,119 @@
 }
 
 .agistep-page__chatbot-examples {
-
+  margin-top: rrem(94);
+  background: linear-gradient(to bottom, transparent rrem(213), $c-BgGray rrem(213));
+  @include mq("md") {
+    margin-top: rrem(40);
+  }
 }
 
 .agistep-page__chatbot-imageBox {
   display: flex;
+  gap: rrem(106);
+  justify-content: center;
 }
 
 .agistep-page__chatbot-image {
-  aspect-ratio: 380/410;
-  max-width: rrem(380);
-}
-
-.pc-only {
-
+  aspect-ratio: 274/405;
+  max-width: rrem(274);
+  @include mq("md") {
+    width: rrem(200);
+  }
 }
 
 .agistep-page__chatbot-discription {
-
+  margin-top: rrem(44);
+  padding-bottom: rrem(35);
+  @include mq("md") {
+    margin-top: rrem(20);
+    padding-bottom: rrem(20);
+  }
 }
 
 .agistep-page__chatbot-subcatch {
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(26.25 / 15);
+  letter-spacing: 0.6px;
+  text-align: center;
 
 }
 
 .agistep-page__chatbot-catch {
-
+  margin-top: rrem(23);
+  text-align: center;
+  color: $c-accent;
+  font-size: rrem(22);
+  font-weight: $bold;
+  line-height: calc(35.2 / 22);
+  letter-spacing: 1.76px;
+  @include mq("md") {
+    margin-top: rrem(15);
+    font-size: rrem(18);
+  }
 }
 
 .agistep-page__chatbot-categories {
+  margin-top: rrem(51);
+  max-width: rrem(760);
+  margin-inline: auto;
+  @include mq("md") {
+    margin-top: rrem(20);
+    max-width: rrem(300);
+  }
+}
+
+.agistep-page .chatbot-category__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rrem(32);
+  @include mq("md") {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: initial;
+    row-gap: rrem(20);
+  }
+}
+
+.agistep-page .chatbot-category__item {
+  background: linear-gradient(to bottom, transparent rrem(20), $c-white rrem(20));
+  padding: 0 rrem(29) rrem(29) rrem(29);
+}
+
+.agistep-page .chatbot-category__head {
+  display: grid;
+  place-content: center;
+}
+
+.agistep-page .chatbot-category__title {
+  color: $c-white;
+  text-align: center;
+  background-color: $c-text;
+  font-size: rrem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.64px;
+  padding: rrem(8) rrem(24);
+  width: rrem(182);
+  border-radius: 30px;
+}
+
+.agistep-page .chatbot-category__bottom {
+  margin-top: rrem(22);
 
 }
 
-.agistep-page {
-
+.agistep-page .chatbot-category__bottom-list {
+  list-style: disc;
+  padding-left: rrem(8);
 }
 
-.chatbot-category__list {
-
-}
-
-.chatbot-category__item {
-
-}
-
-.chatbot-category__head {
-
-}
-
-.chatbot-category__title {
-
-}
-
-.chatbot-category__bottom {
-
-}
-
-.chatbot-category__bottom-list {
-
-}
-
-.chatbot-category__bottom-item {
-
+.agistep-page  .chatbot-category__bottom-item {
+  color: $c-black;
+  font-size: rrem(13);  
+  font-weight: $medium;
+  line-height: calc(20.8 / 13);
+  letter-spacing: 0.52px;
 }
 
 
@@ -551,207 +611,9 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* E-Cycleページ plan プラン
+/* AGI-Step qa セクション
 ======================================*/
-.ecycle-page__plan {
-  padding-top: rrem(168);
-  padding-bottom: rrem(101);
-  @include mq("md") {
-    padding-top: rrem(80);
-    padding-bottom: rrem(60);
-  }
-}
-
-.ecycle-page__plan-inner {
-  max-width: rrem(890);
-}
-
-.ecycle-page__plan-wrap {
-  margin-top: rrem(64);
-  @include mq("md") {
-    margin-top: rrem(20);
-  }
-}
-
-.ecycle-page__plan-subtitle {
-  text-align: center;
-  font-size: rrem(22);
-  font-weight: $bold;
-  line-height: calc(35.2 / 22);
-  letter-spacing: 1.76px;
-  position: relative;
-  @include mq("md") {
-    font-size: rrem(16);
-  }
-}
-.ecycle-page__plan-subtitle::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: rrem(420);
-  height: 1px;
-  background: #00CF35;
-  @include mq("md") {
-    width: rrem(320);
-  }
-}
-
-.ecycle-page__plan-details {
-  margin-top: rrem(64);
-  display: flex;
-  column-gap: rrem(40);
-  @include mq("md") {
-    margin-top: rrem(40);
-    flex-direction: column;
-    row-gap: rrem(20);
-    column-gap: initial;
-    max-width: rrem(320);
-    margin-inline: auto;
-  }
-}
-
-.ecycle-page .plan-details__cost {
-  width: 50%;
-  text-align: center;
-  @include mq("md") {
-    width: 100%;
-  }
-}
-
-.ecycle-page .plan-details__cost-title.bg-green {
-  background-color: $c-main;
-}
-
-.ecycle-page .plan-details__cost-title.bg-red {
-  background-color: $c-accent;
-}
-
-.ecycle-page .plan-details__cost-title {
-  color: $c-white;
-  font-size: rrem(18);
-  font-weight: $bold;
-  line-height: calc(28.8 / 18);
-  letter-spacing: 0.72px;
-  padding-block: rrem(10);
-  @include mq("md") {
-    padding-block: rrem(5);
-  }
-}
-
-.ecycle-page .plan-details__cost-item {
-  margin-top: rrem(24);
-  font-size: rrem(18);
-  font-weight: $bold;
-  line-height: calc(28.8 / 18);
-  letter-spacing: 0.72px;
-  @include mq("md") {
-    margin-top: rrem(10);
-    font-size: rrem(16);
-  }
-}
-
-.ecycle-page .plan-details__cost-item .text-highlight {
-  font-size: rrem(30);
-  @include mq("md") {
-    font-size: rrem(24);
-  }
-}
-
-.ecycle-page .plan-details__cost-item + .plan-details__cost-item {
-  margin-top: rrem(5);
-}
-
-.ecycle-page__plan-calculation {
-  margin-top: rrem(40);
-  padding: rrem(38) rrem(56) rrem(43);
-  background-color: $c-BgGray;
-  @include mq("md") {
-    margin-top: rrem(20);
-    padding: rrem(18);
-  }
-}
-
-.ecycle-page .plan-calculation__title-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ecycle-page .plan-calculation__title {
-  text-align: center;
-  color: $c-black;
-  font-size: rrem(13);
-  font-weight: $medium;
-  line-height: calc(20.8 / 13);
-  letter-spacing: 0.52px;
-}
-
-.ecycle-page .plan-calculation__description {
-  text-align: center;
-  padding-block: rrem(13);
-  border: solid 1px $c-main;
-  width: rrem(400);
-  margin-top: rrem(16);
-  font-size: rrem(18);
-  font-weight: $bold;
-  line-height: calc(18 / 18);
-  letter-spacing: 0.72px;
-  @include mq("md") {
-    width: 100%;
-  }
-}
-
-.ecycle-page .plan-calculation__wrap {
-  margin-top: rrem(23);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: rrem(44);
-  @include mq("md") {
-    flex-direction: column;
-    margin-top: rrem(20);
-    gap: rrem(20);
-  }
-}
-
-.ecycle-page .plan-calculation__textbox {
-
-}
-
-.ecycle-page .plan-calculation__text {
-  font-size: rrem(16);
-  font-weight: $bold;
-  line-height: calc(24 / 16);
-  letter-spacing: 0.64px;
-}
-
-.ecycle-page .plan-calculation__text + .plan-calculation__text  {
-  margin-top: rrem(9);
-}
-
-.ecycle-page .plan-calculation__image {
-  aspect-ratio: 400 / 120;
-  max-width: rrem(400);
-}
-
-
-
-/* E-Cycleページ qa セクション
-======================================*/
-.ecycle-page__qa {
+.agistep-page__qa {
   padding-top: rrem(72);
   padding-bottom: rrem(89);
   @include mq("md") {

@@ -4248,6 +4248,18 @@ select::-ms-expand {
 
 /* AGI-Step feature セクション
 ======================================*/
+.agistep-page__feature {
+  background-color: #28292B;
+  padding-top: 10.5rem;
+  padding-bottom: 7.5rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__feature {
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
 .agistep-page__feature-list {
   margin-top: 10.375rem;
   max-width: 47.5rem;
@@ -4406,12 +4418,10 @@ select::-ms-expand {
 ======================================*/
 .agistep-page__feature-case {
   margin-top: 7.5rem;
-  padding-bottom: 7.5rem;
 }
 @media screen and (max-width: 767px) {
   .agistep-page__feature-case {
     margin-top: 2.5rem;
-    padding-bottom: 3.75rem;
   }
 }
 
@@ -4462,13 +4472,141 @@ select::-ms-expand {
 
 /* AGI-Step chatbot chatボット
 ======================================*/
+.agistep-page__chatbot {
+  padding-top: 7.5rem;
+  padding-bottom: 2.8125rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__chatbot {
+    padding-top: 5rem;
+    padding-bottom: 1.875rem;
+  }
+}
+
+.agistep-page__chatbot-examples {
+  margin-top: 5.875rem;
+  background: linear-gradient(to bottom, transparent 13.3125rem, #f5f5f5 13.3125rem);
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__chatbot-examples {
+    margin-top: 2.5rem;
+  }
+}
+
 .agistep-page__chatbot-imageBox {
   display: flex;
+  gap: 6.625rem;
+  justify-content: center;
 }
 
 .agistep-page__chatbot-image {
-  aspect-ratio: 380/410;
-  max-width: 23.75rem;
+  aspect-ratio: 274/405;
+  max-width: 17.125rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__chatbot-image {
+    width: 12.5rem;
+  }
+}
+
+.agistep-page__chatbot-discription {
+  margin-top: 2.75rem;
+  padding-bottom: 2.1875rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__chatbot-discription {
+    margin-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+.agistep-page__chatbot-subcatch {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+
+.agistep-page__chatbot-catch {
+  margin-top: 1.4375rem;
+  text-align: center;
+  color: #F74A3F;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1.76px;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__chatbot-catch {
+    margin-top: 0.9375rem;
+    font-size: 1.125rem;
+  }
+}
+
+.agistep-page__chatbot-categories {
+  margin-top: 3.1875rem;
+  max-width: 47.5rem;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__chatbot-categories {
+    margin-top: 1.25rem;
+    max-width: 18.75rem;
+  }
+}
+
+.agistep-page .chatbot-category__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page .chatbot-category__list {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: initial;
+    row-gap: 1.25rem;
+  }
+}
+
+.agistep-page .chatbot-category__item {
+  background: linear-gradient(to bottom, transparent 1.25rem, #FFF 1.25rem);
+  padding: 0 1.8125rem 1.8125rem 1.8125rem;
+}
+
+.agistep-page .chatbot-category__head {
+  display: grid;
+  place-content: center;
+}
+
+.agistep-page .chatbot-category__title {
+  color: #FFF;
+  text-align: center;
+  background-color: #28292B;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  padding: 0.5rem 1.5rem;
+  width: 11.375rem;
+  border-radius: 30px;
+}
+
+.agistep-page .chatbot-category__bottom {
+  margin-top: 1.375rem;
+}
+
+.agistep-page .chatbot-category__bottom-list {
+  list-style: disc;
+  padding-left: 0.5rem;
+}
+
+.agistep-page .chatbot-category__bottom-item {
+  color: #000;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.52px;
 }
 
 /* AGI-Step timeline 導入までの流れ
@@ -4496,221 +4634,15 @@ select::-ms-expand {
   }
 }
 
-/* E-Cycleページ plan プラン
+/* AGI-Step qa セクション
 ======================================*/
-.ecycle-page__plan {
-  padding-top: 10.5rem;
-  padding-bottom: 6.3125rem;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page__plan {
-    padding-top: 5rem;
-    padding-bottom: 3.75rem;
-  }
-}
-
-.ecycle-page__plan-inner {
-  max-width: 55.625rem;
-}
-
-.ecycle-page__plan-wrap {
-  margin-top: 4rem;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page__plan-wrap {
-    margin-top: 1.25rem;
-  }
-}
-
-.ecycle-page__plan-subtitle {
-  text-align: center;
-  font-size: 1.375rem;
-  font-weight: 700;
-  line-height: 1.6;
-  letter-spacing: 1.76px;
-  position: relative;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page__plan-subtitle {
-    font-size: 1rem;
-  }
-}
-
-.ecycle-page__plan-subtitle::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 26.25rem;
-  height: 1px;
-  background: #00CF35;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page__plan-subtitle::after {
-    width: 20rem;
-  }
-}
-
-.ecycle-page__plan-details {
-  margin-top: 4rem;
-  display: flex;
-  column-gap: 2.5rem;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page__plan-details {
-    margin-top: 2.5rem;
-    flex-direction: column;
-    row-gap: 1.25rem;
-    column-gap: initial;
-    max-width: 20rem;
-    margin-inline: auto;
-  }
-}
-
-.ecycle-page .plan-details__cost {
-  width: 50%;
-  text-align: center;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page .plan-details__cost {
-    width: 100%;
-  }
-}
-
-.ecycle-page .plan-details__cost-title.bg-green {
-  background-color: #00CF35;
-}
-
-.ecycle-page .plan-details__cost-title.bg-red {
-  background-color: #F74A3F;
-}
-
-.ecycle-page .plan-details__cost-title {
-  color: #FFF;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.6;
-  letter-spacing: 0.72px;
-  padding-block: 0.625rem;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page .plan-details__cost-title {
-    padding-block: 0.3125rem;
-  }
-}
-
-.ecycle-page .plan-details__cost-item {
-  margin-top: 1.5rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.6;
-  letter-spacing: 0.72px;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page .plan-details__cost-item {
-    margin-top: 0.625rem;
-    font-size: 1rem;
-  }
-}
-
-.ecycle-page .plan-details__cost-item .text-highlight {
-  font-size: 1.875rem;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page .plan-details__cost-item .text-highlight {
-    font-size: 1.5rem;
-  }
-}
-
-.ecycle-page .plan-details__cost-item + .plan-details__cost-item {
-  margin-top: 0.3125rem;
-}
-
-.ecycle-page__plan-calculation {
-  margin-top: 2.5rem;
-  padding: 2.375rem 3.5rem 2.6875rem;
-  background-color: #f5f5f5;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page__plan-calculation {
-    margin-top: 1.25rem;
-    padding: 1.125rem;
-  }
-}
-
-.ecycle-page .plan-calculation__title-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ecycle-page .plan-calculation__title {
-  text-align: center;
-  color: #000;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.6;
-  letter-spacing: 0.52px;
-}
-
-.ecycle-page .plan-calculation__description {
-  text-align: center;
-  padding-block: 0.8125rem;
-  border: solid 1px #00CF35;
-  width: 25rem;
-  margin-top: 1rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.72px;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page .plan-calculation__description {
-    width: 100%;
-  }
-}
-
-.ecycle-page .plan-calculation__wrap {
-  margin-top: 1.4375rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.75rem;
-}
-@media screen and (max-width: 767px) {
-  .ecycle-page .plan-calculation__wrap {
-    flex-direction: column;
-    margin-top: 1.25rem;
-    gap: 1.25rem;
-  }
-}
-
-.ecycle-page .plan-calculation__text {
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.64px;
-}
-
-.ecycle-page .plan-calculation__text + .plan-calculation__text {
-  margin-top: 0.5625rem;
-}
-
-.ecycle-page .plan-calculation__image {
-  aspect-ratio: 400/120;
-  max-width: 25rem;
-}
-
-/* E-Cycleページ qa セクション
-======================================*/
-.ecycle-page__qa {
+.agistep-page__qa {
   padding-top: 4.5rem;
   padding-bottom: 5.5625rem;
 }
 @media screen and (max-width: 767px) {
-  .ecycle-page__qa {
+  .agistep-page__qa {
     padding-top: 5rem;
     padding-bottom: 3.75rem;
   }
-}
+}/*# sourceMappingURL=styles.css.map */
