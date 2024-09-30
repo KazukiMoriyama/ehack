@@ -3569,7 +3569,7 @@ select::-ms-expand {
 ======================================*/
 .ecycle-page__features {
   padding-top: 9.875rem;
-  padding-bottom: 10.6875rem;
+  padding-bottom: 4.125rem;
 }
 @media screen and (max-width: 767px) {
   .ecycle-page__features {
@@ -3760,6 +3760,17 @@ select::-ms-expand {
 
 /* E-Cycleページ results 制作実績
 ======================================*/
+.ecycle-page__results {
+  padding-top: 5rem;
+  padding-bottom: 8.9375rem;
+}
+@media screen and (max-width: 767px) {
+  .ecycle-page__results {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
 /* （仮） 画像 */
 .ecycle-page__results-slider {
   margin-inline: auto;

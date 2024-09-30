@@ -151,7 +151,7 @@
 ======================================*/
 .ecycle-page__features {
   padding-top: rrem(158);
-  padding-bottom: rrem(171);
+  padding-bottom: rrem(66);
   @include mq("md") {
     padding-top: rrem(80);
     padding-bottom: rrem(60);
@@ -325,6 +325,14 @@
 
 /* E-Cycleページ results 制作実績
 ======================================*/
+.ecycle-page__results {
+  padding-top: rrem(80);
+  padding-bottom: rrem(143);
+  @include mq("md") {
+    padding-top: rrem(60);
+    padding-bottom: rrem(60);
+  } 
+}
 
 /* （仮） 画像 */
 .ecycle-page__results-slider {
