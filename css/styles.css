@@ -4340,6 +4340,7 @@ select::-ms-expand {
   font-weight: 500;
   line-height: 1.75;
   letter-spacing: 0.6px;
+  margin-top: 2rem;
 }
 @media screen and (max-width: 767px) {
   .agistep-page__description-text {

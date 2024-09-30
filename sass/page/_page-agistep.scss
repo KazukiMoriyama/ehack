@@ -326,6 +326,7 @@
   font-weight: $medium;
   line-height: calc(26.25 / 15);
   letter-spacing: 0.6px;
+  margin-top: rrem(32);
   @include mq("md") {
     margin-top: rrem(10);
   }
