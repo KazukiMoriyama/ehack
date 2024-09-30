@@ -124,18 +124,29 @@ $(window).on('load', function () {
 /*タイプライターアニメーション
 ========================================*/
 $(function () {
-    console.log('タイプライターアニメーションの処理を開始');
+    // ローディングテキスト
+    const textDOM = document.getElementById('loading__typewriter-text'); 
+    // ローディング全体
+    const loadingDOM = document.querySelector('.loading'); 
+    // ファーストビューのテキスト
+    const fvTextDOM = document.getElementById('fv-typewriter-text'); 
 
-    const textDOM = document.getElementById('loading__typewriter-text'); // ローディングテキスト
-    const loadingDOM = document.querySelector('.loading'); // ローディング全体
-    const fvTextDOM = document.getElementById('fv-typewriter-text'); // ファーストビューのテキスト
-    const delay = 150; // タイプライターの速度
+
+     // どれか1つでも見つからなければ処理を終了
+     if (!textDOM || !loadingDOM || !fvTextDOM) {
+        return; // 処理を中止
+    }
+
+
+    // タイプライターの速度
+    const delay = 150;
     let index = 0;
     let intervalId;
 
-    if (!textDOM) {
-        console.error('ローディングテキストが見つかりません');
-        return;
+    // 必要な要素がすべて存在するか確認
+    if (!textDOM || !loadingDOM || !fvTextDOM) {
+        console.warn('必要な要素が見つかりません。');
+        return; // 要素がなければ処理を終了
     }
 
     const text = textDOM.innerHTML;
@@ -200,13 +211,16 @@ $(function () {
 const hoverBtn = document.getElementById('js-btn-hover');
 const contactWrap = document.querySelector('.contact__wrap');
 
-hoverBtn.addEventListener('mouseenter', () => {
-    contactWrap.classList.add('active');
-});
+// hoverBtnが存在する場合のみ、イベントリスナーを追加する
+if (hoverBtn) {
+    hoverBtn.addEventListener('mouseenter', () => {
+        contactWrap.classList.add('active');
+    });
 
-hoverBtn.addEventListener('mouseleave', () => {
-    contactWrap.classList.remove('active');
-});
+    hoverBtn.addEventListener('mouseleave', () => {
+        contactWrap.classList.remove('active');
+    });
+}
 
 
 /*footerドロップダウンアニメーション 何回でも繰り返し
