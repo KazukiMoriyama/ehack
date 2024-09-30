@@ -4054,6 +4054,7 @@ select::-ms-expand {
 .agistep-page__quick {
   padding-top: 6.5rem;
   padding-bottom: 5.75rem;
+  background-color: #28292B;
 }
 @media screen and (max-width: 767px) {
   .agistep-page__quick {
@@ -4067,7 +4068,6 @@ select::-ms-expand {
 .agistep-page__problem {
   padding-top: 9rem;
   padding-bottom: 9.5rem;
-  background-color: #28292B;
 }
 @media screen and (max-width: 767px) {
   .agistep-page__problem {
@@ -4269,6 +4269,10 @@ select::-ms-expand {
     padding-top: 5rem;
     padding-bottom: 3.75rem;
   }
+}
+
+.agistep-page__feature .under-service__section-titlebox {
+  color: #FFF;
 }
 
 .agistep-page__feature-list {

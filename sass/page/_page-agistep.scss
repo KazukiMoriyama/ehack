@@ -51,6 +51,7 @@
 .agistep-page__quick {
   padding-top: rrem(104);
   padding-bottom: rrem(92);
+  background-color: $c-text;
   @include mq("md") {
     padding-top: rrem(80);
     padding-bottom: rrem(60); 
@@ -62,7 +63,7 @@
 .agistep-page__problem {
   padding-top: rrem(144);
   padding-bottom: rrem(152);
-  background-color: $c-text;
+  //background-color: $c-text;
   @include mq("md") {
     padding-top: rrem(80);
     padding-bottom: rrem(60);
@@ -258,6 +259,11 @@
     padding-bottom: rrem(60);
   }
 }
+
+.agistep-page__feature .under-service__section-titlebox {
+  color: $c-white;
+}
+
 
 .agistep-page__feature-list {
   margin-top: rrem(166);
