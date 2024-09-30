@@ -2,14 +2,18 @@
 /* リキッドレイアウト対応のための設定 */
 body {
   color: #28292B;
-  background: rgb(40, 41, 43);
   transition: 1s;
-  color: #fff;
 }
 
-body.bg-w {
-  background: rgba(40, 41, 43, 0);
-  color: #000;
+.bg_change-w {
+  background: rgb(40, 41, 43);
+  color: #fff;
+  transition: 1s;
+}
+
+.bg_change-w.bg-w {
+  background: #fff;
+  color: rgb(40, 41, 43);
 }
 
 body.top_body::-webkit-scrollbar {
@@ -4709,4 +4713,4 @@ select::-ms-expand {
     padding-top: 5rem;
     padding-bottom: 3.75rem;
   }
-}/*# sourceMappingURL=styles.css.map */
+}

@@ -30,19 +30,23 @@ $c-BgGray: #f5f5f5;
 
 
 body {
-  color: $c-text;
-  background: rgba(40, 41, 43);
-  transition: 1s;
-  color: #fff;
+    color: $c-text;
+    transition: 1s;
 }
 
-body.bg-w {
-  background: rgba(40, 41, 43, 0);
-  color: #000;
+.bg_change-w {
+    background: rgba(40, 41, 43);
+    color: #fff;
+    transition: 1s;
+}
+
+.bg_change-w.bg-w {
+    background: #fff;
+    color: rgba(40, 41, 43);
 }
 
 body.top_body::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 // ================================================
@@ -62,9 +66,9 @@ $extra-bold: 800;
 $heavy: 900;
 
 body {
-  // このサイトの基本フォント
-  font-family: $base-font;
-  font-weight: $regular;
+    // このサイトの基本フォント
+    font-family: $base-font;
+    font-weight: $regular;
 }
 
 // ================================================
@@ -72,46 +76,46 @@ body {
 // ================================================
 //ブレイクポイント(デザインによって異なる)
 $breakpoints: (
-  sm: 550,
-  md: 767,
-  lg: 1200,
-  xl: 1400,
+    sm: 550,
+    md: 767,
+    lg: 1200,
+    xl: 1400,
 );
 
 
 //メディアクエリー
 $mediaquerys: (
-  sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",
-  md: "screen and (max-width: #{map-get($breakpoints,'md')}px)",
-  lg: "screen and (max-width: #{map-get($breakpoints,'lg')}px)",
-  xl: "screen and (max-width: #{map-get($breakpoints,'xl')}px)",
+    sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",
+    md: "screen and (max-width: #{map-get($breakpoints,'md')}px)",
+    lg: "screen and (max-width: #{map-get($breakpoints,'lg')}px)",
+    xl: "screen and (max-width: #{map-get($breakpoints,'xl')}px)",
 );
 
 // @include mq(){}で書くとブレークポイントが反映される（初期値はmd）
 @mixin mq($mediaquery: md) {
-  @media #{map-get($mediaquerys, $mediaquery)} {
-    @content;
-  }
+    @media #{map-get($mediaquerys, $mediaquery)} {
+        @content;
+    }
 }
 
 /*  PCとSPの表示非表示の切り替え */
 
 /*PCのみ表示*/
 .pc-only {
-  display: block;
+    display: block;
 
-  @include mq("md") {
-    display: none;
-  }
+    @include mq("md") {
+        display: none;
+    }
 }
 
 /*(md)px以下で表示*/
 .sp-only {
-  display: none;
+    display: none;
 
-  @include mq("md") {
-    display: block;
-  }
+    @include mq("md") {
+        display: block;
+    }
 }
 
 
@@ -120,63 +124,63 @@ $mediaquerys: (
 // ================================================
 // remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
 @function rrem($pixels) {
-  @return math.div($pixels, 16) * 1rem;
+    @return math.div($pixels, 16) * 1rem;
 }
 
 /*画像の縦横比設定*/
 img {
-  width: 100%;
-  //height: auto;
-  display: block;
+    width: 100%;
+    //height: auto;
+    display: block;
 }
 
 img {
-  object-fit: cover;
-  height: 100%;
+    object-fit: cover;
+    height: 100%;
 }
 
 /* aタグのスタイルリセット*/
 a {
-  text-decoration: none;
-  transition: opacity, 0.3s 0s ease;
+    text-decoration: none;
+    transition: opacity, 0.3s 0s ease;
 }
 
 a:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 /* 画像のはみ出しを管理 */
 main {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* addressタグ リセット */
 address {
-  font-style: normal;
+    font-style: normal;
 }
 
 /* 電話発信 PCではしない*/
 a[href^="tel:"] {
-  pointer-events: none; //クリックやタップなどのイベントを無効
-  color: inherit;
+    pointer-events: none; //クリックやタップなどのイベントを無効
+    color: inherit;
 
-  @include mq("md") {
-    pointer-events: auto;
-  }
+    @include mq("md") {
+        pointer-events: auto;
+    }
 }
 
 /* 横スクロール防止 */
 html,
 body {
-  overflow-x: clip;
+    overflow-x: clip;
 }
 
 .anker-link {
-  scroll-margin-top: rrem(150);
+    scroll-margin-top: rrem(150);
 
-  @include mq("md") {
-    scroll-margin-top: rrem(50);
-  }
+    @include mq("md") {
+        scroll-margin-top: rrem(50);
+    }
 }
 
 /* ハンバーガーメニュー開いているとき、背景固定 */
@@ -190,10 +194,10 @@ body {
 
 /* ▼を非表示にする（detailsとsummaryタグ） */
 summary {
-  display: block;
+    display: block;
 }
 
 /* Safariで表示されるデフォルトの三角形アイコンを消します */
 summary::-webkit-details-marker {
-  display: none;
+    display: none;
 }
