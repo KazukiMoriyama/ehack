@@ -4052,6 +4052,7 @@ select::-ms-expand {
 .agistep-page__problem {
   padding-top: 9rem;
   padding-bottom: 9.5rem;
+  background-color: #28292B;
 }
 @media screen and (max-width: 767px) {
   .agistep-page__problem {
@@ -4268,6 +4269,12 @@ select::-ms-expand {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .agistep-page__feature-image + .agistep-page__feature-image {
+    margin-top: 1.25rem;
+  }
+}
+
 .agistep-page__feature-description {
   margin-top: 1.875rem;
   display: flex;
@@ -4289,6 +4296,11 @@ select::-ms-expand {
   line-height: 1.6;
   letter-spacing: 2.4px;
 }
+@media screen and (max-width: 767px) {
+  .agistep-page__description-title {
+    font-size: 1.375rem;
+  }
+}
 
 .agistep-page__description-text {
   color: #FFF;
@@ -4296,6 +4308,11 @@ select::-ms-expand {
   font-weight: 500;
   line-height: 1.75;
   letter-spacing: 0.6px;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__description-text {
+    margin-top: 0.625rem;
+  }
 }
 
 .agistep-page__description-image {
@@ -4319,16 +4336,159 @@ select::-ms-expand {
 @media screen and (max-width: 767px) {
   .agistep-page__feature-automation {
     margin-top: 2.5rem;
+    padding: 1.25rem;
   }
 }
 
 .agistep-page__automation-image {
-  aspect-ratio: 682/389;
-  width: 42.625rem;
+  aspect-ratio: 900/512;
+  width: 56.25rem;
 }
 @media screen and (max-width: 767px) {
   .agistep-page__automation-image {
-    width: 20rem;
+    width: 100%;
+  }
+}
+
+.agistep-page__automation-image img {
+  height: 100%;
+}
+
+/* AGI-Step feature セクション 導入シュミレーション
+======================================*/
+.agistep-page__feature-simulation {
+  margin-top: 2rem;
+  padding: 2.25rem 3.125rem 2.5625rem;
+  background-color: #FFF;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__feature-simulation {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+  }
+}
+
+.agistep-page__simulation-title {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__simulation-title {
+    font-size: 1rem;
+  }
+}
+
+.agistep-page__simulation-image {
+  margin-top: 1.75rem;
+  aspect-ratio: 900/378;
+  width: 56.25rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__simulation-image {
+    width: 100%;
+    margin-top: 0.625rem;
+  }
+}
+
+.agistep-page__simulation-image img {
+  height: 100%;
+}
+
+/* AGI-Step case 企業の効果
+======================================*/
+.agistep-page__feature-case {
+  margin-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__feature-case {
+    margin-top: 2.5rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.agistep-page__case-title {
+  text-align: center;
+  color: #FFF;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__case-title {
+    font-size: 1.375rem;
+  }
+}
+
+.agistep-page__case-wrap {
+  margin-top: 4.5625rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__case-wrap {
+    margin-top: 2.5rem;
+  }
+}
+
+.agistep-page__case-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__case-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3125rem;
+  }
+}
+
+.agistep-page__case-image {
+  aspect-ratio: 328/208;
+  max-width: 20.5rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__case-image {
+    width: 100%;
+  }
+}
+
+/* AGI-Step chatbot chatボット
+======================================*/
+.agistep-page__chatbot-imageBox {
+  display: flex;
+}
+
+.agistep-page__chatbot-image {
+  aspect-ratio: 380/410;
+  max-width: 23.75rem;
+}
+
+/* AGI-Step timeline 導入までの流れ
+======================================*/
+.agistep-page__timeline {
+  padding-top: 5rem;
+  padding-bottom: 3.8125rem;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__timeline {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.agistep-page__timeline-image {
+  margin-top: 2.5rem;
+  aspect-ratio: 800/375;
+  max-width: 50rem;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .agistep-page__timeline-image {
+    width: 100%;
   }
 }
 

@@ -62,7 +62,7 @@
 .agistep-page__problem {
   padding-top: rrem(144);
   padding-bottom: rrem(152);
-  //background-color: $c-white;
+  background-color: $c-text;
   @include mq("md") {
     padding-top: rrem(80);
     padding-bottom: rrem(60);
@@ -270,6 +270,12 @@
   }
 }
 
+.agistep-page__feature-image + .agistep-page__feature-image {
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
+
 .agistep-page__feature-description {
   margin-top: rrem(30);
   display: flex;
@@ -293,6 +299,9 @@
   font-weight: $bold;
   line-height: calc(48 / 30);
   letter-spacing: 2.4px;
+  @include mq("md") {
+    font-size: rrem(22);
+  }
 }
 
 .agistep-page__description-text {
@@ -301,6 +310,9 @@
   font-weight: $medium;
   line-height: calc(26.25 / 15);
   letter-spacing: 0.6px;
+  @include mq("md") {
+    margin-top: rrem(10);
+  }
 }
 
 .agistep-page__description-image {
@@ -321,31 +333,222 @@
   background-color: $c-white;
   @include mq("md") {
     margin-top: rrem(40);
+    padding: rrem(20);
   }
 }
 
 .agistep-page__automation-image {
-  aspect-ratio: 682 / 389;
-  width: rrem(682);
+  aspect-ratio: 900 / 512;
+  width: rrem(900);
   @include mq("md") {
-    width: rrem(320);
+    width: 100%;
   }
 }
 
-.agistep-page__feature-simulation {
+.agistep-page__automation-image img {
+  height: 100%;
+}
 
+/* AGI-Step feature セクション 導入シュミレーション
+======================================*/
+.agistep-page__feature-simulation {
+  margin-top: rrem(32);
+  padding: rrem(36) rrem(50) rrem(41);
+  background-color: $c-white;
+  @include mq("md") {
+    margin-top: rrem(20);
+    padding: rrem(20);
+  }
 }
 
 .agistep-page__simulation-title {
-
+  color: $c-black;
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(28.8 / 18);
+  letter-spacing: 0.72px;
+  text-align: center;
+  @include mq("md") {
+    font-size: rrem(16);
+  }
 }
 
 .agistep-page__simulation-image {
+  margin-top: rrem(28);
+  aspect-ratio: 900 / 378;
+  width: rrem(900);
+  @include mq("md") {
+    width: 100%;
+    margin-top: rrem(10);
+  }
+}
+
+.agistep-page__simulation-image img {
+  height: 100%;
+}
+
+
+/* AGI-Step case 企業の効果
+======================================*/
+.agistep-page__feature-case {
+  margin-top: rrem(120);
+  padding-bottom: rrem(120);
+  @include mq("md") {
+    margin-top: rrem(40);
+    padding-bottom: rrem(60);
+  }
+}
+
+.agistep-page__case-title {
+  text-align: center;
+  color: $c-white;
+  font-size: rrem(30);
+  font-weight: $bold;
+  line-height: calc(48 / 30);
+  letter-spacing: 2.4px;
+  @include mq("md") {
+    font-size: rrem(22);
+  }
+}
+
+.agistep-page__case-wrap {
+  margin-top: rrem(73);
+  @include mq("md") {
+    margin-top: rrem(40);
+  }
+}
+
+.agistep-page__case-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rrem(8);
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rrem(5);
+  }
+}
+
+.agistep-page__case-item {
+
+}
+
+.agistep-page__case-image {
+  aspect-ratio: 328 / 208;
+  max-width: rrem(328);
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+/* AGI-Step chatbot chatボット
+======================================*/
+.agistep-page__chatbot {
+
+}
+
+.inner {
+
+}
+
+.under-service__section-titlebox {
+
+}
+
+.under-service__section-subtitle {
+
+}
+
+.under-service__section-title {
+
+}
+
+.agistep-page__chatbot-examples {
+
+}
+
+.agistep-page__chatbot-imageBox {
+  display: flex;
+}
+
+.agistep-page__chatbot-image {
+  aspect-ratio: 380/410;
+  max-width: rrem(380);
+}
+
+.pc-only {
+
+}
+
+.agistep-page__chatbot-discription {
+
+}
+
+.agistep-page__chatbot-subcatch {
+
+}
+
+.agistep-page__chatbot-catch {
+
+}
+
+.agistep-page__chatbot-categories {
+
+}
+
+.agistep-page {
+
+}
+
+.chatbot-category__list {
+
+}
+
+.chatbot-category__item {
+
+}
+
+.chatbot-category__head {
+
+}
+
+.chatbot-category__title {
+
+}
+
+.chatbot-category__bottom {
+
+}
+
+.chatbot-category__bottom-list {
+
+}
+
+.chatbot-category__bottom-item {
 
 }
 
 
 
+
+/* AGI-Step timeline 導入までの流れ
+======================================*/
+.agistep-page__timeline {
+  padding-top: rrem(80);
+  padding-bottom: rrem(61);
+  @include mq("md") {
+    padding-top: rrem(40);
+    padding-bottom: rrem(40);
+  }
+}
+.agistep-page__timeline-image {
+  margin-top: rrem(40);
+  aspect-ratio: 800 / 375;
+  max-width: rrem(800);
+  margin-inline: auto;
+  @include mq("md") {
+    width: 100%;
+  }
+}
 
 
 
