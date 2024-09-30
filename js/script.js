@@ -15,7 +15,7 @@ function showBG() {
     if ($('body').hasClass('top_body')) {
         $("#js-logo img").attr("src", "./images/common/logo-black.svg");
     } else {
-        $("#js-logo img").attr("src", "../../images/common/logo-black.svg");
+        $("#js-logo img").attr("src", "../images/common/logo-black.svg");
     }
 }
 
@@ -27,7 +27,7 @@ function hideBG() {
 
     // bodyにtop_bodyクラスがない場合
     if (!$('body').hasClass('top_body')) {
-        $("#js-logo img").attr("src", "../../images/common/logo-white.svg");
+        $("#js-logo img").attr("src", "../images/common/logo-white.svg");
     } else {
         $("#js-logo img").attr("src", "./images/common/logo-white.svg");
     }
