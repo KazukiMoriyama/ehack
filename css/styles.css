@@ -46,6 +46,11 @@ body {
   }
 }
 
+/* videoタグ クリック禁止 */
+video {
+  pointer-events: none;
+}
+
 /*画像の縦横比設定*/
 img {
   width: 100%;
