@@ -1466,7 +1466,7 @@ select::-ms-expand {
 .service__block-title {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(4.563rem, 2.348rem + 4.61vw, 6.5rem);
-  line-height: 1;
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: 5px;
 }

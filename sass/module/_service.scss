@@ -60,7 +60,7 @@
   font-family: $en-font;
   //font-size: rrem(104);
   font-size: clamp(4.563rem, 2.348rem + 4.61vw, 6.5rem);
-  line-height: calc(104/104);
+  line-height: 1.2;
   font-weight: $bold;
   letter-spacing: 5px;
 
