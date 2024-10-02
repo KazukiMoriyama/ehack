@@ -330,13 +330,21 @@
   padding-bottom: rrem(143);
   @include mq("md") {
     padding-top: rrem(60);
-    padding-bottom: rrem(60);
-  } 
+    padding-bottom: rrem(100);
+  }
 }
 
 /* スライドショー */
 .ecycle-page__results-slider {
-
+  margin-top: rrem(37);
+  background-color: $c-BgGray;
+  padding-top: rrem(51);
+  padding-bottom: rrem(51);
+  @include mq("md") {
+    margin-top: rrem(20);
+    padding-top: rrem(20);
+    padding-bottom: rrem(20);
+  }
 }
 
 .splide {
@@ -348,7 +356,7 @@
 }
 
 .results-slider__container {
-
+  position: relative;
 }
 
 .splide__arrows {
@@ -356,7 +364,37 @@
 }
 
 .results-slider__arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @include mq("md") {
+    justify-content: space-evenly;
+    top: initial;
+    bottom: rrem(-80);
+    // width: 115%;
+    // //left: -7.5%;
+    // left: -20px;
+  }
+}
+// .results-slider__arrows img {
+//   @include mq("md") {
+//     width: 20px;
+//     height: 20px;
+//   }
+// }
 
+.results-slider__box {
+  max-width: rrem(420);
+  margin-inline: auto;
+  @include mq("md") {
+    max-width: rrem(300);
+  }
+  
 }
 
 .splide__arrow {
@@ -396,8 +434,12 @@
   // grid-template-columns: repeat(2, 1fr);
   display: flex;
   column-gap: rrem(48);
-  max-width: rrem(415);
+  //max-width: rrem(415);
   justify-items: end;
+  @include mq("md") {
+    column-gap: rrem(10);
+    align-items: center;
+  }
 }
 
 .results-slider__item {
@@ -408,10 +450,16 @@
   aspect-ratio: 148 / 310;
   width: rrem(148);
   flex-shrink: 0;
+  @include mq("md") {
+    width: rrem(100);
+  }
 }
 
 .results-slider__image img {
   height: rrem(318);
+  @include mq("md") {
+    height: auto;
+  }
 }
 
 .results-slider__body {
@@ -431,6 +479,9 @@
   padding-top: rrem(6);
   padding-bottom: rrem(6);
   margin-top: rrem(28);
+  @include mq("md") {
+    margin-top: initial;
+  }
 }
 
 .results-slider__duration {
@@ -464,6 +515,9 @@
   background-color: $c-text;
   display: inline-block;
   padding: 4px 16px;
+  @include mq("md") {
+    padding: 4px 10px;
+  }
 }
 
 .results-slider__metrics-value {

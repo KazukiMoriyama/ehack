@@ -386,16 +386,22 @@ $(document).ready(function () {
 });
 
 
-/*splide
+/* E-Cycleページ results 制作実績 スライドショー
 ========================================*/
 //new Splide( '.splide' ).mount();
 
 const options1 = {
     type: 'loop',
     //autoplay: true,
-    perMove: 1,
-    perPage: 1,
-    pagination:false,
+    perMove: 1, //一枚ずつ動く
+    perPage: 1, //一枚ずつ表示
+    pagination:false, //ページネーション非表示
+    gap: '13.125rem', //スライド間のスペース
+    breakpoints: {
+        768: {
+            gap: '1.5rem', //スライド間のスペース
+        }
+    }
   }
   const splide1 = new Splide( '#js-result__slider',options1 );
   splide1.mount();
