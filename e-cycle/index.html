@@ -24,9 +24,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
   <!-- css -->
-  <link href="../css/styles.css?20240927" rel="stylesheet">
+  <link href="../css/splide-core.min.css" rel="stylesheet">
+  <link href="../css/styles.css?20241001" rel="stylesheet">
   <!-- JavaScript -->
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="../js/splide.min.js"></script>
   <script defer src="../js/script.js"></script>
 </head>
 <!-- E-Cycleページ -->
@@ -366,6 +368,15 @@
           </div>
           <!-- （仮）研修実績スライドショー -->
           <div class="ecycle-page__results-slider">
+            <div class="splide" aria-label="ecycle-page__results-slider">
+              <div class="splide__track">
+                <div class="splide__list">
+                  <div class="splide__slide">Slide 01</div>
+                  <div class="splide__slide">Slide 02</div>
+                  <div class="splide__slide">Slide 03</div>
+                </div>
+              </div>
+            </div>
             <img src="../images/ecycle/results-test@2x.png" alt="" width="840" height="420">
           </div>
         </div>
