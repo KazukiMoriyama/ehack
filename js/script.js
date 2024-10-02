@@ -385,3 +385,17 @@ $(document).ready(function () {
     checkPosition();
 });
 
+
+/*splide
+========================================*/
+//new Splide( '.splide' ).mount();
+
+const options1 = {
+    type: 'loop',
+    //autoplay: true,
+    perMove: 1,
+    perPage: 1,
+    pagination:false,
+  }
+  const splide1 = new Splide( '#js-result__slider',options1 );
+  splide1.mount();

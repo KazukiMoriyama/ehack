@@ -334,11 +334,158 @@
   } 
 }
 
+/* スライドショー */
+.ecycle-page__results-slider {
+
+}
+
+.splide {
+
+}
+
+.results-slider {
+
+}
+
+.results-slider__container {
+
+}
+
+.splide__arrows {
+
+}
+
+.results-slider__arrows {
+
+}
+
+.splide__arrow {
+
+}
+
+.splide__arrow--prev {
+
+}
+
+.splide__arrow--next {
+
+}
+
+.splide__track {
+
+}
+
+.splide__list {
+
+}
+
+.results-slider__list {
+  background-color: $c-BgGray;
+  max-width: rrem(415);
+  //margin-inline: auto;
+
+
+}
+
+.splide__slide {
+
+}
+
+.results-slider__item {
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  column-gap: rrem(48);
+  max-width: rrem(415);
+  justify-items: end;
+}
+
+.results-slider__item {
+  //margin-right: rrem(210);
+}
+
+.results-slider__image {
+  aspect-ratio: 148 / 310;
+  width: rrem(148);
+  flex-shrink: 0;
+}
+
+.results-slider__image img {
+  height: rrem(318);
+}
+
+.results-slider__body {
+  text-align: center;
+  width: 100%;
+
+}
+
+.results-slider__title {
+  color: $c-white;
+  font-size: rrem(15);
+  font-weight: $medium;
+  line-height: calc(15 / 15);
+  letter-spacing: 0.6px;
+  background-color: $c-text;
+  text-align: center;
+  padding-top: rrem(6);
+  padding-bottom: rrem(6);
+  margin-top: rrem(28);
+}
+
+.results-slider__duration {
+  margin-top: rrem(13);
+  font-size: rrem(13);
+  font-weight: $medium;
+  line-height: calc(13 / 13);
+  letter-spacing: 0.52px;
+  text-align: center;
+  border-radius: 12px;
+  border: solid 1px $c-text;
+  padding: rrem(8) rrem(28);
+  display: inline-block;
+  background-color: $c-white;
+}
+
+
+.results-slider__metrics {
+  margin-top: rrem(13);
+  background-color: $c-white;
+  padding-bottom: rrem(8);
+  background: linear-gradient(to bottom, transparent 10px, #FFF 8px);
+}
+
+.results-slider__metrics-label {
+  color: $c-white;
+  font-size: rrem(13);
+  font-weight: $medium;
+  line-height: calc(13 / 13);
+  letter-spacing: 0.52px;
+  background-color: $c-text;
+  display: inline-block;
+  padding: 4px 16px;
+}
+
+.results-slider__metrics-value {
+  margin-top: rrem(5);
+  font-size: rrem(13);
+  font-weight: $medium;
+  line-height: calc(13 / 13);
+  letter-spacing: 0.52px;
+}
+
+.results-slider__metrics-value .text-highlight {
+  color: $c-accent;
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(18 / 18);
+  letter-spacing: 0.72px;
+}
+
+
 /* （仮） 画像 */
 .ecycle-page__results-slider {
-  margin-inline: auto;
-  aspect-ratio: 840 / 420;
-  width: rrem(840);
+  background-color: $c-BgGray;
 }
 
 
