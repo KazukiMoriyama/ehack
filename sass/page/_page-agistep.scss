@@ -443,7 +443,9 @@
   margin-inline: auto;
   @include mq("md") {
     grid-template-columns: repeat(2, 1fr);
-    gap: rrem(5);
+    column-gap: rrem(15);
+  row-gap: rrem(20);
+  max-width: rrem(330);
   }
 }
 
@@ -452,6 +454,10 @@
   padding-top: rrem(17);
   padding-bottom: rrem(26);
   text-align: center;
+  @include mq("md") {
+    padding-top: rrem(10);
+    padding-bottom: rrem(10);
+  }
 }
 
 .agistep-page .case-study__title {
@@ -467,6 +473,13 @@
   width: calc(100% + 40px);
   position: relative;
   right: 20px;
+  @include mq("md") {
+    font-size: rrem(16);
+    padding-top: rrem(8);
+    padding-bottom: rrem(8);
+    width: calc(100% + 10px);
+    right: 5px;
+  }
 }
 
 .agistep-page .case-study__benefit {
@@ -475,6 +488,13 @@
   line-height: calc(28.8 / 18);
   letter-spacing: 0.72px;
   padding-top: rrem(24);
+  @include mq("md") {
+    font-size: rrem(14);
+    line-height: calc(24 / 16);
+    font-weight: $medium;
+    padding-top: rrem(10);
+    letter-spacing: 0px;
+  }
 }
 
 .agistep-page .case-study__result {
@@ -483,19 +503,29 @@
   font-weight: $bold;
   line-height: calc(28.8 / 18);
   letter-spacing: 0.72px;
+  @include mq("md") {
+    font-size: rrem(16);
+  }
 }
 
 .agistep-page .case-study__result .text-highlight {
   font-size: rrem(44);
   line-height: calc(66 / 44);
   letter-spacing: 3.52px;
+  @include mq("md") {
+    font-size: rrem(30);
+    letter-spacing: 2.4px;
+  }
 }
 
 .case-study__result-description {
   font-size: rrem(22);
   font-weight: $bold;
   line-height: calc(35.2 / 22);
-letter-spacing: 1.76px;
+  letter-spacing: 1.76px;
+  @include mq("md") {
+    font-size: rrem(16);
+  }
 }
 
 
