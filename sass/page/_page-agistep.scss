@@ -426,34 +426,78 @@
   }
 }
 
-.agistep-page__case-wrap {
+
+.agistep-page__case-list {
   margin-top: rrem(73);
   @include mq("md") {
     margin-top: rrem(40);
   }
 }
 
-.agistep-page__case-list {
+.agistep-page.case-study__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: rrem(8);
+  column-gap: rrem(48);
+  row-gap: rrem(24);
+  max-width: rrem(960);
+  margin-inline: auto;
   @include mq("md") {
     grid-template-columns: repeat(2, 1fr);
     gap: rrem(5);
   }
 }
 
-.agistep-page__case-item {
-
+.agistep-page .case-study__item {
+  background-color: $c-white;
+  padding-top: rrem(17);
+  padding-bottom: rrem(26);
+  text-align: center;
 }
 
-.agistep-page__case-image {
-  aspect-ratio: 328 / 208;
-  max-width: rrem(328);
-  @include mq("md") {
-    width: 100%;
-  }
+.agistep-page .case-study__title {
+  background-color: $c-Dgray;
+  text-align: center;
+  color: $c-white;
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(18 / 18);
+  letter-spacing: 0.72px;
+  padding-top: rrem(13);
+  padding-bottom: rrem(13);
+  width: calc(100% + 40px);
+  position: relative;
+  right: 20px;
 }
+
+.agistep-page .case-study__benefit {
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(28.8 / 18);
+  letter-spacing: 0.72px;
+  padding-top: rrem(24);
+}
+
+.agistep-page .case-study__result {
+  color: $c-accent;
+  font-size: rrem(18);
+  font-weight: $bold;
+  line-height: calc(28.8 / 18);
+  letter-spacing: 0.72px;
+}
+
+.agistep-page .case-study__result .text-highlight {
+  font-size: rrem(44);
+  line-height: calc(66 / 44);
+  letter-spacing: 3.52px;
+}
+
+.case-study__result-description {
+  font-size: rrem(22);
+  font-weight: $bold;
+  line-height: calc(35.2 / 22);
+letter-spacing: 1.76px;
+}
+
 
 /* AGI-Step chatbot chatボット
 ======================================*/

@@ -4619,35 +4619,79 @@ select::-ms-expand {
   }
 }
 
-.agistep-page__case-wrap {
+.agistep-page__case-list {
   margin-top: 4.5625rem;
 }
 @media screen and (max-width: 767px) {
-  .agistep-page__case-wrap {
+  .agistep-page__case-list {
     margin-top: 2.5rem;
   }
 }
 
-.agistep-page__case-list {
+.agistep-page.case-study__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  column-gap: 3rem;
+  row-gap: 1.5rem;
+  max-width: 60rem;
+  margin-inline: auto;
 }
 @media screen and (max-width: 767px) {
-  .agistep-page__case-list {
+  .agistep-page.case-study__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.3125rem;
   }
 }
 
-.agistep-page__case-image {
-  aspect-ratio: 328/208;
-  max-width: 20.5rem;
+.agistep-page .case-study__item {
+  background-color: #FFF;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.625rem;
+  text-align: center;
 }
-@media screen and (max-width: 767px) {
-  .agistep-page__case-image {
-    width: 100%;
-  }
+
+.agistep-page .case-study__title {
+  background-color: #5f5f5f;
+  text-align: center;
+  color: #FFF;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.72px;
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+  width: calc(100% + 40px);
+  position: relative;
+  right: 20px;
+}
+
+.agistep-page .case-study__benefit {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+  padding-top: 1.5rem;
+}
+
+.agistep-page .case-study__result {
+  color: #F74A3F;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.72px;
+}
+
+.agistep-page .case-study__result .text-highlight {
+  font-size: 2.75rem;
+  line-height: 1.5;
+  letter-spacing: 3.52px;
+}
+
+.case-study__result-description {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1.76px;
 }
 
 /* AGI-Step chatbot chatボット
