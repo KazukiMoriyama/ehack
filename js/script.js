@@ -388,20 +388,28 @@ $(document).ready(function () {
 
 /* E-Cycleページ results 制作実績 スライドショー
 ========================================*/
-//new Splide( '.splide' ).mount();
 
-const options1 = {
-    type: 'loop',
-    //autoplay: true,
-    perMove: 1, //一枚ずつ動く
-    perPage: 1, //一枚ずつ表示
-    pagination:false, //ページネーション非表示
-    gap: '13.125rem', //スライド間のスペース
-    breakpoints: {
-        768: {
+// スライドショーの要素が存在するか確認
+document.addEventListener('DOMContentLoaded', function () {
+    var splideElement = document.querySelector('#js-result__slider');
+
+    // スライドショーの要素が存在する場合のみSplideを初期化
+    if (splideElement) {
+      const options1 = {
+        type: 'loop',
+        //autoplay: true,
+        perMove: 1, //一枚ずつ動く
+        perPage: 1, //一枚ずつ表示
+        pagination: false, //ページネーション非表示
+        gap: '13.125rem', //スライド間のスペース
+        breakpoints: {
+          768: {
             gap: '1.5rem', //スライド間のスペース
+          }
         }
+      };
+
+      const splide1 = new Splide(splideElement, options1);
+      splide1.mount();
     }
-  }
-  const splide1 = new Splide( '#js-result__slider',options1 );
-  splide1.mount();
+  });
