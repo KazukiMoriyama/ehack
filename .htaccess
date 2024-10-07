@@ -1,0 +1,7 @@
+AuthUserFile /home/xs456103/egu-test.com/public_html/dev-06.egu-test.com/.htpasswd
+AuthName "hogehoge"
+AuthType Basic
+require valid-user
+<Files ~ "^.(htpasswd|htaccess)$">
+  deny from all
+</Files>
