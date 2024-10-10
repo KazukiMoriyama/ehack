@@ -3146,7 +3146,7 @@ select::-ms-expand {
 .under-service-fv__title {
   font-size: clamp(5rem, 3.286rem + 3.57vw, 6.5rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: 8.32px;
   margin-top: 1.5625rem;
 }

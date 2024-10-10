@@ -41,7 +41,7 @@
     //font-size: rrem(104);
     font-size: clamp(5rem, 3.286rem + 3.57vw, 6.5rem);
     font-weight: $bold;
-    line-height: calc(104/104);
+    line-height: 1.2;
     letter-spacing: 8.32px;
     margin-top: rrem(25);
     @include mq("md") {
