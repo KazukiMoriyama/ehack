@@ -1892,6 +1892,12 @@ select::-ms-expand {
   opacity: 1;
   transition-delay: 0.2s;
 }
+@media screen and (max-width: 767px) {
+  .contact-btn__circle:hover .contact-btn__arrow {
+    animation: none;
+    transition-delay: 0;
+  }
+}
 
 @keyframes arrow-slide {
   0% {
@@ -1952,15 +1958,31 @@ select::-ms-expand {
   background-color: transparent;
   transform: scale(1.2);
 }
+@media screen and (max-width: 767px) {
+  .contact-btn__circle:hover {
+    background-color: initial;
+    transform: none;
+  }
+}
 
 /* ホバー時に黒線が一周し、グラデーション線を非表示 */
 .contact-btn__circle:hover .black-border {
   stroke-dashoffset: 0;
 }
+@media screen and (max-width: 767px) {
+  .contact-btn__circle:hover .black-border {
+    stroke-dashoffset: 301.6; /* ホバー時にアニメーションしないようにする */
+  }
+}
 
 /* グラデーション線を消す */
 .contact-btn__circle:hover .gradient-border {
   stroke: none;
+}
+@media screen and (max-width: 767px) {
+  .contact-btn__circle:hover .gradient-border {
+    stroke: url(#gradientSVG); /* ホバー時の変化を無効にする */
+  }
 }
 
 .footer {

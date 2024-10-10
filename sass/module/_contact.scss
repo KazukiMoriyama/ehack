@@ -170,10 +170,14 @@
 }
 
 .contact-btn__circle:hover .contact-btn__arrow {
-    animation: arrow-slide 0.3s;
-    opacity: 1;
-    //transform: translateX(7px);
-    transition-delay: 0.2s;
+  animation: arrow-slide 0.3s;
+  opacity: 1;
+  //transform: translateX(7px);
+  transition-delay: 0.2s;
+  @include mq("md") {
+    animation: none;
+    transition-delay: 0;
+  }
 }
 
 @keyframes arrow-slide {
@@ -236,16 +240,25 @@
 
 /* ホバー時も背景は透明、ボタンを拡大 */
 .contact-btn__circle:hover {
-    background-color: transparent;
-    transform: scale(1.2);
+  background-color: transparent;
+  transform: scale(1.2);
+  @include mq("md") {
+    background-color: initial;
+    transform: none;
+  }
 }
-
 /* ホバー時に黒線が一周し、グラデーション線を非表示 */
 .contact-btn__circle:hover .black-border {
-    stroke-dashoffset: 0;
+  stroke-dashoffset: 0;
+  @include mq("md") {
+    stroke-dashoffset: 301.6; /* ホバー時にアニメーションしないようにする */
+  }
 }
 
 /* グラデーション線を消す */
 .contact-btn__circle:hover .gradient-border {
-    stroke: none;
+  stroke: none;
+  @include mq("md") {
+    stroke: url(#gradientSVG); /* ホバー時の変化を無効にする */
+  }
 }
