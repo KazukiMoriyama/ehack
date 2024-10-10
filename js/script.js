@@ -274,6 +274,94 @@ function typeWriter(element, text, delay = 100) {
     typing();
 }
 
+/*TOP about タイプライターテキストアニメーション（4つ順番に発火）
+========================================*/
+
+// $(function () {
+//     $(document).ready(function () {
+//         $('.typewriter').css('visibility', 'hidden');
+
+//         // 各要素の高さを計測して固定
+//         $('.typewriter').each(function () {
+//             var originalHeight = $(this).outerHeight();
+//             $(this).css('min-height', originalHeight + 'px'); // 高さを固定
+//         });
+
+//         $(window).scroll(function () {
+//             var windowHeight = $(window).height(),
+//                 topWindow = $(window).scrollTop();
+
+//             $('.typewriter').each(function (index) {
+//                 var objectPosition = $(this).offset().top;
+
+//                 if (topWindow > objectPosition - windowHeight + 150) {
+//                     if ($(this).prev('.typewriter').length === 0 || $(this).prev('.typewriter').hasClass('completed')) {
+//                         showTextSequentially(index);
+//                     }
+//                 }
+//             });
+//         });
+
+//         function showTextSequentially(index) {
+//             var el = $('.typewriter').eq(index);
+//             if (el.length === 0 || el.css('visibility') !== 'hidden') return;
+
+//             el.css('visibility', 'visible');
+//             var htmlContent = el.html().trim();  // HTMLコンテンツを取得
+//             el.html(''); // コンテンツをクリアしてタイプライターエフェクトを開始
+
+//             typewriter({
+//                 el: el[0],
+//                 speed: 20, // スピードを上げる
+//                 string: htmlContent,
+//                 callback: function () {
+//                     el.addClass('completed'); // エフェクトが完了したらクラスを付与
+
+//                     // 隣接する次の要素があり、かつその要素が現在の要素と同じ位置にある場合、次の要素を即座に発火
+//                     var nextEl = el.next('.typewriter');
+//                     if (nextEl.length && nextEl.offset().top === el.offset().top + el.outerHeight()) {
+//                         // すぐに次を実行
+//                         showTextSequentially(index + 1);
+//                     } else {
+//                         // 次の要素がスクロールで表示されるのを待つ
+//                         $(window).scroll();
+//                     }
+//                 }
+//             });
+//         }
+
+//         const typewriter = (param) => {
+//             let el = param.el;
+//             let speed = param.speed;
+//             let string = param.string;
+//             let callback = param.callback;
+
+//             let cursorPos = 0;
+//             const regex = /<br\s*\/?>|&[^;]+;/gi;
+
+//             function typeNext() {
+//                 if (cursorPos < string.length) {
+//                     let match = regex.exec(string);
+//                     if (match && match.index === cursorPos) {
+//                         el.innerHTML += match[0];
+//                         cursorPos += match[0].length;
+//                     } else {
+//                         el.textContent += string[cursorPos];
+//                         cursorPos++;
+//                     }
+//                     setTimeout(typeNext, speed);
+//                 } else if (typeof callback === 'function') {
+//                     callback();
+//                 }
+//             }
+
+//             typeNext();
+//         };
+//     });
+// });
+
+/*TOP about タイプライターテキストアニメーション（4つ同時に発火）
+========================================*/
 $(function () {
     $(document).ready(function () {
         $('.typewriter').css('visibility', 'hidden');
@@ -292,17 +380,15 @@ $(function () {
                 var objectPosition = $(this).offset().top;
 
                 if (topWindow > objectPosition - windowHeight + 150) {
-                    if ($(this).prev('.typewriter').length === 0 || $(this).prev('.typewriter').hasClass('completed')) {
-                        showTextSequentially(index);
+                    // すべての.typewriter要素に対して一斉にアニメーションを開始
+                    if ($(this).css('visibility') === 'hidden') {
+                        showText($(this));
                     }
                 }
             });
         });
 
-        function showTextSequentially(index) {
-            var el = $('.typewriter').eq(index);
-            if (el.length === 0 || el.css('visibility') !== 'hidden') return;
-
+        function showText(el) {
             el.css('visibility', 'visible');
             var htmlContent = el.html().trim();  // HTMLコンテンツを取得
             el.html(''); // コンテンツをクリアしてタイプライターエフェクトを開始
@@ -313,16 +399,6 @@ $(function () {
                 string: htmlContent,
                 callback: function () {
                     el.addClass('completed'); // エフェクトが完了したらクラスを付与
-
-                    // 隣接する次の要素があり、かつその要素が現在の要素と同じ位置にある場合、次の要素を即座に発火
-                    var nextEl = el.next('.typewriter');
-                    if (nextEl.length && nextEl.offset().top === el.offset().top + el.outerHeight()) {
-                        // すぐに次を実行
-                        showTextSequentially(index + 1);
-                    } else {
-                        // 次の要素がスクロールで表示されるのを待つ
-                        $(window).scroll();
-                    }
                 }
             });
         }
@@ -356,6 +432,10 @@ $(function () {
         };
     });
 });
+
+
+
+
 
 $(document).ready(function () {
     $('.text-fadein').each(function () {
