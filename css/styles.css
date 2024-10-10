@@ -1758,13 +1758,68 @@ select::-ms-expand {
   text-align: center;
 }
 
-.supports__logo-item {
+.supports__logo-wrap {
   margin-top: 5.875rem;
+  max-width: 55rem;
+  margin-inline: auto;
 }
 @media screen and (max-width: 767px) {
-  .supports__logo-item {
+  .supports__logo-wrap {
     margin-top: 2.6875rem;
   }
+}
+
+.supports__logo-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 1.875rem;
+  row-gap: 1.875rem;
+  align-items: end;
+  grid-template-rows: auto; /* 行の高さを自動に */
+  grid-template-areas: "logo01 logo02 logo03 logo04 logo05" ". logo06 logo07 logo08 logo09";
+  justify-items: center; /* ロゴを中央に揃える */
+}
+
+.logo01 {
+  grid-area: logo01;
+}
+
+.logo02 {
+  grid-area: logo02;
+}
+
+.logo03 {
+  grid-area: logo03;
+}
+
+.logo04 {
+  grid-area: logo04;
+}
+
+.logo05 {
+  grid-area: logo05;
+}
+
+.logo06 {
+  grid-area: logo06;
+}
+
+.logo07 {
+  grid-area: logo07;
+}
+
+.logo08 {
+  grid-area: logo08;
+}
+
+.logo09 {
+  grid-area: logo09;
+}
+
+.supports__logo-item {
+  display: grid; /* list-item の代わりに grid を指定 */
+  grid-area: inherit; /* これにより li タグ自体が grid-area を継承 */
+  justify-items: center;
 }
 
 .contact__wrap {
