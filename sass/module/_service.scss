@@ -233,6 +233,10 @@
 .service-btn__circle:hover {
   transform: scale(1.2);
   background-color: transparent;
+  @include mq("md") {
+    transform: none;
+    background-color: transparent;
+  }
 
 }
 
@@ -241,6 +245,10 @@
   opacity: 1;
   //transform: translateX(7px);
   transition-delay: 0.2s;
+  @include mq("md") {
+    animation: none;
+    transition-delay: 0;
+  }
 }
 
 @keyframes arrow-slide {
@@ -292,8 +300,6 @@
 }
 
 /* グラデーション線のスタイル（初期状態では見えない） */
-////円の外側を一周なので、数字の調整が必要
-/// HTMLの cx="50" cy="50" r="48" を調整かな？？
 .service-btn__circle .gradient-border {
   stroke-dasharray: 301.6;
   /* 円周の長さ */
@@ -313,9 +319,15 @@
 /* ホバー時にグラデーション線が一周し、グラデーション線を非表示 */
 .service-btn__circle:hover .gradient-border {
   stroke-dashoffset: 0;
+  @include mq("md") {
+    stroke-dashoffset: 301.6;/* ホバー時にグラデーション線が動かないようにする */
+  }
 }
 
 /* 黒線を消す */
 .service-btn__circle:hover .black-border {
   stroke: none;
+  @include mq("md") {
+    stroke: $c-text;
+  }
 }

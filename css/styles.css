@@ -1635,11 +1635,23 @@ select::-ms-expand {
   transform: scale(1.2);
   background-color: transparent;
 }
+@media screen and (max-width: 767px) {
+  .service-btn__circle:hover {
+    transform: none;
+    background-color: transparent;
+  }
+}
 
 .service-btn__circle:hover .service-btn__arrow {
   animation: arrow-slide 0.5s;
   opacity: 1;
   transition-delay: 0.2s;
+}
+@media screen and (max-width: 767px) {
+  .service-btn__circle:hover .service-btn__arrow {
+    animation: none;
+    transition-delay: 0;
+  }
 }
 
 @keyframes arrow-slide {
@@ -1706,10 +1718,20 @@ select::-ms-expand {
 .service-btn__circle:hover .gradient-border {
   stroke-dashoffset: 0;
 }
+@media screen and (max-width: 767px) {
+  .service-btn__circle:hover .gradient-border {
+    stroke-dashoffset: 301.6; /* ホバー時にグラデーション線が動かないようにする */
+  }
+}
 
 /* 黒線を消す */
 .service-btn__circle:hover .black-border {
   stroke: none;
+}
+@media screen and (max-width: 767px) {
+  .service-btn__circle:hover .black-border {
+    stroke: #28292B;
+  }
 }
 
 .supports__title-wrap {
