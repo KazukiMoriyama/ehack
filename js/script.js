@@ -208,11 +208,27 @@ $(function () {
 
 /*contactホバーアニメーション（active付いたら背景・テキスト色が変わる）
 ========================================*/
+// const hoverBtn = document.getElementById('js-btn-hover');
+// const contactWrap = document.querySelector('.contact__wrap');
+
+// // hoverBtnが存在する場合のみ、イベントリスナーを追加する
+// if (hoverBtn) {
+//     hoverBtn.addEventListener('mouseenter', () => {
+//         contactWrap.classList.add('active');
+//     });
+
+//     hoverBtn.addEventListener('mouseleave', () => {
+//         contactWrap.classList.remove('active');
+//     });
+// }
+
+/*contactホバーアニメーション（768px以上のときactive付いたら背景・テキスト色が変わる）
+========================================*/
 const hoverBtn = document.getElementById('js-btn-hover');
 const contactWrap = document.querySelector('.contact__wrap');
 
-// hoverBtnが存在する場合のみ、イベントリスナーを追加する
-if (hoverBtn) {
+// hoverBtnが存在する場合のみ、かつウィンドウ幅が767px以上のときにイベントリスナーを追加する
+if (hoverBtn && window.innerWidth >= 767) {
     hoverBtn.addEventListener('mouseenter', () => {
         contactWrap.classList.add('active');
     });
@@ -221,6 +237,29 @@ if (hoverBtn) {
         contactWrap.classList.remove('active');
     });
 }
+
+// ウィンドウのリサイズイベントを監視して、767px以上かどうかをチェック
+window.addEventListener('resize', () => {
+    if (hoverBtn && window.innerWidth >= 767) {
+        // イベントリスナーを追加
+        hoverBtn.addEventListener('mouseenter', () => {
+            contactWrap.classList.add('active');
+        });
+
+        hoverBtn.addEventListener('mouseleave', () => {
+            contactWrap.classList.remove('active');
+        });
+    } else {
+        // イベントリスナーを削除
+        hoverBtn.removeEventListener('mouseenter', () => {
+            contactWrap.classList.add('active');
+        });
+
+        hoverBtn.removeEventListener('mouseleave', () => {
+            contactWrap.classList.remove('active');
+        });
+    }
+});
 
 
 /*footerドロップダウンアニメーション 何回でも繰り返し
