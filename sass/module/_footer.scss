@@ -99,6 +99,9 @@
   font-weight: $regular;
   line-height: calc(21/14);
   letter-spacing: 1.12px;
+  height: inherit;
+  display: inline-block;
+  width: 100%;
 }
 
 

@@ -2051,6 +2051,9 @@ select::-ms-expand {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 1.12px;
+  height: inherit;
+  display: inline-block;
+  width: 100%;
 }
 
 /* アコーディオンふわっと開くように
