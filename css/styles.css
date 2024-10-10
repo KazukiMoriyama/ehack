@@ -1631,17 +1631,6 @@ select::-ms-expand {
 }
 
 /* ホバー時のアニメーション */
-.service-btn__circle:hover {
-  transform: scale(1.2);
-  background-color: transparent;
-}
-@media screen and (max-width: 767px) {
-  .service-btn__circle:hover {
-    transform: none;
-    background-color: transparent;
-  }
-}
-
 .service-btn__circle:hover .service-btn__arrow {
   animation: arrow-slide 0.5s;
   opacity: 1;
@@ -1681,6 +1670,13 @@ select::-ms-expand {
   transition-delay: 0.2s;
   left: 0;
 }
+@media screen and (max-width: 767px) {
+  .service-btn__circle:hover .service-btn__arrow:after {
+    opacity: 0.8;
+    transform: none; /* 移動を無効化 */
+    transition-delay: 0; /* 遅延なしにする */
+  }
+}
 
 /* SVGを使用したグレー線とグラデーション線の表示 */
 .service-btn__circle .circle-border {
@@ -1700,18 +1696,21 @@ select::-ms-expand {
 
 /* グラデーション線のスタイル（初期状態では見えない） */
 .service-btn__circle .gradient-border {
-  stroke-dasharray: 301.6;
-  /* 円周の長さ */
-  stroke-dashoffset: 301.6;
-  /* 初期状態は線が見えない */
-  transition: stroke-dashoffset 0.5s ease;
-  /* スピード */
+  stroke-dasharray: 301.6; /* 円周の長さ */
+  stroke-dashoffset: 301.6; /* 初期状態は線が見えない */
+  transition: stroke-dashoffset 0.5s ease; /* スピード */
 }
 
 /* ホバー時 背景は黒、ボタンを拡大 */
 .service-btn__circle:hover {
   transform: scale(1.2);
   background-color: #28292B;
+}
+@media screen and (max-width: 767px) {
+  .service-btn__circle:hover {
+    transform: none;
+    background-color: transparent;
+  }
 }
 
 /* ホバー時にグラデーション線が一周し、グラデーション線を非表示 */
