@@ -276,7 +276,6 @@ function typeWriter(element, text, delay = 100) {
 
 /*TOP about タイプライターテキストアニメーション（4つ順番に発火）
 ========================================*/
-
 // $(function () {
 //     $(document).ready(function () {
 //         $('.typewriter').css('visibility', 'hidden');
@@ -360,6 +359,7 @@ function typeWriter(element, text, delay = 100) {
 //     });
 // });
 
+
 /*TOP about タイプライターテキストアニメーション（4つ同時に発火）
 ========================================*/
 $(function () {
@@ -436,7 +436,8 @@ $(function () {
 
 
 
-
+/* 下からふわっと出てくるようにするアニメーション
+========================================*/
 $(document).ready(function () {
     $('.text-fadein').each(function () {
         // Wrap the content with the desired span elements
@@ -466,6 +467,7 @@ $(document).ready(function () {
 });
 
 
+
 /* E-Cycleページ results 制作実績 スライドショー
 ========================================*/
 
@@ -493,3 +495,6 @@ document.addEventListener('DOMContentLoaded', function () {
       splide1.mount();
     }
   });
+
+
+
