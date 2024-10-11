@@ -13,31 +13,79 @@
   }
 }
 
-.supports__logo-list {
+.supports__logo-list01 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: rrem(30);
   row-gap: rrem(30);
   align-items: end;
   grid-template-rows: auto; /* 行の高さを自動に */
-  grid-template-areas:
-    "logo01 logo02 logo03 logo04 logo05"
-    ". logo06 logo07 logo08 logo09";
   justify-items: center; /* ロゴを中央に揃える */
+  @include mq("md") {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: rrem(15);
+    row-gap: rrem(15);
+  }
 }
 
-.logo01 { grid-area: logo01; }
-.logo02 { grid-area: logo02; }
-.logo03 { grid-area: logo03; }
-.logo04 { grid-area: logo04; }
-.logo05 { grid-area: logo05; }
-.logo06 { grid-area: logo06; }
-.logo07 { grid-area: logo07; }
-.logo08 { grid-area: logo08; }
-.logo09 { grid-area: logo09; }
+.logo04,
+.logo05 {
+  @include mq("md") {
+    margin-left: 95px;
+  }
+}
+
+.supports__logo-list02 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: rrem(30);
+  row-gap: rrem(30);
+  align-items: center;
+  grid-template-rows: auto; /* 行の高さを自動に */
+  justify-items: center; /* ロゴを中央に揃える */
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rrem(15);
+    row-gap: rrem(15);
+    margin-left: rrem(300);
+  }
+}
+
+.logo1 { grid-area: logo1; }
+.logo2 { grid-area: logo2; }
+.logo3 { grid-area: logo3; }
+.logo4 { grid-area: logo4; }
+.logo5 { grid-area: logo5; }
+.logo6 { grid-area: logo6; }
+.logo7 { grid-area: logo7; }
+.logo8 { grid-area: logo8; }
+.logo9 { grid-area: logo9; }
+
+
 
 .supports__logo-item {
   display: grid; /* list-item の代わりに grid を指定 */
   grid-area: inherit; /* これにより li タグ自体が grid-area を継承 */
   justify-items: center;
+  @include mq("md") {
+    max-width: rrem(120);
+  }
 }
+
+.supports__logo-list01 + .supports__logo-list02 {
+  margin-top: rrem(30);
+  @include mq("md") {
+    margin-top: rrem(15);
+  }
+}
+
+// .logo1 { grid-column: span 1; }
+// .logo2 { grid-column: span 1; }
+// .logo3 { grid-column: span 1; }
+// .logo4 { grid-column: span 1; }
+// .logo5 { grid-column: span 1; }
+
+// .logo6 { grid-column: 2 / span 1; } /* 2列目から開始 */
+// .logo7 { grid-column: span 1; }
+// .logo8 { grid-column: span 1; }
+// .logo9 { grid-column: span 1; }

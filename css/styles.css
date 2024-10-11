@@ -1769,57 +1769,102 @@ select::-ms-expand {
   }
 }
 
-.supports__logo-list {
+.supports__logo-list01 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 1.875rem;
   row-gap: 1.875rem;
   align-items: end;
   grid-template-rows: auto; /* 行の高さを自動に */
-  grid-template-areas: "logo01 logo02 logo03 logo04 logo05" ". logo06 logo07 logo08 logo09";
   justify-items: center; /* ロゴを中央に揃える */
 }
-
-.logo01 {
-  grid-area: logo01;
+@media screen and (max-width: 767px) {
+  .supports__logo-list01 {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.9375rem;
+    row-gap: 0.9375rem;
+  }
 }
 
-.logo02 {
-  grid-area: logo02;
+@media screen and (max-width: 767px) {
+  .logo04,
+  .logo05 {
+    margin-left: 95px;
+  }
 }
 
-.logo03 {
-  grid-area: logo03;
+.supports__logo-list02 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1.875rem;
+  row-gap: 1.875rem;
+  align-items: center;
+  grid-template-rows: auto; /* 行の高さを自動に */
+  justify-items: center; /* ロゴを中央に揃える */
+}
+@media screen and (max-width: 767px) {
+  .supports__logo-list02 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.9375rem;
+    row-gap: 0.9375rem;
+    margin-left: 18.75rem;
+  }
 }
 
-.logo04 {
-  grid-area: logo04;
+.logo1 {
+  grid-area: logo1;
 }
 
-.logo05 {
-  grid-area: logo05;
+.logo2 {
+  grid-area: logo2;
 }
 
-.logo06 {
-  grid-area: logo06;
+.logo3 {
+  grid-area: logo3;
 }
 
-.logo07 {
-  grid-area: logo07;
+.logo4 {
+  grid-area: logo4;
 }
 
-.logo08 {
-  grid-area: logo08;
+.logo5 {
+  grid-area: logo5;
 }
 
-.logo09 {
-  grid-area: logo09;
+.logo6 {
+  grid-area: logo6;
+}
+
+.logo7 {
+  grid-area: logo7;
+}
+
+.logo8 {
+  grid-area: logo8;
+}
+
+.logo9 {
+  grid-area: logo9;
 }
 
 .supports__logo-item {
   display: grid; /* list-item の代わりに grid を指定 */
   grid-area: inherit; /* これにより li タグ自体が grid-area を継承 */
   justify-items: center;
+}
+@media screen and (max-width: 767px) {
+  .supports__logo-item {
+    max-width: 7.5rem;
+  }
+}
+
+.supports__logo-list01 + .supports__logo-list02 {
+  margin-top: 1.875rem;
+}
+@media screen and (max-width: 767px) {
+  .supports__logo-list01 + .supports__logo-list02 {
+    margin-top: 0.9375rem;
+  }
 }
 
 .contact__wrap {
