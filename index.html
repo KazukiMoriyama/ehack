@@ -154,7 +154,7 @@
     <!-- ファーストビュー -->
     <section class="fv" id="js-fv">
       <div class="fv__inner">
-        <video class="fixed_video" src="./images/video/ehack_fv.mp4" playsinline autoplay muted loop></video>
+        <video class="fixed_video" src="./images/video/ehack_fv_compress.mp4" playsinline autoplay muted loop></video>
         <!-- ファーストビュー用のテキスト -->
         <h2 class="fv-text" id="fv-typewriter-text">想像を超えた<br class="sp-only">その先へ</h2>
         <!-- スクロールボタン -->
@@ -171,7 +171,7 @@
     <!-- About -->
     <section class="about layout-about" id="about">
       <!-- 背景動画 -->
-      <video class="background_video" src="./images/video/bg_movie.mp4" playsinline autoplay muted loop></video>
+      <video class="background_video" src="./images/video/bg_movie_compress.mp4" playsinline autoplay muted loop></video>
       <div class="about__inner inner">
         <!-- タイトル -->
         <h2 class="about__title text-fadein">about</h2>
@@ -343,8 +343,8 @@
             <div class="supports__title-wrap section__title-wrap">
               <h2 class="supports__title section__title text-fadein">supports</h2>
             </div>
-            <!-- ロゴ一覧 -->
-            <div class="supports__logo-wrap">
+            <!-- ロゴ一覧 pcサイズ用 -->
+            <div class="supports__logo-wrap pc-only">
               <!-- ロゴ上段 -->
               <ul class="supports__logo-list01">
                 <li class="supports__logo-item logo1">
@@ -379,13 +379,48 @@
                 </li>
               </ul>
             </div>
-            <!-- 仮ロゴ画像 -->
-            <!-- <figure class="supports__logo-item">
-              <picture>
-                <source srcset="./images/top/logo_dummy_SP.png?1" media="(max-width: 767px)">
-                <img src="./images/top/logo_dummy.svg" alt="（仮）ロゴ一覧" width="880" height="247" decoding="async">
-              </picture>
-            </figure> -->
+            <!-- ロゴ一覧 spサイズ用 -->
+            <div class="supports__logo-wrap sp-only">
+              <!-- ロゴ1段目 -->
+              <ul class="supports__logo-listSP01">
+                <li class="supports__logo-item logo1">
+                  <img src="./images/top/logo_dummy01@2x.png" alt="ロゴ01" class="logo01" width="100" height="105" decoding="async">
+                </li>
+                <li class="supports__logo-item logo2">
+                  <img src="./images/top/logo_dummy02@2x.png" alt="ロゴ02" class="logo02" width="140" height="105" decoding="async">
+                </li>
+                <li class="supports__logo-item logo3">
+                  <img src="./images/top/logo_dummy03@2x.png" alt="ロゴ03" class="logo03" width="130" height="105" decoding="async">
+                </li>
+              </ul>
+              <!-- ロゴ2段目 -->
+              <ul class="supports__logo-listSP02">
+                <li class="supports__logo-item logo4">
+                  <img src="./images/top/logo_dummy04@2x.png" alt="ロゴ04" class="logo04" width="120" height="105" decoding="async">
+                </li>
+                <li class="supports__logo-item logo5">
+                  <img src="./images/top/logo_dummy05@2x.png" alt="ロゴ05" class="logo05" width="115" height="105" decoding="async">
+                </li>
+              </ul>
+              <!-- ロゴ3段目 -->
+              <ul class="supports__logo-listSP02 third-column">
+                <li class="supports__logo-item logo6">
+                  <img src="./images/top/logo_dummy06@2x.png" alt="ロゴ06" class="logo06" width="220" height="70" decoding="async">
+                </li>
+                <li class="supports__logo-item logo9">
+                  <img src="./images/top/logo_dummy09@2x.png" alt="ロゴ09" class="logo09" width="140" height="105" decoding="async">
+                </li>
+              </ul>
+              <!-- ロゴ4段目 -->
+              <ul class="supports__logo-listSP02">
+                <li class="supports__logo-item logo7">
+                  <img src="./images/top/logo_dummy07@2x.png" alt="ロゴ07" class="logo07" width="140" height="105" decoding="async">
+                </li>
+                <li class="supports__logo-item logo8">
+                  <img src="./images/top/logo_dummy08@2x.png" alt="ロゴ08" class="logo08" width="120" height="105" decoding="async">
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
       </div>
@@ -393,7 +428,7 @@
     <!-- Contact セクション -->
     <section class="contact layout-contact">
       <!-- 背景動画 -->
-      <video class="background_video" src="./images/video/bg_movie.mp4" playsinline autoplay muted loop></video>
+      <video class="background_video" src="./images/video/bg_movie_compress.mp4" playsinline autoplay muted loop></video>
       <div class="contact__inner inner">
         <div class="contact__wrap">
           <div class="contact__title-wrap section__title-wrap">

@@ -1766,6 +1766,7 @@ select::-ms-expand {
 @media screen and (max-width: 767px) {
   .supports__logo-wrap {
     margin-top: 2.6875rem;
+    max-width: 20.625rem;
   }
 }
 
@@ -1778,20 +1779,6 @@ select::-ms-expand {
   grid-template-rows: auto; /* 行の高さを自動に */
   justify-items: center; /* ロゴを中央に揃える */
 }
-@media screen and (max-width: 767px) {
-  .supports__logo-list01 {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 0.9375rem;
-    row-gap: 0.9375rem;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .logo04,
-  .logo05 {
-    margin-left: 95px;
-  }
-}
 
 .supports__logo-list02 {
   display: grid;
@@ -1801,50 +1788,6 @@ select::-ms-expand {
   align-items: center;
   grid-template-rows: auto; /* 行の高さを自動に */
   justify-items: center; /* ロゴを中央に揃える */
-}
-@media screen and (max-width: 767px) {
-  .supports__logo-list02 {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 0.9375rem;
-    row-gap: 0.9375rem;
-    margin-left: 18.75rem;
-  }
-}
-
-.logo1 {
-  grid-area: logo1;
-}
-
-.logo2 {
-  grid-area: logo2;
-}
-
-.logo3 {
-  grid-area: logo3;
-}
-
-.logo4 {
-  grid-area: logo4;
-}
-
-.logo5 {
-  grid-area: logo5;
-}
-
-.logo6 {
-  grid-area: logo6;
-}
-
-.logo7 {
-  grid-area: logo7;
-}
-
-.logo8 {
-  grid-area: logo8;
-}
-
-.logo9 {
-  grid-area: logo9;
 }
 
 .supports__logo-item {
@@ -1861,9 +1804,39 @@ select::-ms-expand {
 .supports__logo-list01 + .supports__logo-list02 {
   margin-top: 1.875rem;
 }
+
+/* spサイズ用 ロゴ一覧 */
 @media screen and (max-width: 767px) {
-  .supports__logo-list01 + .supports__logo-list02 {
-    margin-top: 0.9375rem;
+  .supports__logo-listSP01 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.875rem;
+    align-items: end;
+    grid-template-rows: 6.5625rem; /* 行の高さを自動に */
+    justify-items: center; /* ロゴを中央に揃える */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .supports__logo-listSP02 {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 1.875rem;
+    justify-content: space-evenly;
+    align-items: end;
+    height: 6.5625rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .supports__logo-listSP02.third-column {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .supports__logo-listSP02 + .supports__logo-listSP02 {
+    margin-top: 1.25rem;
   }
 }
 

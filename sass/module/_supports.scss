@@ -10,6 +10,7 @@
   margin-inline: auto;
   @include mq("md") {
     margin-top: rrem(43);
+    max-width: rrem(330);
   }
 }
 
@@ -21,19 +22,8 @@
   align-items: end;
   grid-template-rows: auto; /* 行の高さを自動に */
   justify-items: center; /* ロゴを中央に揃える */
-  @include mq("md") {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: rrem(15);
-    row-gap: rrem(15);
-  }
 }
 
-.logo04,
-.logo05 {
-  @include mq("md") {
-    margin-left: 95px;
-  }
-}
 
 .supports__logo-list02 {
   display: grid;
@@ -43,25 +33,7 @@
   align-items: center;
   grid-template-rows: auto; /* 行の高さを自動に */
   justify-items: center; /* ロゴを中央に揃える */
-  @include mq("md") {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: rrem(15);
-    row-gap: rrem(15);
-    margin-left: rrem(300);
-  }
 }
-
-.logo1 { grid-area: logo1; }
-.logo2 { grid-area: logo2; }
-.logo3 { grid-area: logo3; }
-.logo4 { grid-area: logo4; }
-.logo5 { grid-area: logo5; }
-.logo6 { grid-area: logo6; }
-.logo7 { grid-area: logo7; }
-.logo8 { grid-area: logo8; }
-.logo9 { grid-area: logo9; }
-
-
 
 .supports__logo-item {
   display: grid; /* list-item の代わりに grid を指定 */
@@ -74,18 +46,39 @@
 
 .supports__logo-list01 + .supports__logo-list02 {
   margin-top: rrem(30);
+}
+
+/* spサイズ用 ロゴ一覧 */
+.supports__logo-listSP01 {
   @include mq("md") {
-    margin-top: rrem(15);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: rrem(30);
+    align-items: end;
+    grid-template-rows: rrem(105); /* 行の高さを自動に */
+    justify-items: center; /* ロゴを中央に揃える */
   }
 }
 
-// .logo1 { grid-column: span 1; }
-// .logo2 { grid-column: span 1; }
-// .logo3 { grid-column: span 1; }
-// .logo4 { grid-column: span 1; }
-// .logo5 { grid-column: span 1; }
+.supports__logo-listSP02 {
+  @include mq("md") {
+    margin-top: rrem(20);
+    display: flex;
+    gap: rrem(30);
+    justify-content: space-evenly;
+    align-items: end;
+    height: rrem(105);
+  }
+}
 
-// .logo6 { grid-column: 2 / span 1; } /* 2列目から開始 */
-// .logo7 { grid-column: span 1; }
-// .logo8 { grid-column: span 1; }
-// .logo9 { grid-column: span 1; }
+.supports__logo-listSP02.third-column {
+  @include mq("md") {
+    align-items: center;
+  }
+}
+
+.supports__logo-listSP02 + .supports__logo-listSP02 {
+  @include mq("md") {
+    margin-top: rrem(20);
+  }
+}
