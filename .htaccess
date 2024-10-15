@@ -1,4 +1,4 @@
-AuthUserFile /home/xs456103/egu-test.com/public_html/dev-06.egu-test.com/.htpasswd
+AuthUserFile /home/xs027134/xs027134.xsrv.jp/public_html/ehack-test03/.htpasswd
 AuthName "hogehoge"
 AuthType Basic
 require valid-user
